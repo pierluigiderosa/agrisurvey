@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% load leaflet_tags %}
+
+<title>{% block head_title %}{{ block.super }} | Domanda{% endblock head_title %}</title>
+{% block script %}
+    {% leaflet_js %}
+    {% leaflet_css %}
+{% endblock %}
+{% block content %}
+    {% if not error %}
+        <h2>Danno</h2>
+        {#        controllo per far apparire il bottone di edit solo ai CAA#}
+        {% if request.user.is_authenticated and danno.CAA == request.user %}
+            <a href="{% url 'danno_edit' pk=danno.id %}" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Modifica<span class="far fa-edit fa-lg"></span></a>
+            {#            <a href="{% url 'danno_edit' pk=danno.id %} class="btn btn-info" role="button">Edita</a>#}
+        {% endif %}
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Richiedente: {{ danno.richiedente }}</li>
+            <li class="list-group-item">Foglio: {{ danno.foglio }} particella: {{ danno.particella }}</li>
+            <li class="list-group-item">Data inserimento {{ danno.data_ins|date }}</li>
+            <li class="list-group-item">Coltura: {{ danno.coltura }} {{ danno.varieta }}</li>
+            <li class="list-group-item">Superficie particella in ettari: {{ danno.SumTot }} di cui a seminativo {{ danno.SumSem }}</li>
+            <li class="list-group-item">percentuale stimata del danno: {{ danno.PercDanno }}%</li>
+            <li class="list-group-item">produzione prevista nella particella: {{ danno.Produzione }} corrispondente al {{ danno.PerProdPersa }}% di produzione persa</li>
+            <li class="list-group-item">ipotetico valore del danno stimato dal dichiarante: {{ danno.ValoreDanno }}€</li>
+            <li class="list-group-item">numero piante danneggiate: {{ danno.NumPianteDan }} e tipo: {{ danno.TipoPiante }}</li>
+            <li class="list-group-item">Selvaggina che ha fatto i danni alla coltura: {{ danno.SelvagginaSem }} e tipo: {{ danno.OpereProtezione }}</li>
+            <li class="list-group-item">Opere di protezione: {{ danno.OpereProtezione }}</li>
+            <li class="list-group-item">Centro di Assistenza Agricolo assegnatario domanda: {{ danno.CAA }}</li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Catastali correttamente inseriti:
+                <span class="badge badge-primary badge-pill">{{ danno.fog_part_certified.count }}</span>
+            </li>
+        </ul>
+
+
+        {% leaflet_map "main" callback="main_map_init" %}
+
+        <script type="text/javascript">
+            function main_map_init (map, options) {
+
+                var dataurl = "{% url "data" %}?pid={{ danno.id }}";
+                // Download GeoJSON via Ajax
+                $.getJSON(dataurl, function (data) {
+                    // Add GeoJSON layer
+                    L.geoJson(data).addTo(map);
+                });
+
+            }
+        </script>
+    {% else %}
+        <h3>Accesso negato</h3>
+        <p>{{ error }}</p>
+    {% endif %}
+{% endblock content %}

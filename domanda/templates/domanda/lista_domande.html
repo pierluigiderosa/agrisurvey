@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <table style="width:100%" class="table table-hover table-responsive">
+            <thead class="thead-light">
+    <tr>
+        <th scope="col">id pratica</th>
+        <th scope="col">Richiedente</th>
+        <th scope="col">Valore danno</th>
+        <th scope="col">data inserimento</th>
+        <th scope="col">stato</th>
+        <th scope="col">part. inserite</th>
+    </tr>
+    </thead>
+    {% for danno in danni_lista %}
+        <tr>
+            <th scope="row"><a href="{{ danno.get_absolute_url }}">{{ danno.id }}</a></th>
+            <td>{{ danno.richiedente }}</td>
+            <td>€ {{ danno.ValoreDanno }}</td>
+            <td>{{ danno.data_ins|date }}</td>
+            <td>{{ danno.stato_pratica }}</td>
+            <td>{{ danno.fog_part_certified.count }}</td>
+        </tr>
+    {% empty %}
+        <tr>
+            <th>Non risultano danni inseriti</th>
+        </tr>
+    {% endfor %}
+</table>
+{% else %}
+        <p>Benvenuto. Pagina non visibile agli utenti esterni. <br>Per favore effettua il <a href="{% url "login" %}">Login</a></p>
+{% endif %}
+{% endblock content %}

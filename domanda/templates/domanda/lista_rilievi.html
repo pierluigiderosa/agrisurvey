@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <table style="width:100%" class="table table-hover table-responsive">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">id pratica</th>
+                <th scope="col">Richiedente</th>
+                <th scope="col">Valore danno</th>
+                <th scope="col">Stato</th>
+                <th scope="col">CAA</th>
+                <th scope="col">data inserimento</th>
+                <th scope="col">part. inserite</th>
+                <th scope="col">Download vettoriale</th>
+                <th scope="col">Download ortofoto</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for danno in rilievi_lista %}
+                <tr>
+                    {#  se metto il link al singolo danno          <th><a href="{{ danno.get_absolute_url }}">{{ danno.id }}</a></th>#}
+                    <th scope="row">{{ danno.id }}</th>
+                    <td>{{ danno.richiedente }}</td>
+                    <td>€ {{ danno.ValoreDanno }}</td>
+                    <td>{{ danno.stato_pratica }}</td>
+                    <td>{{ danno.CAA }}</td>
+                    <td>{{ danno.data_ins|date }}</td>
+                    <td>{{ danno.fog_part_certified.count }}</td>
+                    <td>{% if danno.fog_part_certified.count > 0 %}
+                        <a href="{{ danno.id }}/download/">spatialite</a>
+                        <td><a href="/domanda/assegna/quadrante/{{ danno.id }}">ortofoto</a></td>
+                    {% else %}
+                        Non risultano catastali inseriti per la domanda.
+                    {% endif %}
+
+
+                </tr>
+            {% empty %}
+                <tr>
+                    <th>Non risultano danni inseriti</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Benvenuto. Pagina non visibile agli utenti esterni. <br>Per favore effettua il <a href="{% url "login" %}">Login</a></p>
+    {% endif %}
+{% endblock content %}

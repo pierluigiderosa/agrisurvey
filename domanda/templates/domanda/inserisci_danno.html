@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags   %}
+
+<title>{% block head_title %}{{ block.super }} | Inserisci danno{% endblock head_title %}</title>
+
+{% block extrastyle %}
+<script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+{% endblock %}
+
+{% block content %}
+    {{ form.media}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+    {% if not errore %}
+        <h3>Nuova domanda di danno</h3>
+
+        <form method="POST" class="post-form">
+            {% csrf_token %}
+
+            <table>
+                {{ form.as_table }}
+            </table>
+            <button type="submit" class="save btn btn-default">Invia</button>
+        </form>
+    {% else %}
+        <h3>Errore</h3>
+        <br>
+        <p>{{ errore }}</p>
+    {% endif %}
+{% endblock content %}

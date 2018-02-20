@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags   %}
+<title>{% block head_title %}{{ block.super }} | Inserisci danno{% endblock head_title %}</title>
+{% block content %}
+
+    {% if not errore %}
+    <h3>Inserimento Agricoltore</h3>
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        <table>
+            {{ user_form.as_table }}
+            {{ profile_form.as_table }}
+        </table>
+        <button type="submit" class="save btn btn-default">Invia</button>
+    </form>
+    {% else %}
+    <br>
+    <p>{{ errore }}</p>
+    {% endif %}
+
+{% endblock content %}
