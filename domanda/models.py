@@ -103,7 +103,7 @@ class danno(models.Model):
                     to_mail = 'pierluigi.derosa@gfosservices.it'
                 else:
                     to_mail = self.Rilevatore.email
-                #costruisco il copro del messaggio
+                #costruisco il corpo del messaggio
                 body = '''
                 Gentile %s,
                 le è stato appena assegnato un nuovo rilievo.
