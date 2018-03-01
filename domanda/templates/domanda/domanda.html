@@ -31,7 +31,7 @@
             <li class="list-group-item">Centro di Assistenza Agricolo assegnatario domanda: {{ danno.CAA }}</li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 Catastali correttamente inseriti:
-                <span class="badge badge-primary badge-pill">{{ danno.fog_part_certified.count }}</span>
+                <span class="badge badge-primary badge-pill">{{ danno.fog_part_db.count }}</span>
             </li>
         </ul>
 
@@ -39,14 +39,28 @@
         {% leaflet_map "main" callback="main_map_init" %}
 
         <script type="text/javascript">
+            function onEachFeature(feature, layer) {
+                // does this feature have a property named popupContent?
+                if (feature.properties && feature.properties.popupContent) {
+                    layer.bindPopup(feature.properties.popupContent);
+                }
+            }
             function main_map_init (map, options) {
 
                 var dataurl = "{% url "data" %}?pid={{ danno.id }}";
                 // Download GeoJSON via Ajax
                 $.getJSON(dataurl, function (data) {
                     // Add GeoJSON layer
-                    L.geoJson(data).addTo(map);
+                    L.geoJson(data,{
+                        onEachFeature: function (feature, layer) {
+                            layer.bindPopup('<h5>Foglio</h5>'+ feature.properties.foglio+'<h5>Particella: </h5>'+feature.properties.part);
+                        }
+                    }).addTo(map);
+                    {% comment %}var wmsLayer = L.tileLayer.wms('https://demo.boundlessgeo.com/geoserver/ows?', {
+                        layers: 'ne:ne'
+                    }).addTo(map);{% endcomment %}
                 });
+
 
             }
         </script>

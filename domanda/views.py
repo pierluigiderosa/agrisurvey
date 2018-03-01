@@ -18,7 +18,7 @@ from .forms import DannoFormAgricoltore, UserForm, AgricoltoreForm, DannoFormCAA
 from datetime import date
 from django.conf import settings
 
-from .models import danno, quadranti, CatastaleSmall
+from .models import danno, quadranti, catastale_new
 
 
 # Create your views here.
@@ -73,8 +73,8 @@ def quadrante(request,id):
     html_str = ''
     html_test=''
     # per ogni catastale inserito nel danno
-    for i in range(danno_pid.fog_part_certified.count()):
-        catasto = danno_pid.fog_part_certified.all()[i]
+    for i in range(danno_pid.fog_part_db.count()):
+        catasto = danno_pid.fog_part_db.all()[i]
         catasto.mpoly.transform('3003')
         quad_interessati = quadranti.objects.filter(mpoly__intersects=catasto.mpoly)
 
@@ -146,6 +146,7 @@ class MapLayer(GeoJSONLayerView):
     precision = 4   # float
     simplify = 0.5  # generalization
     geometry_field = 'mpoly' #colonna geometrie
+    properties = ['part','foglio','comune']
 
 
 
@@ -156,7 +157,7 @@ class MapLayer(GeoJSONLayerView):
         except ValueError:
             Http404
         #reverse selection di catastale a partire dal danno
-        context = CatastaleSmall.objects.filter(danno__id=pk_id_int)
+        context = catastale_new.objects.filter(danno__id=pk_id_int)
         return context
 
 @login_required
@@ -183,9 +184,17 @@ def InserisciDanno(request):
                 dannoEntry.stato_pratica = u'lavorazione'
                 dannoEntry.save()
 
-                for item in range(len(form.cleaned_data['fog_part_certified'])):
-                    dannoEntry.fog_part_certified.add(form.cleaned_data['fog_part_certified'][item])
+                #sostituito il modo per salvare le particelle con ajax per gestire molte righe
+                # for item in range(len(form.cleaned_data['fog_part_certified'])):
+                #     dannoEntry.fog_part_certified.add(form.cleaned_data['fog_part_certified'][item])
+                # dannoEntry.save()
+
+                for item in range(len(form.cleaned_data['fog_part_db'])):
+                    pk_id = form.cleaned_data['fog_part_db'][item]
+                    catastale_obj=catastale_new.objects.get(id=pk_id)
+                    dannoEntry.fog_part_db.add(catastale_obj)
                 dannoEntry.save()
+
 
                 # redirect to a new URL:
                 return HttpResponseRedirect('/domanda/%s/' % (str(dannoEntry.id)))
@@ -256,7 +265,7 @@ def download_sqlite(request, id):
     # TODO cancellare il file una vota scaricato
     idint = int(id)
     danno_id = danno.objects.get(id=idint)
-    if danno_id.fog_part_certified.count() == 0:
+    if danno_id.fog_part_db.count() == 0:
         messages.warning(request, 'Non puoi esportare perchè non ci sono particelle')
         return render(request, 'domanda/messaggio.html')
     else:

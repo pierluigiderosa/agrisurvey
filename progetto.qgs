@@ -5,34 +5,22 @@
   <evaluateDefaultValues active="0"/>
   <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
     <customproperties/>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="catastale_small20180130222241239" source="/home/pierluigi/Sviluppo/agrisurvey/domanda/data/catastale_small.shp" name="catastale_small">
-      <customproperties>
-        <property key="embedded" value="1"/>
-        <property key="embedded_project" value="./domanda/data/agrisurvey.qgs"/>
-      </customproperties>
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="dati_agrisurvey_comuni_toscana_300320180227151315660" source="/media/pierluigi/LENOVO1/lavori/63_agrisurvey/dati_agrisurvey.gpkg|layerid=3" name="dati_agrisurvey comuni_toscana_3003">
+      <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="dati_geografici20180123083344460" source="/home/pierluigi/Sviluppo/agrisurvey/dati_geografici.gpkg|layername=toscana_3003" name="toscana 3003">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="dati_agrisurvey20180227072711907" source="/media/pierluigi/LENOVO1/lavori/63_agrisurvey/dati_agrisurvey.gpkg|layername=toscana_3003" name="dati_agrisurvey toscana_3003 MultiPolygon">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="1" providerKey="wms" checked="Qt::Unchecked" id="Particelle_catastali___AdT_Catasto_Terreni20180123183217966" source="contextualWMSLegend=0&amp;crs=EPSG:3003&amp;dpiMode=7&amp;featureCount=10&amp;format=image/png&amp;layers=rt_cat.idcatpart.rt&amp;styles=&amp;url=http://www502.regione.toscana.it/wmsraster/com.rt.wms.RTmap/wms?map%3Dwmscatasto%26map_resolution%3D91%26language%3Dita%26" name="Particelle catastali - AdT Catasto Terreni">
       <customproperties/>
     </layer-tree-layer>
+    <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="domanda_quadranti20180227072409324" source="dbname='agrisurvey_db_new' host=localhost port=5432 user='pierluigi' sslmode=disable key='id' srid=3003 type=MultiPolygon table=&quot;public&quot;.&quot;domanda_quadranti&quot; (mpoly) sql=" name="domanda_quadranti">
+      <customproperties/>
+    </layer-tree-layer>
     <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="e466001020180208222755389" source="/home/pierluigi/Sviluppo/agrisurvey/domanda/data/e4660010.shp" name="e4660010">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="wms" checked="Qt::Unchecked" id="OFC_2016_20cm___32_bit_colore___RGB20180123183450344" source="contextualWMSLegend=0&amp;crs=EPSG:3003&amp;dpiMode=7&amp;featureCount=10&amp;format=image/png&amp;layers=rt_ofc.5k16.32bit&amp;styles=&amp;url=http://www502.regione.toscana.it/ows_ofc/com.rt.wms.RTmap/wms?map%3Dowsofc%26map_resolution%3D91%26" name="OFC 2016 20cm - 32 bit colore - RGB">
-      <customproperties/>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="wms" checked="Qt::Checked" id="OFC_2016_20cm___32_bit_colore___RGB20180208222656341" source="contextualWMSLegend=0&amp;crs=EPSG:3003&amp;dpiMode=7&amp;featureCount=10&amp;format=image/png&amp;layers=rt_ofc.5k16.32bit&amp;styles=&amp;url=http://www502.regione.toscana.it/ows_ofc/com.rt.wms.RTmap/wms?map%3Dowsofc%26map_resolution%3D91%26" name="OFC 2016 20cm - 32 bit colore - RGB">
-      <customproperties/>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="dati_geografici20180125104243449" source="/home/pierluigi/Sviluppo/agrisurvey/dati_geografici.gpkg|layername=quadranti_toscana" name="dati_geografici quadranti_toscana Polygon">
-      <customproperties/>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="dati_geografici20180123182356580" source="/home/pierluigi/Sviluppo/agrisurvey/dati_geografici.gpkg|layername=reticolo5k_3003" name="reticolo5k 3003">
-      <customproperties/>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="dati_geografici20180123083034213" source="/home/pierluigi/Sviluppo/agrisurvey/dati_geografici.gpkg|layername=toscana_limiti" name="toscana">
+    <layer-tree-layer expanded="1" providerKey="wms" checked="Qt::Unchecked" id="OFC_2016_20cm___32_bit_colore___RGB20180208222656341" source="contextualWMSLegend=0&amp;crs=EPSG:3003&amp;dpiMode=7&amp;featureCount=10&amp;format=image/png&amp;layers=rt_ofc.5k16.32bit&amp;styles=&amp;url=http://www502.regione.toscana.it/ows_ofc/com.rt.wms.RTmap/wms?map%3Dowsofc%26map_resolution%3D91%26" name="OFC 2016 20cm - 32 bit colore - RGB">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="1" providerKey="wms" checked="Qt::Unchecked" id="mapbox_satellite20180123074811784" source="crs=EPSG:3857&amp;format=&amp;type=xyz&amp;url=https://c.tiles.mapbox.com/v4/freddi.m2nj71k6/%7Bz%7D/%7Bx%7D/%7By%7D.png?access_token%3Dpk.eyJ1IjoiZnJlZGRpIiwiYSI6InhWUFRCYk0ifQ.qmjZlLlDE-EnjmTwp9Rf0Q" name="mapbox satellite">
@@ -46,13 +34,13 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1665370.35550458705984056</xmin>
-      <ymin>4846386.90366972424089909</ymin>
-      <xmax>1667995.35550458705984056</xmax>
-      <ymax>4849011.90366972424089909</ymax>
+      <xmin>1505013.90917957574129105</xmin>
+      <ymin>4666804.42202139180153608</ymin>
+      <xmax>1831602.60542245116084814</xmax>
+      <ymax>4938684.18011383805423975</ymax>
     </extent>
     <rotation>0</rotation>
-    <projections>1</projections>
+    <projections>0</projections>
     <destinationsrs>
       <spatialrefsys>
         <proj4>+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=1500000 +y_0=0 +ellps=intl +towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68 +units=m +no_defs</proj4>
@@ -66,44 +54,39 @@
       </spatialrefsys>
     </destinationsrs>
     <rendermaptile>0</rendermaptile>
-    <layer_coordinate_transform_info>
-      <layer_coordinate_transform destAuthId="EPSG:3003" srcAuthId="EPSG:3003" srcDatumTransform="-1" destDatumTransform="-1" layerid="e466001020180130221912176"/>
-      <layer_coordinate_transform destAuthId="EPSG:3003" srcAuthId="EPSG:3003" srcDatumTransform="-1" destDatumTransform="-1" layerid="dati_geografici20180125104243449"/>
-      <layer_coordinate_transform destAuthId="EPSG:3003" srcAuthId="EPSG:3003" srcDatumTransform="-1" destDatumTransform="-1" layerid="pasted_features20180208222535778"/>
-      <layer_coordinate_transform destAuthId="EPSG:3003" srcAuthId="EPSG:3003" srcDatumTransform="-1" destDatumTransform="-1" layerid="e466001020180208222755389"/>
-      <layer_coordinate_transform destAuthId="EPSG:3003" srcAuthId="EPSG:3003" srcDatumTransform="-1" destDatumTransform="-1" layerid="OFC_2016_20cm___32_bit_colore___RGB20180208222656341"/>
-      <layer_coordinate_transform destAuthId="EPSG:3003" srcAuthId="EPSG:3003" srcDatumTransform="-1" destDatumTransform="-1" layerid="dati_geografici20180123083344460"/>
-    </layer_coordinate_transform_info>
+    <layer_coordinate_transform_info/>
   </mapcanvas>
   <layer-tree-canvas>
     <custom-order enabled="0">
       <item>OSM_classic20180123074639872</item>
       <item>mapbox_satellite20180123074811784</item>
-      <item>dati_geografici20180123083034213</item>
-      <item>dati_geografici20180123083344460</item>
-      <item>dati_geografici20180123182356580</item>
       <item>Particelle_catastali___AdT_Catasto_Terreni20180123183217966</item>
-      <item>OFC_2016_20cm___32_bit_colore___RGB20180123183450344</item>
-      <item>dati_geografici20180125104243449</item>
-      <item>catastale_small20180130222241239</item>
       <item>OFC_2016_20cm___32_bit_colore___RGB20180208222656341</item>
       <item>e466001020180208222755389</item>
+      <item>domanda_quadranti20180227072409324</item>
+      <item>dati_agrisurvey20180227072711907</item>
+      <item>dati_agrisurvey_comuni_toscana_300320180227151315660</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="catastale_small" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="dati_agrisurvey comuni_toscana_3003" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="catastale_small20180130222241239" visible="0"/>
+        <legendlayerfile isInOverview="0" layerid="dati_agrisurvey_comuni_toscana_300320180227151315660" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="toscana 3003" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="dati_agrisurvey toscana_3003 MultiPolygon" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="dati_geografici20180123083344460" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="dati_agrisurvey20180227072711907" visible="0"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Particelle catastali - AdT Catasto Terreni" showFeatureCount="0">
       <filegroup open="true" hidden="false">
         <legendlayerfile isInOverview="0" layerid="Particelle_catastali___AdT_Catasto_Terreni20180123183217966" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="domanda_quadranti" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="domanda_quadranti20180227072409324" visible="1"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="e4660010" showFeatureCount="0">
@@ -113,27 +96,7 @@
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OFC 2016 20cm - 32 bit colore - RGB" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="OFC_2016_20cm___32_bit_colore___RGB20180123183450344" visible="0"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="OFC 2016 20cm - 32 bit colore - RGB" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="OFC_2016_20cm___32_bit_colore___RGB20180208222656341" visible="1"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="dati_geografici quadranti_toscana Polygon" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="dati_geografici20180125104243449" visible="0"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="reticolo5k 3003" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="dati_geografici20180123182356580" visible="0"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="toscana" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="dati_geografici20180123083034213" visible="0"/>
+        <legendlayerfile isInOverview="0" layerid="OFC_2016_20cm___32_bit_colore___RGB20180208222656341" visible="0"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="mapbox satellite" showFeatureCount="0">
@@ -148,51 +111,6 @@
     </legendlayer>
   </legend>
   <projectlayers>
-    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-      <extent>
-        <xmin>1530000</xmin>
-        <ymin>4665000</ymin>
-        <xmax>1800000</xmax>
-        <ymax>4950000</ymax>
-      </extent>
-      <id>OFC_2016_20cm___32_bit_colore___RGB20180123183450344</id>
-      <datasource>contextualWMSLegend=0&amp;crs=EPSG:3003&amp;dpiMode=7&amp;featureCount=10&amp;format=image/png&amp;layers=rt_ofc.5k16.32bit&amp;styles=&amp;url=http://www502.regione.toscana.it/ows_ofc/com.rt.wms.RTmap/wms?map%3Dowsofc%26map_resolution%3D91%26</datasource>
-      <keywordList>
-        <value></value>
-      </keywordList>
-      <layername>OFC 2016 20cm - 32 bit colore - RGB</layername>
-      <srs>
-        <spatialrefsys>
-          <proj4>+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=1500000 +y_0=0 +ellps=intl +towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68 +units=m +no_defs</proj4>
-          <srsid>968</srsid>
-          <srid>3003</srid>
-          <authid>EPSG:3003</authid>
-          <description>Monte Mario / Italy zone 1</description>
-          <projectionacronym>tmerc</projectionacronym>
-          <ellipsoidacronym>intl</ellipsoidacronym>
-          <geographicflag>false</geographicflag>
-        </spatialrefsys>
-      </srs>
-      <customproperties>
-        <property key="identify/format" value="Undefined"/>
-      </customproperties>
-      <provider>wms</provider>
-      <noData>
-        <noDataList bandNo="1" useSrcNoData="0"/>
-      </noData>
-      <map-layer-style-manager current="">
-        <map-layer-style name=""/>
-      </map-layer-style-manager>
-      <pipe>
-        <rasterrenderer opacity="1" alphaBand="-1" band="1" type="singlebandcolordata">
-          <rasterTransparency/>
-        </rasterrenderer>
-        <brightnesscontrast brightness="0" contrast="0"/>
-        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-        <rasterresampler maxOversampling="2"/>
-      </pipe>
-      <blendMode>0</blendMode>
-    </maplayer>
     <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
       <extent>
         <xmin>1530000</xmin>
@@ -328,164 +246,6 @@
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer embedded="1" id="catastale_small20180130222241239" project="./domanda/data/agrisurvey.qgs"/>
-    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-      <extent>
-        <xmin>9.68671999999999933</xmin>
-        <ymin>42.23769999999999669</ymin>
-        <xmax>12.37139999999999951</xmax>
-        <ymax>44.47270000000000323</ymax>
-      </extent>
-      <id>dati_geografici20180123083034213</id>
-      <datasource>./dati_geografici.gpkg|layername=toscana_limiti</datasource>
-      <keywordList>
-        <value></value>
-      </keywordList>
-      <layername>toscana</layername>
-      <srs>
-        <spatialrefsys>
-          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
-          <srsid>3452</srsid>
-          <srid>4326</srid>
-          <authid>EPSG:4326</authid>
-          <description>WGS 84</description>
-          <projectionacronym>longlat</projectionacronym>
-          <ellipsoidacronym>WGS84</ellipsoidacronym>
-          <geographicflag>true</geographicflag>
-        </spatialrefsys>
-      </srs>
-      <provider encoding="UTF-8">ogr</provider>
-      <vectorjoins/>
-      <layerDependencies/>
-      <expressionfields/>
-      <map-layer-style-manager current="">
-        <map-layer-style name=""/>
-      </map-layer-style-manager>
-      <edittypes>
-        <edittype widgetv2type="TextEdit" name="fid">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="codice_istat">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="comune">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="nome_ted">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="provincia">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="regione">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="cod_regione">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="cod_provincia">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="cod_comune">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="tipo">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-      </edittypes>
-      <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
-        <symbols>
-          <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
-            <layer pass="0" class="SimpleFill" locked="0">
-              <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="169,111,29,255"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="0,0,0,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.26"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="style" v="solid"/>
-            </layer>
-          </symbol>
-        </symbols>
-        <rotation/>
-        <sizescale scalemethod="diameter"/>
-      </renderer-v2>
-      <labeling type="simple"/>
-      <customproperties/>
-      <blendMode>0</blendMode>
-      <featureBlendMode>0</featureBlendMode>
-      <layerTransparency>0</layerTransparency>
-      <displayfield>fid</displayfield>
-      <label>0</label>
-      <labelattributes>
-        <label fieldname="" text="Etichetta"/>
-        <family fieldname="" name="Ubuntu"/>
-        <size fieldname="" units="pt" value="12"/>
-        <bold fieldname="" on="0"/>
-        <italic fieldname="" on="0"/>
-        <underline fieldname="" on="0"/>
-        <strikeout fieldname="" on="0"/>
-        <color fieldname="" red="0" blue="0" green="0"/>
-        <x fieldname=""/>
-        <y fieldname=""/>
-        <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
-        <angle fieldname="" value="0" auto="0"/>
-        <alignment fieldname="" value="center"/>
-        <buffercolor fieldname="" red="255" blue="255" green="255"/>
-        <buffersize fieldname="" units="pt" value="1"/>
-        <bufferenabled fieldname="" on=""/>
-        <multilineenabled fieldname="" on=""/>
-        <selectedonly on=""/>
-      </labelattributes>
-      <annotationform>.</annotationform>
-      <aliases>
-        <alias field="fid" index="0" name=""/>
-        <alias field="codice_istat" index="1" name=""/>
-        <alias field="comune" index="2" name=""/>
-        <alias field="nome_ted" index="3" name=""/>
-        <alias field="provincia" index="4" name=""/>
-        <alias field="regione" index="5" name=""/>
-        <alias field="cod_regione" index="6" name=""/>
-        <alias field="cod_provincia" index="7" name=""/>
-        <alias field="cod_comune" index="8" name=""/>
-        <alias field="tipo" index="9" name=""/>
-      </aliases>
-      <excludeAttributesWMS/>
-      <excludeAttributesWFS/>
-      <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
-        <columns/>
-      </attributetableconfig>
-      <editform>.</editform>
-      <editforminit/>
-      <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath>.</editforminitfilepath>
-      <editforminitcode><![CDATA[]]></editforminitcode>
-      <featformsuppress>0</featformsuppress>
-      <editorlayout>generatedlayout</editorlayout>
-      <widgets/>
-      <conditionalstyles>
-        <rowstyles/>
-        <fieldstyles/>
-      </conditionalstyles>
-      <defaults>
-        <default field="fid" expression=""/>
-        <default field="codice_istat" expression=""/>
-        <default field="comune" expression=""/>
-        <default field="nome_ted" expression=""/>
-        <default field="provincia" expression=""/>
-        <default field="regione" expression=""/>
-        <default field="cod_regione" expression=""/>
-        <default field="cod_provincia" expression=""/>
-        <default field="cod_comune" expression=""/>
-        <default field="tipo" expression=""/>
-      </defaults>
-      <previewExpression></previewExpression>
-    </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
         <xmin>1554750</xmin>
@@ -493,12 +253,12 @@
         <xmax>1771650</xmax>
         <ymax>4924790</ymax>
       </extent>
-      <id>dati_geografici20180123083344460</id>
-      <datasource>./dati_geografici.gpkg|layername=toscana_3003</datasource>
+      <id>dati_agrisurvey20180227072711907</id>
+      <datasource>/media/pierluigi/LENOVO1/lavori/63_agrisurvey/dati_agrisurvey.gpkg|layername=toscana_3003</datasource>
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>toscana 3003</layername>
+      <layername>dati_agrisurvey toscana_3003 MultiPolygon</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=1500000 +y_0=0 +ellps=intl +towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68 +units=m +no_defs</proj4>
@@ -555,7 +315,7 @@
           <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
             <layer pass="0" class="SimpleFill" locked="0">
               <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="63,69,235,255"/>
+              <prop k="color" v="39,163,245,255"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -644,18 +404,12 @@
       <previewExpression></previewExpression>
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-      <extent>
-        <xmin>1554750</xmin>
-        <ymin>4674790</ymin>
-        <xmax>1774750</xmax>
-        <ymax>4924790</ymax>
-      </extent>
-      <id>dati_geografici20180123182356580</id>
-      <datasource>./dati_geografici.gpkg|layername=reticolo5k_3003</datasource>
+      <id>dati_agrisurvey_comuni_toscana_300320180227151315660</id>
+      <datasource>/media/pierluigi/LENOVO1/lavori/63_agrisurvey/dati_agrisurvey.gpkg|layerid=3</datasource>
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>reticolo5k 3003</layername>
+      <layername>dati_agrisurvey comuni_toscana_3003</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=1500000 +y_0=0 +ellps=intl +towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68 +units=m +no_defs</proj4>
@@ -679,16 +433,34 @@
         <edittype widgetv2type="TextEdit" name="fid">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="left">
+        <edittype widgetv2type="TextEdit" name="objectid_1">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="top">
+        <edittype widgetv2type="TextEdit" name="codice_istat">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="right">
+        <edittype widgetv2type="TextEdit" name="comune">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="bottom">
+        <edittype widgetv2type="TextEdit" name="nome_ted">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="provincia">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="regione">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="cod_regione">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="cod_provincia">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="cod_comune">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="tipo">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
       </edittypes>
@@ -697,7 +469,7 @@
           <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
             <layer pass="0" class="SimpleFill" locked="0">
               <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="158,202,0,255"/>
+              <prop k="color" v="174,196,237,255"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -743,10 +515,16 @@
       <annotationform>.</annotationform>
       <aliases>
         <alias field="fid" index="0" name=""/>
-        <alias field="left" index="1" name=""/>
-        <alias field="top" index="2" name=""/>
-        <alias field="right" index="3" name=""/>
-        <alias field="bottom" index="4" name=""/>
+        <alias field="objectid_1" index="1" name=""/>
+        <alias field="codice_istat" index="2" name=""/>
+        <alias field="comune" index="3" name=""/>
+        <alias field="nome_ted" index="4" name=""/>
+        <alias field="provincia" index="5" name=""/>
+        <alias field="regione" index="6" name=""/>
+        <alias field="cod_regione" index="7" name=""/>
+        <alias field="cod_provincia" index="8" name=""/>
+        <alias field="cod_comune" index="9" name=""/>
+        <alias field="tipo" index="10" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -768,26 +546,32 @@
       </conditionalstyles>
       <defaults>
         <default field="fid" expression=""/>
-        <default field="left" expression=""/>
-        <default field="top" expression=""/>
-        <default field="right" expression=""/>
-        <default field="bottom" expression=""/>
+        <default field="objectid_1" expression=""/>
+        <default field="codice_istat" expression=""/>
+        <default field="comune" expression=""/>
+        <default field="nome_ted" expression=""/>
+        <default field="provincia" expression=""/>
+        <default field="regione" expression=""/>
+        <default field="cod_regione" expression=""/>
+        <default field="cod_provincia" expression=""/>
+        <default field="cod_comune" expression=""/>
+        <default field="tipo" expression=""/>
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
-        <xmin>1554750</xmin>
-        <ymin>4674790</ymin>
-        <xmax>1774750</xmax>
-        <ymax>4924790</ymax>
+        <xmin>1553650</xmin>
+        <ymin>4673540</ymin>
+        <xmax>1775850</xmax>
+        <ymax>4926040</ymax>
       </extent>
-      <id>dati_geografici20180125104243449</id>
-      <datasource>./dati_geografici.gpkg|layername=quadranti_toscana</datasource>
+      <id>domanda_quadranti20180227072409324</id>
+      <datasource>dbname='agrisurvey_db_new' host=localhost port=5432 user='pierluigi' password='10aprile' sslmode=disable key='id' srid=3003 type=MultiPolygon table="public"."domanda_quadranti" (mpoly) sql=</datasource>
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>dati_geografici quadranti_toscana Polygon</layername>
+      <layername>domanda_quadranti</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=1500000 +y_0=0 +ellps=intl +towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68 +units=m +no_defs</proj4>
@@ -800,7 +584,7 @@
           <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
-      <provider encoding="UTF-8">ogr</provider>
+      <provider encoding="System">postgres</provider>
       <vectorjoins/>
       <layerDependencies/>
       <expressionfields/>
@@ -808,6 +592,9 @@
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
         <edittype widgetv2type="TextEdit" name="fid">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
@@ -829,7 +616,7 @@
           <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
             <layer pass="0" class="SimpleFill" locked="0">
               <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="87,95,188,255"/>
+              <prop k="color" v="160,134,186,255"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -850,7 +637,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>fid</displayfield>
+      <displayfield>id</displayfield>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Etichetta"/>
@@ -874,11 +661,12 @@
       </labelattributes>
       <annotationform>.</annotationform>
       <aliases>
-        <alias field="fid" index="0" name=""/>
-        <alias field="left" index="1" name=""/>
-        <alias field="top" index="2" name=""/>
-        <alias field="right" index="3" name=""/>
-        <alias field="bottom" index="4" name=""/>
+        <alias field="id" index="0" name=""/>
+        <alias field="fid" index="1" name=""/>
+        <alias field="left" index="2" name=""/>
+        <alias field="top" index="3" name=""/>
+        <alias field="right" index="4" name=""/>
+        <alias field="bottom" index="5" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -899,6 +687,7 @@
         <fieldstyles/>
       </conditionalstyles>
       <defaults>
+        <default field="id" expression=""/>
         <default field="fid" expression=""/>
         <default field="left" expression=""/>
         <default field="top" expression=""/>
@@ -1322,7 +1111,7 @@ def my_form_open(dialog, layer, feature):
     <WMSContactPosition type="QString"></WMSContactPosition>
     <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
     <Measure>
-      <Ellipsoid type="QString">intl</Ellipsoid>
+      <Ellipsoid type="QString">NONE</Ellipsoid>
     </Measure>
     <WMSPrecision type="QString">8</WMSPrecision>
     <WMSSegmentizeFeatureInfoGeometry type="bool">false</WMSSegmentizeFeatureInfoGeometry>
@@ -1343,16 +1132,12 @@ def my_form_open(dialog, layer, feature):
     <Digitizing>
       <DefaultSnapToleranceUnit type="int">2</DefaultSnapToleranceUnit>
       <LayerSnappingList type="QStringList">
-        <value>catastale_small20180130222241239</value>
-        <value>dati_geografici20180123083034213</value>
-        <value>dati_geografici20180123083344460</value>
-        <value>dati_geografici20180123182356580</value>
-        <value>dati_geografici20180125104243449</value>
+        <value>dati_agrisurvey20180227072711907</value>
+        <value>dati_agrisurvey_comuni_toscana_300320180227151315660</value>
+        <value>domanda_quadranti20180227072409324</value>
         <value>e466001020180208222755389</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
-        <value>disabled</value>
-        <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
@@ -1365,12 +1150,8 @@ def my_form_open(dialog, layer, feature):
         <value>2</value>
         <value>2</value>
         <value>2</value>
-        <value>2</value>
-        <value>2</value>
       </LayerSnappingToleranceUnitList>
       <LayerSnapToList type="QStringList">
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
@@ -1379,8 +1160,6 @@ def my_form_open(dialog, layer, feature):
       <DefaultSnapType type="QString">off</DefaultSnapType>
       <DefaultSnapTolerance type="double">0</DefaultSnapTolerance>
       <LayerSnappingToleranceList type="QStringList">
-        <value>0.000000</value>
-        <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
@@ -1402,7 +1181,7 @@ def my_form_open(dialog, layer, feature):
       <ProjectCRSProj4String type="QString">+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=1500000 +y_0=0 +ellps=intl +towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68 +units=m +no_defs</ProjectCRSProj4String>
       <ProjectCrs type="QString">EPSG:3003</ProjectCrs>
       <ProjectCRSID type="int">968</ProjectCRSID>
-      <ProjectionsEnabled type="int">1</ProjectionsEnabled>
+      <ProjectionsEnabled type="int">0</ProjectionsEnabled>
     </SpatialRefSys>
     <DefaultStyles>
       <Fill type="QString"></Fill>

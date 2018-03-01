@@ -12,6 +12,22 @@ from django.core.mail import send_mail
 
 # Create your models here.
 
+class catastale_new(models.Model):
+    part = models.CharField(max_length=5)
+    foglio = models.CharField(max_length=8)
+    comune = models.CharField(max_length=25)
+    mpoly = models.MultiPolygonField(srid=3003)
+    objects = models.GeoManager()
+
+    # Returns the string representation of the model.
+    def __str__(self):  # __unicode__ on Python 2
+        return u'%s f: %s p: %s' % (self.comune, self.foglio[-4:], self.part)
+
+    class Meta:
+        verbose_name = 'catastale'
+        verbose_name_plural = 'catastali'
+
+
 
 class CatastaleSmall(models.Model):
     # Regular Django fields corresponding to the attributes in the
@@ -32,8 +48,8 @@ class CatastaleSmall(models.Model):
         return u'%s f: %s p: %s' %(self.comune, self.foglio,self.part)
 
     class Meta:
-        verbose_name='catastale'
-        verbose_name_plural='catastali'
+        verbose_name='catastale_v'
+        verbose_name_plural='catastali_v'
 
 
 
@@ -49,11 +65,15 @@ class quadranti(models.Model):
     def __str__(self):  # __unicode__ on Python 2
         return u'fid: %s' % (self.fid)
 
+class dannoTest(models.Model):
+    richiedente = models.ForeignKey(User, null=True, blank=True, limit_choices_to={'groups__name': "Agricoltore"})
+    fog_part_certified = models.ManyToManyField(catastale_new,verbose_name='Foglio Particella da Catastale',help_text='Inserire nel formato Comune foglio e particella del tipo : -<b>Empoli 0600 317</b>- dove 0600 è il foglio e 317 la particella')
+
 
 class danno(models.Model):
     richiedente = models.ForeignKey(User, null=True, blank=True,limit_choices_to={'groups__name': "Agricoltore"})
-    foglio = models.CharField(max_length=50,verbose_name='Fogli colpiti da danno',default='')
-    particella = models.CharField(max_length=50,default='')
+    foglio = models.CharField(max_length=50,verbose_name='Fogli colpiti da danno',default='',help_text='<b>Attenzione</b> da inserire solo nel caso in cui non si ritrova il catastale nel campo in fondo alla pagina')
+    particella = models.CharField(max_length=50,default='',help_text='<b>Attenzione</b> da inserire solo nel caso in cui non si ritrova il catastale nel campo in fondo alla pagina')
     coltura = models.CharField(max_length=50,default='')
     varieta = models.CharField(max_length=50,verbose_name='varietà colturale',blank=True)
     SumTot = models.FloatField(verbose_name='Superficie totale particelle ettari',default=0)
@@ -87,7 +107,8 @@ class danno(models.Model):
     Rilevatore = models.ForeignKey(User, null=True, blank=True, limit_choices_to={'groups__name': "Rilevatore"}, related_name='+', )
 
     fog_part_certified = models.ManyToManyField(CatastaleSmall,verbose_name='Foglio Particella da Catastale',help_text='aiuto')
-
+    fog_part_db = models.ManyToManyField(catastale_new, verbose_name='Foglio Particella da Catastale',
+                                                help_text='Inserire nel formato Comune foglio e particella del tipo : -<b>Empoli 0600 317</b>- dove 0600 è il foglio e 317 la particella')
 
     #Add helper function for Admin display
     def author_full_name(self):

@@ -43,7 +43,7 @@ def make(danno, pk,sqlitedb):
     conn.execute(sql)
 
     # inserting POLYGONs
-    catastali = dn.fog_part_certified.all()
+    catastali = dn.fog_part_db.all()
     for i in range(len(catastali)):
         catastale_i = catastali[i]
         geometria = "GeomFromText('"

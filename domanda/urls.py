@@ -2,7 +2,7 @@ from django.conf.urls import url
 from django.contrib.auth.decorators import login_required
 from.views import MapLayer
 from .views import ListaDomande, lista_rilievi, danno_singolo, InserisciDanno, InserisciAgricoltore, dannoEdit, download_sqlite, quadrante
-from .models import CatastaleSmall
+from .models import catastale_new
 
 
 
@@ -14,7 +14,7 @@ urlpatterns = [
     url(r'^assegna/quadrante/(?P<id>\d+)/$', quadrante, name='quadrante'),
     url(r'^inserisci/agricoltore/$',InserisciAgricoltore,name='inserisci_agricoltore'),
     url(r'^inserisci/$',InserisciDanno,name='inserisci_danno'),
-    url(r'^catastale.geojson$', MapLayer.as_view(model=CatastaleSmall), name='data'),
+    url(r'^catastale.geojson$', MapLayer.as_view(model=catastale_new), name='data'),
     url(r'^$', ListaDomande.as_view(), name='lista_domande'),
     # url(r'^(?P<id>\d+)/$', DetailView.as_view(
     #     model= danno,

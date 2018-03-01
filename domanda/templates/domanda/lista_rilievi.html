@@ -26,8 +26,8 @@
                     <td>{{ danno.stato_pratica }}</td>
                     <td>{{ danno.CAA }}</td>
                     <td>{{ danno.data_ins|date }}</td>
-                    <td>{{ danno.fog_part_certified.count }}</td>
-                    <td>{% if danno.fog_part_certified.count > 0 %}
+                    <td>{{ danno.fog_part_db.count }}</td>
+                    <td>{% if danno.fog_part_db.count > 0 %}
                         <a href="{{ danno.id }}/download/">spatialite</a>
                         <td><a href="/domanda/assegna/quadrante/{{ danno.id }}">ortofoto</a></td>
                     {% else %}

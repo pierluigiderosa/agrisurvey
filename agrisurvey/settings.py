@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.gis',
     'crispy_forms',
+    'ajax_select',
     'djgeojson',
     'leaflet',
     'domanda',

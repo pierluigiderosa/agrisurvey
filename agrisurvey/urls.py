@@ -14,15 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
+from django.conf.urls.static import static
+from django.conf import settings
 from django.contrib.gis import admin
 from django.views.i18n import JavaScriptCatalog
+from ajax_select import urls as ajax_select_urls
 
-
+admin.autodiscover()
 
 urlpatterns = [
+    url(r'^ajax_select/', include(ajax_select_urls)),
     url(r'^admin/jsi18n/$', JavaScriptCatalog.as_view(), name='javascript-catalog'),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^domanda/', include('domanda.urls')),
     url(r'^$', include('domanda.urls')),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

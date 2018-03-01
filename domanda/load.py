@@ -13,14 +13,11 @@ catastale_small_mapping = {
 
 catastale_new_mapping = {
     'part' : 'PART',
-    'sub' : 'SUB',
     'foglio' : 'FOGLIO',
-    'idseq' : 'IDSEQ',
-    'codfoglio' : 'CODFOGLIO',
-    'fe466001' : 'FE466001',
-    'comune' : 'COMUNE',
+    'comune' : 'comune',
     'mpoly' : 'MULTIPOLYGON',
 }
+
 
 quadranti_mapping = {
     'fid' : 'fid',
@@ -43,10 +40,14 @@ def run(verbose=True):
     lm.save(strict=True, verbose=verbose)
 
 def run_new(verbose=True):
-    lm = LayerMapping(catastale_new, catastale_shp_new, catastale_new_mapping,
-                      transform=False, encoding='iso-8859-1')
+    datadir='/media/pierluigi/LENOVO1/lavori/63_agrisurvey/CATASTO_VETT'
+    shp = ['a564','a632','a633','b036','b406','b507','B626','b684','B794','b962','c101','c529','c540','d299','d403','d575','d583']
+    for i in range(len(shp)):
+        catastale_shp_new = os.path.join(datadir,shp[i]+'.shp')
+        lm = LayerMapping(catastale_new, catastale_shp_new, catastale_new_mapping,
+                          transform=False, encoding='iso-8859-1')
 
-    lm.save(strict=True, verbose=verbose)
+        lm.save(strict=True, verbose=verbose)
 
 
 def run_quadranti(verbose=True):
