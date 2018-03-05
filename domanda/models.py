@@ -65,15 +65,11 @@ class quadranti(models.Model):
     def __str__(self):  # __unicode__ on Python 2
         return u'fid: %s' % (self.fid)
 
-class dannoTest(models.Model):
-    richiedente = models.ForeignKey(User, null=True, blank=True, limit_choices_to={'groups__name': "Agricoltore"})
-    fog_part_certified = models.ManyToManyField(catastale_new,verbose_name='Foglio Particella da Catastale',help_text='Inserire nel formato Comune foglio e particella del tipo : -<b>Empoli 0600 317</b>- dove 0600 è il foglio e 317 la particella')
-
 
 class danno(models.Model):
     richiedente = models.ForeignKey(User, null=True, blank=True,limit_choices_to={'groups__name': "Agricoltore"})
-    foglio = models.CharField(max_length=50,verbose_name='Fogli colpiti da danno',default='',help_text='<b>Attenzione</b> da inserire solo nel caso in cui non si ritrova il catastale nel campo in fondo alla pagina')
-    particella = models.CharField(max_length=50,default='',help_text='<b>Attenzione</b> da inserire solo nel caso in cui non si ritrova il catastale nel campo in fondo alla pagina')
+    foglio = models.CharField(max_length=50,verbose_name='Fogli colpiti da danno',default='',null=True, blank=True,help_text='<b>Attenzione</b> da inserire solo nel caso in cui non si ritrova il catastale nel campo in fondo alla pagina')
+    particella = models.CharField(max_length=50,default='',null=True, blank=True,help_text='<b>Attenzione</b> da inserire solo nel caso in cui non si ritrova il catastale nel campo in fondo alla pagina')
     coltura = models.CharField(max_length=50,default='')
     varieta = models.CharField(max_length=50,verbose_name='varietà colturale',blank=True)
     SumTot = models.FloatField(verbose_name='Superficie totale particelle ettari',default=0)
@@ -88,6 +84,7 @@ class danno(models.Model):
     OpereProtezione = models.CharField(max_length=250,blank=True)
     #dati addizionali
     data_ins = models.DateField(auto_now_add=True,verbose_name='Data inserimento')
+    note = models.CharField(max_length=1000,blank=True,null=True,verbose_name='Note (facoltativo)')
     #stato di lavorazione della
     LAVORAZIONE = 'lavorazione'
     RILIEVO = 'rilievo'
@@ -105,7 +102,7 @@ class danno(models.Model):
     )
     CAA = models.ForeignKey(User, null=True, blank=True, limit_choices_to={'groups__name': "CAA"}, related_name='+', help_text='Centro di Assistenza agricolo')
     Rilevatore = models.ForeignKey(User, null=True, blank=True, limit_choices_to={'groups__name': "Rilevatore"}, related_name='+', )
-
+    mappale = models.FileField(blank=True,upload_to='mappali/',help_text='file pdf')
     fog_part_certified = models.ManyToManyField(CatastaleSmall,verbose_name='Foglio Particella da Catastale',help_text='aiuto')
     fog_part_db = models.ManyToManyField(catastale_new, verbose_name='Foglio Particella da Catastale',
                                                 help_text='Inserire nel formato Comune foglio e particella del tipo : -<b>Empoli 0600 317</b>- dove 0600 è il foglio e 317 la particella')

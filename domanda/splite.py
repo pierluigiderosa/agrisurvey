@@ -17,30 +17,32 @@ def make(danno, pk,sqlitedb):
     conn.execute("SELECT load_extension('mod_spatialite');")
 
     # creating a POLYGON table
-    sql = 'CREATE TABLE danni ('
-    sql += 'id INTEGER NOT NULL PRIMARY KEY,'
-    sql += 'codice_danno INTEGER NOT NULL,'
-    sql += 'richiedente TEXT NOT NULL,'
-    sql += 'coltura TEXT NOT NULL,'
-    sql += 'varieta TEXT,'
-    sql += 'SumTot REAL NOT NULL,'
-    sql += 'SumSem REAL NOT NULL,'
-    sql += 'PercDanno INTEGER NOT NULL,'
-    sql += 'Produzione INTEGER NOT NULL,'
-    sql += 'PerProdPersa INTEGER NOT NULL,'
-    sql += 'ValoreDanno INTEGER NOT NULL,'
-    sql += 'NumPianteDan INTEGER,'
-    sql += 'TipoPiante TEXT,'
-    sql += 'SelvagginaSem TEXT NOT NULL,'
-    sql += 'OpereProtezione TEXT,'
-    sql += 'stato_pratica TEXT NOT NULL,'
-    sql += 'foglio TEXT NOT NULL,'
-    sql += 'particella TEXT NOT NULL)'
-    conn.execute(sql)
-    # creating a POLYGON Geometry column
-    sql = "SELECT AddGeometryColumn('danni', "
-    sql += "'geom', 3003, 'MULTIPOLYGON', 'XY')"
-    conn.execute(sql)
+    layers=['danni','danni_editabile']
+    for layer in layers:
+        sql = 'CREATE TABLE %s (' %(layer)
+        sql += 'id INTEGER NOT NULL PRIMARY KEY,'
+        sql += 'codice_danno INTEGER NOT NULL,'
+        sql += 'richiedente TEXT NOT NULL,'
+        sql += 'coltura TEXT NOT NULL,'
+        sql += 'varieta TEXT,'
+        sql += 'SumTot REAL NOT NULL,'
+        sql += 'SumSem REAL NOT NULL,'
+        sql += 'PercDanno INTEGER NOT NULL,'
+        sql += 'Produzione INTEGER NOT NULL,'
+        sql += 'PerProdPersa INTEGER NOT NULL,'
+        sql += 'ValoreDanno INTEGER NOT NULL,'
+        sql += 'NumPianteDan INTEGER,'
+        sql += 'TipoPiante TEXT,'
+        sql += 'SelvagginaSem TEXT NOT NULL,'
+        sql += 'OpereProtezione TEXT,'
+        sql += 'stato_pratica TEXT NOT NULL,'
+        sql += 'foglio TEXT NOT NULL,'
+        sql += 'particella TEXT NOT NULL)'
+        conn.execute(sql)
+        # creating a POLYGON Geometry column
+        sql = "SELECT AddGeometryColumn('%s', " %(layer)
+        sql += "'geom', 3003, 'MULTIPOLYGON', 'XY')"
+        conn.execute(sql)
 
     # inserting POLYGONs
     catastali = dn.fog_part_db.all()
@@ -50,15 +52,17 @@ def make(danno, pk,sqlitedb):
         geometria = "GeomFromText('"
         geometria += catastale_i.mpoly.wkt
         geometria += "', 3003)"
-        sql = "INSERT INTO danni (id, codice_danno, richiedente,coltura,varieta,SumTot,SumSem,PercDanno,Produzione,PerProdPersa ,ValoreDanno,NumPianteDan,TipoPiante,SelvagginaSem, OpereProtezione,stato_pratica,foglio,particella, geom) "
-        sql += "VALUES (%d, %d, '%s', '%s', '%s', %d, %d, %d, %d, %d, %d, %d , '%s', '%s', '%s', '%s', '%s', '%s', %s)" % (i+1,
-        dn.id, str(dn.richiedente), dn.coltura, dn.varieta, dn.SumTot, dn.SumSem, dn.PercDanno, dn.Produzione,
-        dn.PerProdPersa, dn.ValoreDanno, dn.NumPianteDan, dn.TipoPiante, dn.SelvagginaSem, dn.OpereProtezione,
-        dn.stato_pratica, catastale_i.foglio, catastale_i.part, geometria)
-        conn.execute(sql)
+        for layer in layers:
+            sql = "INSERT INTO %s (id, codice_danno, richiedente,coltura,varieta,SumTot,SumSem,PercDanno,Produzione,PerProdPersa ,ValoreDanno,NumPianteDan,TipoPiante,SelvagginaSem, OpereProtezione,stato_pratica,foglio,particella, geom) " %(layer)
+            sql += "VALUES (%d, %d, '%s', '%s', '%s', %d, %d, %d, %d, %d, %d, %d , '%s', '%s', '%s', '%s', '%s', '%s', %s)" % (i+1,
+            dn.id, str(dn.richiedente), dn.coltura, dn.varieta, dn.SumTot, dn.SumSem, dn.PercDanno, dn.Produzione,
+            dn.PerProdPersa, dn.ValoreDanno, dn.NumPianteDan, dn.TipoPiante, dn.SelvagginaSem, dn.OpereProtezione,
+            dn.stato_pratica, catastale_i.foglio, catastale_i.part, geometria)
+            conn.execute(sql)
 
     conn.commit()
     conn.execute("SELECT CreateSpatialIndex('danni', 'geom');")
+    conn.execute("SELECT CreateSpatialIndex('danni_editabile', 'geom');")
 
     # update layer statistic required by geopaparazzi
     sql = "SELECT UpdateLayerStatistics()"

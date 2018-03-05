@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from ajax_select.admin import AjaxSelectAdmin
 from django.contrib.gis import admin
 from ajax_select import make_ajax_form
-from .models import CatastaleSmall, danno, dannoTest,Agricoltore,catastale_new
+from .models import CatastaleSmall, danno, Agricoltore,catastale_new
 
 # Register your models here.
 admin.site.register(CatastaleSmall, admin.OSMGeoAdmin)
@@ -42,10 +42,4 @@ class AgricoltoreAdmin(admin.ModelAdmin):
 admin.site.register(Agricoltore, AgricoltoreAdmin)
 
 
-@admin.register(dannoTest)
-class DannoAdminTest(AjaxSelectAdmin):
-    form = make_ajax_form(dannoTest, {
-        # fieldname: channel_name
-        'fog_part_certified': 'catastali'
-    })
 

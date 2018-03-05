@@ -9,7 +9,7 @@
 {% endblock %}
 {% block content %}
     {% if not error %}
-        <h2>Danno</h2>
+        <h2>Visualizzazione singolo danno</h2>
         {#        controllo per far apparire il bottone di edit solo ai CAA#}
         {% if request.user.is_authenticated and danno.CAA == request.user %}
             <a href="{% url 'danno_edit' pk=danno.id %}" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Modifica<span class="far fa-edit fa-lg"></span></a>

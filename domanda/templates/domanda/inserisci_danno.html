@@ -17,7 +17,7 @@
     {% if not errore %}
         <h3>Nuova domanda di danno</h3>
 
-        <form method="POST" class="post-form">
+        <form method="POST" class="form" enctype="multipart/form-data">
             {% csrf_token %}
 
             <table>

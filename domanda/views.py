@@ -169,9 +169,9 @@ def InserisciDanno(request):
         if request.method == 'POST':
             # create a form instance and populate it with data from the request:
             if request.user.groups.filter(name='Agricoltore').exists():
-                form = DannoFormAgricoltore(request.POST)
+                form = DannoFormAgricoltore(request.POST,request.FILES)
             else:
-                form = DannoFormCAA(request.POST)
+                form = DannoFormCAA(request.POST,request.FILES)
             # check whether it's valid:
             if form.is_valid():
                 # process the data in form.cleaned_data as required
@@ -182,6 +182,7 @@ def InserisciDanno(request):
                 if request.user.groups.filter(name__in=['CAA']).exists():
                     dannoEntry.CAA = request.user
                 dannoEntry.stato_pratica = u'lavorazione'
+                dannoEntry.mappale = form.cleaned_data['mappale']
                 dannoEntry.save()
 
                 #sostituito il modo per salvare le particelle con ajax per gestire molte righe

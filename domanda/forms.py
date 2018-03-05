@@ -15,12 +15,15 @@ class DannoFormAgricoltore(forms.ModelForm):
 
     class Meta:
         model = danno
-        fields = ('coltura', 'varieta','SumTot',
+        fields = ('CAA','coltura', 'varieta','SumTot',
                   'SumSem','PercDanno','Produzione','PerProdPersa','ValoreDanno', 'NumPianteDan',
-                  'TipoPiante','SelvagginaSem','OpereProtezione','CAA','foglio', 'particella')
+                  'TipoPiante','SelvagginaSem','OpereProtezione','mappale','note','foglio', 'particella')
         #widgets = {'fog_part_certified': forms.CheckboxSelectMultiple}
+        widgets = {
+            'note': forms.Textarea(attrs={'rows':4, 'cols':15}),
+        }
         labels = {
-            'fog_part_db': 'Writer',
+            'mappale': 'Estratto di mappa',
         }
 
     fog_part_db = make_ajax_field(danno, 'fog_part_db', 'catastali', help_text='Inserire nel formato Comune foglio e particella del tipo : -<b>Empoli 0600 317</b>- dove il foglio è 0600 e la particella è 317 ')
@@ -39,10 +42,13 @@ class DannoFormCAA(forms.ModelForm):
 
     class Meta:
         model = danno
-        fields = ('richiedente','foglio', 'particella', 'coltura', 'varieta','SumTot',
+        fields = ('richiedente', 'coltura', 'varieta','SumTot',
                   'SumSem','PercDanno','Produzione','PerProdPersa','ValoreDanno', 'NumPianteDan',
-                  'TipoPiante','SelvagginaSem','OpereProtezione')
+                  'TipoPiante','SelvagginaSem','OpereProtezione','mappale','note','foglio', 'particella',)
         #widgets = {'fog_part_certified': forms.CheckboxSelectMultiple}
+        labels = {
+            'mappale': 'Estratto di mappa',
+        }
 
     fog_part_db = make_ajax_field(danno, 'fog_part_db', 'catastali', help_text='Inserire nel formato Comune foglio e particella del tipo : -<b>Empoli 0600 317</b>- dove il foglio è 0600 e la particella è 317 ')
 
