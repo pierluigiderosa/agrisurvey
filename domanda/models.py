@@ -11,6 +11,8 @@ from django.dispatch import receiver
 from django.core.mail import send_mail
 
 # Create your models here.
+from django_iban.fields import IBANField
+
 
 class catastale_new(models.Model):
     part = models.CharField(max_length=5)
@@ -82,6 +84,9 @@ class danno(models.Model):
     TipoPiante  = models.CharField(max_length=50,blank=True)
     SelvagginaSem = models.CharField(max_length=250,default='',verbose_name='Selvaggina che ha fatto i danni alla coltura')
     OpereProtezione = models.CharField(max_length=250,blank=True)
+    polizza = models.NullBooleanField(verbose_name='Polizza assicurativa',blank=True,null=True)
+    biologica = models.NullBooleanField(verbose_name='Azienda biologica',blank=True,null=True)
+    iban = IBANField(default='')
     #dati addizionali
     data_ins = models.DateField(auto_now_add=True,verbose_name='Data inserimento')
     note = models.CharField(max_length=1000,blank=True,null=True,verbose_name='Note (facoltativo)')
@@ -151,6 +156,7 @@ class Agricoltore(models.Model):
     ComuneRes = models.CharField(max_length=50, default='',verbose_name='Comune di residenza')
     telefono = models.CharField(max_length=50, default='',blank=True)
     CF = models.CharField(max_length=50,default='')
+    pec = models.EmailField(blank=True,null=True,verbose_name='Email PEC:')
     PIva = models.CharField(max_length=255, default='',verbose_name='P. IVA')
     Referente = models.CharField(max_length=255, default='',blank=True)
     RefTel = models.CharField(max_length=255, default='',blank=True,verbose_name='Tel: referente')

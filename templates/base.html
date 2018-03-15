@@ -62,6 +62,14 @@
                     {% endif %}
                 </div>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"href="/rilievo" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Rilievo
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/rilievo/inserisci/">Inserisci rilievo</a>
+                </div>
+            </li>
         </ul>
         <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
             {% if user.is_authenticated %}

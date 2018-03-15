@@ -17,7 +17,7 @@ class DannoFormAgricoltore(forms.ModelForm):
         model = danno
         fields = ('CAA','coltura', 'varieta','SumTot',
                   'SumSem','PercDanno','Produzione','PerProdPersa','ValoreDanno', 'NumPianteDan',
-                  'TipoPiante','SelvagginaSem','OpereProtezione','mappale','note','foglio', 'particella')
+                  'TipoPiante','SelvagginaSem','OpereProtezione','polizza','biologica','iban','mappale','note','foglio', 'particella')
         #widgets = {'fog_part_certified': forms.CheckboxSelectMultiple}
         widgets = {
             'note': forms.Textarea(attrs={'rows':4, 'cols':15}),

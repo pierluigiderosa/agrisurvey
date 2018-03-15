@@ -42,8 +42,10 @@ INSTALLED_APPS = [
     'crispy_forms',
     'ajax_select',
     'djgeojson',
+    'django_iban',
     'leaflet',
     'domanda',
+    'rilievo',
 ]
 
 MIDDLEWARE = [
