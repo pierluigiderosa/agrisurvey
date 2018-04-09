@@ -10,15 +10,19 @@ from django.shortcuts import render
 from .forms import UploadGpapForm
 
 # Imaginary function to handle an uploaded file.
-from manage_gpap import ExportFormNotes
+from manage_survey import ExportFormNotes,ExportGeomSurvey,spatial_join
 
 def upload_file(request):
     submitted = False
     if request.method == 'POST':
         form = UploadGpapForm(request.POST, request.FILES)
         if form.is_valid():
-            aa,bb=ExportFormNotes(request.FILES['file'])
-            return HttpResponse(str(aa)+'<br>'+str(bb))
+            anagrafica,rilievo,errore =ExportFormNotes(request.FILES['file'])
+            geom=ExportGeomSurvey(request.FILES['splite_file'])
+            stampa=spatial_join(geom,rilievo)
+            return HttpResponse(str(geom)+'<br><p>aa: </p>'+str(anagrafica)+
+                                '<br><p>bb</p>'+str(rilievo)+
+                                '<br>'+str(stampa))
     else:
         form = UploadGpapForm()
         if 'submitted' in request.GET:
