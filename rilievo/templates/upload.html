@@ -2,11 +2,13 @@
 
 {% block content %}
     {% if submitted %}
+
 <p class="success">
 Your quote was submitted successfully. Thankyou.
 </p>
 
 	{% else %}
+        <h2>Inserimento del rilievo per la pratica # {{ iddanno }}</h2>
     <form action="" enctype="multipart/form-data"
           method="post" novalidate>
         <table>

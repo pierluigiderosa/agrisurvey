@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 from decouple import config
+import socket
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,9 +25,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
-
-ALLOWED_HOSTS = []
+if socket.gethostname()=='pierluigi-Lenovo-U41-70' or socket.gethostname()=='agrisurvey':
+    DEBUG = config('DEBUG', cast=bool)
+else:
+    DEBUG=False
+ALLOWED_HOSTS = ['94.177.183.205','127.0.0.1']
 
 
 # Application definition

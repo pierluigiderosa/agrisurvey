@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% load leaflet_tags %}
+
+<title>{% block head_title %}{{ block.super }} | Riepilogo del rilievo {% endblock head_title %}</title>
+{% block script %}
+    {% leaflet_js %}
+    {% leaflet_css %}
+{% endblock %}
+{% block content %}
+    {% if not error %}
+        <h1># {{ anagrafica.id_pratica.id }}</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-4">
+                    <h2>Anagrafica</h2>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Rappresentante aziendale: {{ anagrafica.Rapp_Az }}</li>
+                        <li class="list-group-item">Denominazione azienda: {{ anagrafica.Az_Ag_denominazione }}</li>
+                        <li class="list-group-item">Documento di identità: {{ anagrafica.Rapp_Az_documento }}</li>
+                        <li class="list-group-item">Titolo di possesso azienda: {{ anagrafica.Az_Ag_possesso }}</li>
+                        <li class="list-group-item">Indirizzo azienda: {{ anagrafica.Az_Ag_denominazione }}</li>
+                        <li class="list-group-item">Denominazione azienda: {{ anagrafica.Az_Ag_indirizzo }}</li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4"><h2>Domanda inserita</h2>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Opera di prevenzione: {{ rilievo.OperePrevenzione }}</li>
+                    <li class="list-group-item">Comune: {{ rilievo.comune }}</li>
+                    <li class="list-group-item">Particelle: {{ rilievo.particelle }}</li>
+                    <li class="list-group-item">Coltura: {{ rilievo.coltura }}</li>
+                    <li class="list-group-item">Localizzazione del fondo: {{ rilievo.Localizzazione_fondo }}</li>
+                    <li class="list-group-item">Produzione media: {{ rilievo.prod_media }}</li>
+                    <li class="list-group-item">Superficie totale: {{ rilievo.Sup_totale }}</li>
+                    <li class="list-group-item">Specie 1: {{ rilievo.Specie1 }}</li>
+                    <li class="list-group-item">Superficie danneggiata: {{ rilievo.Sup_danneggiata }}</li>
+                    <li class="list-group-item">percentuale del danno: {{ rilievo.perc_danno }}</li>
+                    <li class="list-group-item">Specie 2: {{ rilievo.Specie2 }}</li>
+                    <li class="list-group-item">Foglio: {{ rilievo.foglio }}</li>
+                    <li class="list-group-item">Varietà: {{ rilievo.varieta }}</li>
+                </ul>
+                </div>
+                <div class="col-6 col-md-4"><h2>Domanda inserita</h2></div>
+            </div>
+        </div>
+
+
+
+
+    {% else %}
+        <h2>Error su True</h2>
+    {% endif %}
+{% endblock content %}

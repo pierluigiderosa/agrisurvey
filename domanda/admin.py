@@ -43,3 +43,4 @@ admin.site.register(Agricoltore, AgricoltoreAdmin)
 
 
 
+admin.site.site_header = 'Gestionale selvaggina - Amministrazione'

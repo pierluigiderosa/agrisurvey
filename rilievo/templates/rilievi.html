@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if mostra %}
+        <h3>Pratiche per le quali è possibile inserire il rilievo effettuato</h3>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Richiedente</th>
+            <th scope="col">Valore danno stimato</th>
+            <th scope="col">data inserimento</th>
+            <th scope="col">stato</th>
+            <th scope="col">Inserisci rilievo</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for danno in danniRilevatore %}
+        <tr>
+            <th scope="row">{{ danno.id }}</th>
+            <td>{{ danno.richiedente }}</td>
+            <td>{{ danno.ValoreDanno }}€</td>
+            <td>{{ danno.data_ins }}</td>
+            <td>{{ danno.stato_pratica }}</td>
+            <td><a href="{% url 'upload_file' danno.id  %}"><i class="far fa-edit"></i></a> </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        <br>
+        <h3>Pratiche non inseribili perchè non hai ancora effettuato il download dei dati per il rilievo</h3>
+        <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Richiedente</th>
+            <th scope="col">Valore danno stimato</th>
+            <th scope="col">data inserimento</th>
+            <th scope="col">stato</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for danno in pratichenoninseribili %}
+        <tr>
+            <th scope="row">{{ danno.id }}</th>
+            <td>{{ danno.richiedente }}</td>
+            <td>{{ danno.ValoreDanno }}€</td>
+            <td>{{ danno.data_ins }}</td>
+            <td>{{ danno.stato_pratica }}</td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        {% else %}
+        <h2>Solo i rilevatori vedono la pagina</h2>
+    {% endif %}
+{% endblock content %}
