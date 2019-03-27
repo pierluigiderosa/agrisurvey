@@ -29,7 +29,7 @@ if socket.gethostname()=='pierluigi-Lenovo-U41-70' or socket.gethostname()=='agr
     DEBUG = config('DEBUG', cast=bool)
 else:
     DEBUG=False
-ALLOWED_HOSTS = ['94.177.183.205','127.0.0.1']
+ALLOWED_HOSTS = ['94.177.183.205','127.0.0.1','agrisurvey']
 
 
 # Application definition
@@ -134,6 +134,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+STATIC_ROOT = "/var/www/html/static/"
 
 #MEDIA FILES
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -154,4 +155,4 @@ EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_PORT = config('EMAIL_PORT')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-EMAIL_USE_SSL = True
+EMAIL_USE_TLS = True

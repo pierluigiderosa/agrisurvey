@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h2>Pagina di aiuto per configurare il tablet la prima volta</h2>
+    <div class="jumbotron">
+        <h1 class="display-4">Installa Geopaparazzi</h1>
+        <p class="lead">Geopaparazzi è uno strumento sviluppato per eseguire rilievi digitali in campo.
+            Anche se il fine è fare dei rilievi, l'app permette di utilizzare propri dati vettoriali (spatialite) e mappe di sfondo.
+        </p>
+        <hr class="my-4">
+        <p>Installare l'app su un dispositivo android e avviare l'app per fargli generare tutte le cartelle di supporto.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="https://play.google.com/store/apps/details?id=eu.hydrologis.geopaparazzi" role="button">Installa!</a>
+        </p>
+    </div>
+    <div class="jumbotron">
+        <h1 class="display-4">Copia i file nel tuo sistema</h1>
+        <p class="lead">
+            Devi copiare 2 file nella cartella Geopaparazzi presente nella memoria principale del tuo dispositivo. Una volta avviata l'app per la prima volta.
+        </p>
+        <hr class="my-4">
+        <p>Copiare il file per tags.json nella cartella Geopaparazzi l'app su un dispositivo android e avviare l'app per fargli generare tutte le cartelle di supporto.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% static "img/tags.json" %}" role="button">Tags.json</a>
+        </p>
+    </div>
+    <div class="jumbotron">
+        <h1 class="display-4">Copia i file per un utilizzo online e offline delle mappe</h1>
+        <p class="lead">
+            Devi copiare il file nella cartella Geopaparazzi presente nella memoria principale del tuo dispositivo. Una volta avviata l'app per la prima volta.
+        </p>
+        <hr class="my-4">
+        <p>Copiare il file per OrtofotoRealvista-mapurl nella cartella Geopaparazzi l'app su un dispositivo android e avviare l'app per fargli generare tutte le cartelle di supporto.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% static "img/OrtofotoRealvista.mapurl" %}" role="button">Ortofoto.mapurl</a>
+        </p>
+    </div>
+{% endblock content %}

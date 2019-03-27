@@ -28,7 +28,7 @@ class DannoAdminAjax(AjaxSelectAdmin):
     search_fields = ('foglio',)
     list_filter = ('data_ins',)
     ordering = ["-data_ins"]
-    filter_horizontal = ('fog_part_certified',)
+    #filter_horizontal = ('fog_part_certified',)
     form = make_ajax_form(danno, {
         # fieldname: channel_name
         'fog_part_db': 'catastali'
@@ -36,7 +36,7 @@ class DannoAdminAjax(AjaxSelectAdmin):
 
 
 class AgricoltoreAdmin(admin.ModelAdmin):
-    list_display = ('user', 'CF','id', 'luogoNascita',)
+    list_display = ('user', 'id', 'luogoNascita',)
 
 
 admin.site.register(Agricoltore, AgricoltoreAdmin)

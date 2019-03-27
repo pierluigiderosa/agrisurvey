@@ -23,7 +23,7 @@ class catastale_new(models.Model):
 
     # Returns the string representation of the model.
     def __str__(self):  # __unicode__ on Python 2
-        return u'%s f: %s p: %s' % (self.comune, self.foglio[-4:], self.part)
+        return u'%s f: %s p: %s' % (self.comune, self.foglio[-4:-1], self.part)
 
     class Meta:
         verbose_name = 'catastale'
@@ -67,6 +67,16 @@ class quadranti(models.Model):
     def __str__(self):  # __unicode__ on Python 2
         return u'fid: %s' % (self.fid)
 
+class quandranti_livorno(models.Model):
+    location = models.CharField(max_length=254)
+    id = models.BigIntegerField()
+    geom = models.MultiPolygonField(srid=3003)
+
+    # Returns the string representation of the model.
+    def __str__(self):  # __unicode__ on Python 2
+        return u'OFC: %s' % (self.id)
+
+
 
 class danno(models.Model):
     richiedente = models.ForeignKey(User, null=True, blank=True,limit_choices_to={'groups__name': "Agricoltore"})
@@ -86,7 +96,7 @@ class danno(models.Model):
     OpereProtezione = models.CharField(max_length=250,blank=True)
     polizza = models.NullBooleanField(verbose_name='Polizza assicurativa',blank=True,null=True)
     biologica = models.NullBooleanField(verbose_name='Azienda biologica',blank=True,null=True)
-    iban = IBANField(default='')
+    iban = IBANField(default='',blank=True,null=True,help_text='Iban ')
     #dati addizionali
     data_ins = models.DateField(auto_now_add=True,verbose_name='Data inserimento')
     note = models.CharField(max_length=1000,blank=True,null=True,verbose_name='Note (facoltativo)')
@@ -108,9 +118,9 @@ class danno(models.Model):
     CAA = models.ForeignKey(User, null=True, blank=True, limit_choices_to={'groups__name': "CAA"}, related_name='+', help_text='Centro di Assistenza agricolo')
     Rilevatore = models.ForeignKey(User, null=True, blank=True, limit_choices_to={'groups__name': "Rilevatore"}, related_name='+', )
     mappale = models.FileField(blank=True,upload_to='mappali/',help_text='file pdf')
-    fog_part_certified = models.ManyToManyField(CatastaleSmall,verbose_name='Foglio Particella da Catastale',help_text='aiuto')
+    #fog_part_certified = models.ManyToManyField(CatastaleSmall,verbose_name='Foglio Particella da Catastale',help_text='aiuto',null=True, blank=True)
     fog_part_db = models.ManyToManyField(catastale_new, verbose_name='Foglio Particella da Catastale',
-                                                help_text='Inserire nel formato Comune foglio e particella del tipo : -<b>Empoli 0600 317</b>- dove 0600 è il foglio e 317 la particella')
+                                                help_text='Inserire nel formato Comune foglio e particella del tipo : -<b>Empoli 060 317</b>- dove 060 è il foglio è 60 e 317 la particella')
 
     #Add helper function for Admin display
     def author_full_name(self):

@@ -2,6 +2,9 @@
 
 {% block content %}
     {% if user.is_authenticated %}
+        <h2>Riepilogo delle domande di tua competenza.</h2>
+        <p>I Rilevatori visualizzano la lista ma non possono accedere ai dettagli in quanto non proprietari della domanda.</p>
+        <p>Se i rilevatori vogliono vedere i dettagli della domanda devono <a href="{% url 'mostra-rilievi' %}">cliccare qui</a> </p>
     <table style="width:100%" class="table table-hover table-responsive">
             <thead class="thead-light">
     <tr>

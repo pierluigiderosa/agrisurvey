@@ -2,6 +2,7 @@ import os.path as osp
 import sqlite3 as sqlite
 import json
 
+import cStringIO
 from django.contrib.gis.geos import Point, GEOSGeometry
 from django.core.files import File
 from pysqlite2 import dbapi2 as sqlite3
@@ -11,7 +12,7 @@ from domanda.models import danno
 
 
 def ExportFormNotes(file_gpap,id_danno):
-    con = sqlite.connect(file_gpap._name)
+    con = sqlite.connect(file_gpap.temporary_file_path())
     DBcursor = con.cursor()
     # get the rough list of section names (rough means like: {"sectionname":"my name")
     sectionNames = DBcursor.execute("SELECT DISTINCT substr(form,0,instr(form,',')) AS formName FROM notes")
@@ -91,11 +92,12 @@ def ExportFormNotes(file_gpap,id_danno):
             anag.save()
             anag.Firma.save('firma_pratica_%s.jpg' %(str(id_danno)), File(open('/tmp/firma_pratica.jpg', 'r')))
 
+    con.close()
     return anagrafica_output,rilievo_list,errore
 
 
 def ExportGeomSurvey(file_splite):
-    conn = sqlite3.connect(file_splite._name)
+    conn = sqlite3.connect(file_splite.temporary_file_path())
     conn.enable_load_extension(True)
     # initializing Spatial MetaData
     # using v.2.4.0 this will automatically create
@@ -111,6 +113,7 @@ def ExportGeomSurvey(file_splite):
     c.execute(sql_geom_unita)
     geom_wkt = c.fetchall()
 
+    conn.close()
     return geom_wkt
 
 
@@ -125,6 +128,7 @@ def spatial_join(poligoni,rilievi,id_danno):
         out_str+='<br><br>punto rilievo id: '+str(id_rilievo)
         out_str+=rilievoPoint.wkt
 
+        #ricerco il poligono piu vicino ed inizio con il primo
         id_ok=0
         min_distance=rilievoPoint.distance(GEOSGeometry(poligoni[id_ok][0],srid=3003))
 
@@ -139,6 +143,13 @@ def spatial_join(poligoni,rilievi,id_danno):
         out_str+='<br>Minimo id: '+str(id_ok)+'distanza: '+str(min_distance)
 
         #salvo i dati nel DB
+        rilievo_copy={}
+        for k,v in rilievo.iteritems():
+            if v=='':
+                v=0
+            rilievo_copy[k] = v
+        rilievo=rilievo_copy
+
         r = rilievo_poly(
             OperePrevenzione=rilievo['OperePrevenzione'],
             comune = rilievo['comune'],
@@ -150,7 +161,7 @@ def spatial_join(poligoni,rilievi,id_danno):
             Sup_totale = rilievo['Sup_totale'],
             Specie1 = rilievo['Specie1'],
             lat =rilievo['lat'],
-            Sup_danneggiata =rilievo['Sup_danneggiata'],
+            Sup_danneggiata = rilievo['Sup_danneggiata'],
             perc_danno =rilievo['perc_danno'],
             Specie2 =rilievo['Specie2'],
             foglio = rilievo['foglio'],
@@ -159,7 +170,7 @@ def spatial_join(poligoni,rilievi,id_danno):
             id_pratica = danno.objects.get(pk=id_danno),
             mpoly = poligoni[id_ok][0],
                          )
-        #r.save()
+        r.save()
 
     return out_str
 

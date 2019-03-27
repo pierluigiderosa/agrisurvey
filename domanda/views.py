@@ -84,12 +84,16 @@ def quadrante(request,id):
 
     # prendo i valori unici di tutti i quadranti
     quadranti_list = list(set(quad_id))
+    mbtilesPathList=[]
     for qd in range(len(quadranti_list)):
-        mbtilesPath = os.path.join(settings.MEDIA_ROOT, 'mbtiles', 'ortofoto_%d'%(quadranti_list[qd])+'.mbtiles' )
+        mbtilesPath = os.path.join(settings.STATIC_URL, 'mbtiles', 'ortofoto_%d'%(quadranti_list[qd])+'.mbtiles' )
+        # una lista che contiene una tupla con path e quadrante
+        mbtilesPathList.append((mbtilesPath,quadranti_list[qd]))
         # TODO: corregge il path sotto
-        html_str += '<a href="%s">mbtiles %d</a>' % (mbtilesPath, quadranti_list[qd])
-        html_test += str(quadranti_list[qd])
-    return HttpResponse(html_test)
+        html_test += '<a href="%s">mbtiles %d</a>' % (mbtilesPath, quadranti_list[qd])
+        html_test += '<br>'
+    #return HttpResponse(html_test)
+    return render(request, "domanda/lista_ortofoto.html", {'mbtilesPaths': mbtilesPathList})
 
 
 

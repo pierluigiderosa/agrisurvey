@@ -12,6 +12,10 @@ from django.shortcuts import render
 from rilievo.models import rilievo_poly,anagrafica
 from .forms import UploadGpapForm
 
+#report
+from reports import report_singolo,report_singolo_platypus
+
+
 # Imaginary function to handle an uploaded file.
 from manage_survey import ExportFormNotes, ExportGeomSurvey, spatial_join
 
@@ -29,10 +33,16 @@ def upload_file(request,id):
         if form.is_valid():
             anagrafica, rilievo, errore = ExportFormNotes(request.FILES['file'],id_danno)
             geom = ExportGeomSurvey(request.FILES['splite_file'])
+            #la funzione spatial_join si occupa anche di salvare i dati in db per questo non serve salvare il form
             stampa = spatial_join(geom, rilievo,id_danno)
-            return HttpResponse(str(geom) + '<br><p>anagrafica: </p>' + str(anagrafica) +
-                                '<br><p>rilievo</p>' + str(rilievo) +
-                                '<br><p>spatial join: </p><br>' + str(stampa))
+            #cambio lo stato della pratica a completa
+            danno_id = danno.objects.get(id=id_danno)
+            danno_id.stato_pratica = 'completa'
+            danno_id.save()
+            return render(request, 'success_upload.html', {'iddanno': str(id_danno) })
+            # return HttpResponse(str(geom) + '<br><p>anagrafica: </p>' + str(anagrafica) +
+            #                     '<br><p>rilievo</p>' + str(rilievo) +
+            #                     '<br><p>spatial join: </p><br>' + str(stampa))
     else:
         form = UploadGpapForm()
         if 'submitted' in request.GET:
@@ -46,12 +56,15 @@ def mostra_rilievi(request):
     if request.user.groups.filter(name__in=['Rilevatore']).exists():
        mostra=True
        danniRilevatore = danno.objects.filter(Rilevatore=request.user, stato_pratica='rilievo').order_by('-data_ins', 'id')
-       danniRilevatoreNonInseribili = danno.objects.filter(Rilevatore=request.user, stato_pratica='lavorazione').order_by('-data_ins',
-                                                                                                         'id')
+       danniRilevatoreComplete = danno.objects.filter(Rilevatore=request.user, stato_pratica='completa').order_by('-data_ins', 'id')
+       danniRilevatoreNonInseribili = danno.objects.filter(Rilevatore=request.user, stato_pratica='lavorazione').order_by('-data_ins','id')
+       return render(request, "rilievi.html", {'mostra': mostra, 'danniRilevatore': danniRilevatore,
+                                               'pratichenoninseribili': danniRilevatoreNonInseribili,
+                                               'pratichecompletate': danniRilevatoreComplete})
+
     else:
         mostra=False
-
-    return render(request, "rilievi.html",{'mostra':mostra,'danniRilevatore':danniRilevatore,'pratichenoninseribili':danniRilevatoreNonInseribili})
+        return render(request, "rilievi.html",{'mostra':mostra})
 
 
 def mostra_singolo_rilievo(request,id):
@@ -64,20 +77,41 @@ def mostra_singolo_rilievo(request,id):
 
     rilievi_pratica = rilievo_poly.objects.filter(id_pratica__id=id_danno)
     anagrafica_pratica = anagrafica.objects.filter(id_pratica__id=id_danno)
-    if len(anagrafica_pratica) !=1:
+    if anagrafica_pratica.count() >1:
         anagrafica_pratica=anagrafica_pratica[0]
-
-    anagrafica_pratica = anagrafica_pratica.first()
-    domanda = anagrafica_pratica.id_pratica
+    else:
+        anagrafica_pratica = anagrafica_pratica.first()
+    #domanda = anagrafica_pratica.id_pratica
     error=False
 
-    #TODO togliere first a rilievi_pratica e fare il loop nel template
-
-    return render(request, "rilievo_singolo.html", {'anagrafica': anagrafica_pratica,'rilievo':rilievi_pratica.first() ,'error': error})
+    return render(request, "rilievo_singolo.html", {'anagrafica': anagrafica_pratica,'rilievi':rilievi_pratica ,'error': error})
 
 
+def help_rilievo(request):
+    return render(request,"help.html")
 
+@login_required
+def report_rilievo_singolo(request,id):
+    try:
+        id_danno = int(id)
+    except ValueError:
+        raise Http404()
 
+    #prendo i dati dei rilievi
+    rilievi_pratica = rilievo_poly.objects.filter(id_pratica__id=id_danno)
+    anagrafica_pratica = anagrafica.objects.filter(id_pratica__id=id_danno)
+    anagrafica_pratica = anagrafica_pratica.first()
+
+    #get data for reports
+    nome =anagrafica_pratica.id_pratica.richiedente.first_name
+    cognome = anagrafica_pratica.id_pratica.richiedente.last_name
+    agricoltore = anagrafica_pratica.id_pratica.richiedente.agricoltore
+    danno=anagrafica_pratica.id_pratica
+
+    #create the Httpresponse object with teh appropriate PDF using platypus
+    pdf = report_singolo_platypus(id_danno,nome,cognome,agricoltore,danno,anagrafica_pratica,rilievi_pratica)
+
+    return pdf
 
 
 class MapLayer(GeoJSONLayerView):

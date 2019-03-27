@@ -1,0 +1,463 @@
+[
+    {
+        "sectionname": "agrisurvey_anagrafica",
+        "sectiondescription": "Anagrafica per il rilievo dei danni da selvaggina",
+        "forms": [
+            {
+                "formname": "Data anagrafici",
+                "formitems": [
+                   {
+                        "value": "Dati Azienda agricola",
+                        "size": "22",
+                        "type": "label"
+                    },
+                  {
+                    "key": "Az_Ag_denominazione",
+                        "label": "Denominazione Azienda Agricola",
+                        "value": "",
+                        "type": "string"
+                  },
+                  {
+                    "key": "Az_Ag_possesso",
+                        "label": "Titlo di possesso Azienda Agricola",
+                        "value": "",
+                        "type": "string"
+                  },
+                  {
+                    "key": "Az_Ag_indirizzo",
+                        "label": "Indirizzo Azienda Agricola",
+                        "value": "",
+                        "type": "string"
+                  },
+                  {
+                        "value": "Localizzazione del fondo",
+                        "size": "22",
+                        "type": "label"
+                    },
+                  {
+                        "value": "Dati anagrafici dei partecipanti al sopralluogo",
+                        "size": "22",
+                        "type": "label"
+                    },
+                  {
+                        "key": "Rapp_Az",
+                        "label": "Nome e cognome Rappresentante aziendale",
+                        "value": "",
+                        "type": "string"
+                    },
+                  {
+                        "key": "Rapp_Az_documento",
+                        "label": "documento del rappresentante aziendale",
+                        "value": "",
+                        "type": "string"
+                    }
+                ]
+            },{
+                "formname": "Firma",
+                "formitems": [
+                    {
+                        "key": "Firma",
+                        "label": "apponi la firma",
+                        "value": "",
+                        "type": "sketch"
+                    },{
+                        "key": "mappa",
+                        "value": "",
+                        "type": "map"
+                    }
+                ]
+            }
+        ]
+	},{
+        "sectionname": "agrisurvey",
+        "sectiondescription": "Rilievo dei danni da selvaggina",
+        "forms": [
+          {
+                "formname": "Dati catastali",
+                "formitems": [
+                  {
+                    "key": "comune",
+                        "label": "comune",
+                        "value": "",
+                        "type": "string"
+                  },
+                  {
+                        "key": "foglio",
+                        "label": "foglio catastale",
+                        "value": "",
+                        "type": "string"
+                    },{
+                        "key": "particelle",
+                        "label": "particelle presenti in sito",
+                        "value": "",
+                        "type": "string"
+                    },{
+                        "key": "Localizzazione_fondo",
+                    "label":"Opere di prevenzione presenti",
+                        "values": {
+                            "items": [
+                                {"item": "Territorio di caccia programmata"},
+                                {"item": "Zona di rispetto venatorio"},
+                                {"item": "Zona di ripopolamento Cattura"},
+                                {"item": "Altro"}
+                            ]
+                        },
+                        "value": "",
+                        "type": "multistringcombo"
+                    },
+                  {
+                        "key": "OperePrevenzione",
+                    "label":"Opere di prevenzione presenti",
+                        "values": {
+                            "items": [
+                                {"item": "Recinzione"},
+                                {"item": "Dissuasori Acustici"},
+                                {"item": "Interventi Controllo"},
+                                {"item": "Altro"}
+                            ]
+                        },
+                        "value": "",
+                        "type": "multistringcombo"
+                    }
+                ]
+            },{
+                "formname": "Dati colturali",
+                "formitems": [
+                  {
+                    "key": "Sup_totale",
+                    "label": "Superficie totale",
+                        "value": "",
+                        "type": "double"
+                  },
+                  {
+                    "key": "Sup_danneggiata",
+                    "label": "Superficie danneggiata in %",
+                        "value": "",
+                        "type": "integer"
+                  },
+                    {
+                        "key": "coltura",
+                        "label": "Coltura presente in sito",
+                        "values": {
+                            "items": [
+                                {"item": ""},
+                                {"item": "Grano"},
+                                {"item": "Tabacco"},
+                                {"item": "Mais"}
+                            ]
+                        },
+                        "value": "",
+                        "type": "stringcombo"
+                    },{
+                        "key": "varieta",
+                        "label": "varietà presente in sito",
+                        "value": "",
+                        "type": "string"
+                    },{
+                        "key": "prod_media",
+                        "label": "produttività media (Q.li/anno)",
+                        "value": "",
+                        "type": "double"
+                    },{
+                        "key": "perc_danno",
+                        "value": "",
+                        "type": "double"
+                    },{
+                        "key": "Specie1",
+                        "label": "Specie 1",
+                        "values": {
+                            "items": [
+                                {"item": ""},
+                                {"item": "cinghiale"},
+                                {"item": "tasso"},
+                                {"item": "choice 3"},
+                                {"item": "choice 4"},
+                                {"item": "choice 5"}
+                            ]
+                        },
+                        "value": "",
+                        "type": "multistringcombo"
+                    },{
+                        "key": "Specie2",
+                        "label": "Specie 2",
+                        "values": {
+                            "items": [
+                                {"item": ""},
+                                {"item": "cinghiale"},
+                                {"item": "tasso"},
+                                {"item": "choice 3"},
+                                {"item": "choice 4"},
+                                {"item": "choice 5"}
+                            ]
+                        },
+                        "value": "",
+                        "type": "multistringcombo"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "sectionname": "examples",
+        "sectiondescription": "examples of supported form widgets",
+        "forms": [
+            {
+                "formname": "text",
+                "formitems": [
+                    {
+                        "key": "some text",
+                        "value": "",
+                        "type": "string"
+                    }
+                ]
+            },{
+                "formname": "multiple text",
+                "formitems": [
+                    {
+                        "key": "some text",
+                        "value": "text1; text2; text3",
+                        "type": "dynamicstring"
+                    }
+                ]
+            },{
+                "formname": "text example with key and label",
+                "formitems": [
+                    {
+                        "key": "the_key_used_to_index",
+                        "label": "the label used to describe",
+                        "value": "",
+                        "type": "string"
+                    }
+                ]
+            },{
+                "formname": "numeric text",
+                "formitems": [
+                    {
+                        "key": "a number",
+                        "value": "",
+                        "type": "double"
+                    },{
+                        "key": "an integer number",
+                        "value": "",
+                        "type": "integer"
+                    }
+                ]
+            },{
+                "formname": "numeric text used as label in map",
+                "formitems": [
+                    {
+                        "key": "a number",
+                        "value": "",
+                        "islabel": "true",
+                        "type": "double"
+                    },{
+                        "key": "an integer number",
+                        "value": "",
+                        "type": "integer"
+                    }
+                ]
+            },{
+                "formname": "date",
+                "formitems": [
+                    {
+                        "key": "a date",
+                        "value": "",
+                        "type": "date"
+                    }
+                ]
+            },{
+                "formname": "time",
+                "formitems": [
+                    {
+                        "key": "a time",
+                        "value": "",
+                        "type": "time"
+                    }
+                ]
+            },{
+                "formname": "labels",
+                "formitems": [
+                    {
+                        "value": "a simple label of size 20",
+                        "size": "20",
+                        "type": "label"
+                    },{
+                        "value": "a underlined label of size 24",
+                        "size": "24",
+                        "type": "labelwithline"
+                    },{
+                        "value": "a label with link to the geopaparazzi homepage",
+                        "url": "http://www.geopaparazzi.eu",
+                        "size": "20",
+                        "type": "labelwithline"
+                    }
+                ]
+            },{
+                "formname": "boolean",
+                "formitems": [
+                    {
+                        "key": "a boolean choice",
+                        "value": "",
+                        "type": "boolean"
+                    }
+                ]
+            },{
+                "formname": "combos",
+                "formitems": [
+                    {
+                        "key": "a single choice combo",
+                        "values": {
+                            "items": [
+                                {"item": ""},
+                                {"item": "choice 1"},
+                                {"item": "choice 2"},
+                                {"item": "choice 3"},
+                                {"item": "choice 4"},
+                                {"item": "choice 5"}
+                            ]
+                        },
+                        "value": "",
+                        "type": "stringcombo"
+                    },{
+                        "key": "a multiple choice combo",
+                        "values": {
+                            "items": [
+                                {"item": ""},
+                                {"item": "choice 1"},
+                                {"item": "choice 2"},
+                                {"item": "choice 3"},
+                                {"item": "choice 4"},
+                                {"item": "choice 5"}
+                            ]
+                        },
+                        "value": "",
+                        "type": "multistringcombo"
+                    },{
+                        "key": "two connected combos",
+                        "values": {
+                            "items 1": [
+                                {"item": ""},
+                                {"item": "choice 1 of 1"},
+                                {"item": "choice 2 of 1"},
+                                {"item": "choice 3 of 1"},
+                                {"item": "choice 4 of 1"},
+                                {"item": "choice 5 of 1"}
+                            ],
+                            "items 2": [
+                                {"item": ""},
+                                {"item": "choice 1 of 2"},
+                                {"item": "choice 2 of 2"},
+                                {"item": "choice 3 of 2"},
+                                {"item": "choice 4 of 2"},
+                                {"item": "choice 5 of 2"}
+                            ]
+                        },
+                        "value": "",
+                        "type": "connectedstringcombo"
+                    },{
+                        "key": "two connected combos, default selected",
+                        "values": {
+                            "items 1": [
+                                {"item": ""},
+                                {"item": "choice 1 of 1"},
+                                {"item": "choice 2 of 1"},
+                                {"item": "choice 3 of 1"},
+                                {"item": "choice 4 of 1"},
+                                {"item": "choice 5 of 1"}
+                            ],
+                            "items 2": [
+                                {"item": ""},
+                                {"item": "choice 1 of 2"},
+                                {"item": "choice 2 of 2"},
+                                {"item": "choice 3 of 2"},
+                                {"item": "choice 4 of 2"},
+                                {"item": "choice 5 of 2"}
+                            ]
+                        },
+                        "value": "items 2#choice 4 of 2",
+                        "type": "connectedstringcombo"
+                    },{
+                        "key": "a combo that is connected to two others",
+                        "values": {
+                            "items 1": [
+                                {
+                                    "itemname": "subitem 1 of item 1",
+                                    "items":[
+                                      {"item": ""},
+                                      {"item": "choice 1/sub 1/item 1"},
+                                      {"item": "choice 2/sub 1/item 1"},
+                                      {"item": "choice 3/sub 1/item 1"},
+                                      {"item": "choice 4/sub 1/item 1"},
+                                      {"item": "choice 5/sub 1/item 1"}
+                                    ]
+                                },{
+                                    "itemname": "subitem 2 of item 1",
+                                    "items":[
+                                      {"item": ""},
+                                      {"item": "choice 1/sub 2/item 1"},
+                                      {"item": "choice 2/sub 2/item 1"},
+                                      {"item": "choice 3/sub 2/item 1"},
+                                      {"item": "choice 4/sub 2/item 1"},
+                                      {"item": "choice 5/sub 2/item 1"}
+                                    ]
+                                }
+                            ],
+                            "items 2": [
+                              {
+                                "itemname": "subitem 1 of item 2",
+                                "items":[
+                                  {"item": ""},
+                                  {"item": "choice 1/sub 1/item 2"},
+                                  {"item": "choice 2/sub 1/item 2"},
+                                  {"item": "choice 3/sub 1/item 2"},
+                                  {"item": "choice 4/sub 1/item 2"},
+                                  {"item": "choice 5/sub 1/item 2"}
+                                ]
+                              },{
+                                "itemname": "subitem 2 of item 2",
+                                "items":[
+                                  {"item": ""},
+                                  {"item": "choice 1/sub 2/item 2"},
+                                  {"item": "choice 2/sub 2/item 2"},
+                                  {"item": "choice 3/sub 2/item 2"},
+                                  {"item": "choice 4/sub 2/item 2"},
+                                  {"item": "choice 5/sub 2/item 2"}
+                                ]
+                              }
+                            ]
+                        },
+                        "value": "items 2#choice 1/sub 1/item 2#choice 5/sub 2/item 2",
+                        "type": "onetomanystringcombo"
+                    }
+                ]
+            },{
+                "formname": "pictures",
+                "formitems": [
+                    {
+                        "key": "a picture archive",
+                        "value": "",
+                        "type": "pictures"
+                    }
+                ]
+            },{
+                "formname": "sketches",
+                "formitems": [
+                    {
+                        "key": "a sketches archive",
+                        "value": "",
+                        "type": "sketch"
+                    }
+                ]
+            },{
+                "formname": "map",
+                "formitems": [
+                    {
+                        "key": "an image of the last seen map",
+                        "value": "",
+                        "type": "map"
+                    }
+                ]
+            }
+        ]
+	}
+]

@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.gis import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.i18n import JavaScriptCatalog
 from ajax_select import urls as ajax_select_urls
 
@@ -31,3 +32,6 @@ urlpatterns = [
     url(r'^rilievo/', include('rilievo.urls')),
     url(r'^$', include('domanda.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

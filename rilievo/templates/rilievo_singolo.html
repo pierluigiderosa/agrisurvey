@@ -9,11 +9,11 @@
 {% endblock %}
 {% block content %}
     {% if not error %}
-        <h1># {{ anagrafica.id_pratica.id }}</h1>
+        <h2>Riepilogo rilievo # {{ anagrafica.id_pratica.id }}</h2>
         <div class="container">
             <div class="row">
                 <div class="col-6 col-md-4">
-                    <h2>Anagrafica</h2>
+                    <h3>Anagrafica</h3>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Rappresentante aziendale: {{ anagrafica.Rapp_Az }}</li>
                         <li class="list-group-item">Denominazione azienda: {{ anagrafica.Az_Ag_denominazione }}</li>
@@ -21,9 +21,12 @@
                         <li class="list-group-item">Titolo di possesso azienda: {{ anagrafica.Az_Ag_possesso }}</li>
                         <li class="list-group-item">Indirizzo azienda: {{ anagrafica.Az_Ag_denominazione }}</li>
                         <li class="list-group-item">Denominazione azienda: {{ anagrafica.Az_Ag_indirizzo }}</li>
+                        </li>
                     </ul>
+
                 </div>
-                <div class="col-6 col-md-4"><h2>Domanda inserita</h2>
+                {% for rilievo in rilievi %}
+                <div class="col-6 col-md-4"><h3>Domanda inserita {{ forloop.counter }}</h3>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Opera di prevenzione: {{ rilievo.OperePrevenzione }}</li>
                     <li class="list-group-item">Comune: {{ rilievo.comune }}</li>
@@ -38,12 +41,62 @@
                     <li class="list-group-item">Specie 2: {{ rilievo.Specie2 }}</li>
                     <li class="list-group-item">Foglio: {{ rilievo.foglio }}</li>
                     <li class="list-group-item">Varietà: {{ rilievo.varieta }}</li>
+                    <li class="list-group-item">Area: {{ rilievo.mpoly.area|floatformat:0 }} mq</li>
                 </ul>
                 </div>
-                <div class="col-6 col-md-4"><h2>Domanda inserita</h2></div>
+                {% endfor %}
             </div>
         </div>
 
+
+        {% leaflet_map "main" callback="main_map_init" %}
+{#        <script src="js/qgis2web_expressions.js"></script>#}
+{#        <script src="js/leaflet.rotatedMarker.js"></script>#}
+{#        <script src="js/leaflet.pattern.js"></script>#}
+{#        <script src="js/leaflet-hash.js"></script>#}
+{#        <script src="js/Autolinker.min.js"></script>#}
+{#        <script src="js/rbush.min.js"></script>#}
+{#        <script src="js/labelgun.min.js"></script>#}
+{#        <script src="js/labels.js"></script>#}
+{#        <script src="js/leaflet.wms.js"></script>#}
+        <script type="text/javascript">
+            function onEachFeature(feature, layer) {
+                // does this feature have a property named popupContent?
+                if (feature.properties && feature.properties.popupContent) {
+                    layer.bindPopup(feature.properties.popupContent);
+                }
+            }
+            function main_map_init (map, options) {
+
+                var dataurl = "{% url "rilievo_poligono" %}?pid={{ anagrafica.id_pratica.id }}";
+                // Download GeoJSON via Ajax
+                $.getJSON(dataurl, function (data) {
+                    // Add GeoJSON layer
+                    L.geoJson(data,{
+                        onEachFeature: function (feature, layer) {
+                            layer.bindPopup('<h5>Foglio</h5>'+ feature.properties.foglio+'<h5>Particella: </h5>'+feature.properties.particelle);
+                        }
+                    }).addTo(map);
+
+                    var wmsLayer = L.tileLayer.wms('https://demo.boundlessgeo.com/geoserver/ows?', {
+                        layers: 'ne:ne'
+                    }).addTo(map);
+                     var overlay_OFC2013col_0 = L.WMS.layer("http://www502.regione.toscana.it/wmsraster/com.rt.wms.RTmap/wms?map=wmsofc&map_resolution=91&language=ita&", "rt_ofc.10k13", {
+            format: 'image/png',
+            uppercase: true,
+            transparent: true,
+            continuousWorld : true,
+            tiled: true,
+            info_format: 'text/html',
+            opacity: 1,
+            identify: false,
+        });
+        map.addLayer(overlay_OFC2013col_0);
+                });
+
+
+            }
+        </script>
 
 
 

@@ -26,7 +26,7 @@ class DannoFormAgricoltore(forms.ModelForm):
             'mappale': 'Estratto di mappa',
         }
 
-    fog_part_db = make_ajax_field(danno, 'fog_part_db', 'catastali', help_text='Inserire nel formato Comune foglio e particella del tipo : -<b>Empoli 0600 317</b>- dove il foglio è 0600 e la particella è 317 ')
+    fog_part_db = make_ajax_field(danno, 'fog_part_db', 'catastali', help_text='Inserire nel formato Comune foglio e particella del tipo : -<b>Empoli 060 317</b>- dove 060 è il foglio è 60 e la particella è 317 ')
 
     class Media:
         css = {'all': ('/static/admin/css/widgets.css',), }  # custom css
@@ -50,7 +50,7 @@ class DannoFormCAA(forms.ModelForm):
             'mappale': 'Estratto di mappa',
         }
 
-    fog_part_db = make_ajax_field(danno, 'fog_part_db', 'catastali', help_text='Inserire nel formato Comune foglio e particella del tipo : -<b>Empoli 0600 317</b>- dove il foglio è 0600 e la particella è 317 ')
+    fog_part_db = make_ajax_field(danno, 'fog_part_db', 'catastali', help_text='Inserire nel formato Comune foglio e particella del tipo : -    <b>Empoli 060 317</b>- dove 060 è il foglio 60 e la particella è 317.')
 
     class Media:
         css = {'all': ('/static/admin/css/widgets.css',), }  # custom css
@@ -73,7 +73,7 @@ class UserForm(UserCreationForm):
 
 class AgricoltoreForm(forms.ModelForm):
 
-    # il formato correto per inserire la data risulta: mm/dd/yyyy
+    # il formato corretto per inserire la data risulta: mm/dd/yyyy
     class Meta:
         model = Agricoltore
         exclude = ('user','RefTel','CF')

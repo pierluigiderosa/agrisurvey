@@ -63,14 +63,13 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle"href="/rilievo" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="/rilievo/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Rilievo
                 </a>
-                {% if user.groups.all.0.name == "Rilevatore" %}
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/rilievo/">Mostra</a>
-                    </div>
-                {% endif %}
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/rilievo/">Mostra</a>
+                    <a class="dropdown-item" href="/rilievo/help/">Aiuto</a>
+                </div>
             </li>
         </ul>
         <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
@@ -89,7 +88,7 @@
         </ul>
     </div>
 </nav>
-<h1>Agrysurvey domanda danni</h1>
+<h1>Agrysurvey domanda danni</h1><hr class="col-xs-12">
 <div class="container contenuto">
     {% block content%}
 

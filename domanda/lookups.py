@@ -14,8 +14,8 @@ class ThingsLookup(LookupChannel):
             return True
 
     def get_query(self, q, request):
-        queryset = self.model.objects.annotate(search_name=Concat('comune', V(' '),Substr('foglio',5,8),V(' '),'part'))
-        return queryset.filter(search_name__icontains=q)[:10]
+        queryset = self.model.objects.annotate(search_name=Concat('comune', V(' '),Substr('foglio',5,3),V(' '),'part'))
+        return queryset.filter(search_name__icontains=q)[:5]
 
     # def format_item_display(self, item):
     #     return u"<span class='tag'>%s</span>" % item.foglio
