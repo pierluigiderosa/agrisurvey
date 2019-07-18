@@ -30,9 +30,10 @@ quadranti_mapping = {
 
 imagery_mapping = {
     'location' : 'location',
-    'id' : 'id',
+    'num' : 'num',
     'geom' : 'MULTIPOLYGON',
 }
+
 
 
 catastale_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), 'data', 'catastale_small.shp'))

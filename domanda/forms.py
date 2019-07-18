@@ -42,10 +42,13 @@ class DannoFormCAA(forms.ModelForm):
 
     class Meta:
         model = danno
-        fields = ('richiedente', 'coltura', 'varieta','SumTot',
+        fields = ('richiedente','data_danno', 'coltura', 'varieta','SumTot',
                   'SumSem','PercDanno','Produzione','PerProdPersa','ValoreDanno', 'NumPianteDan',
                   'TipoPiante','SelvagginaSem','OpereProtezione','mappale','note','foglio', 'particella',)
         #widgets = {'fog_part_certified': forms.CheckboxSelectMultiple}
+        widgets = {
+            'data_danno': forms.SelectDateWidget(years=range(2015, 2100))
+        }
         labels = {
             'mappale': 'Estratto di mappa',
         }
@@ -76,7 +79,7 @@ class AgricoltoreForm(forms.ModelForm):
     # il formato corretto per inserire la data risulta: mm/dd/yyyy
     class Meta:
         model = Agricoltore
-        exclude = ('user','RefTel','CF')
+        exclude = ('user','CF')
         #widgets = {'dataNascita', forms.DateInput}
         widgets = {
             'dataNascita': forms.SelectDateWidget(years=range(1900, 2000))

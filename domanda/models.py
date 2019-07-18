@@ -69,12 +69,12 @@ class quadranti(models.Model):
 
 class quandranti_livorno(models.Model):
     location = models.CharField(max_length=254)
-    id = models.BigIntegerField()
+    num = models.BigIntegerField()
     geom = models.MultiPolygonField(srid=3003)
 
     # Returns the string representation of the model.
     def __str__(self):  # __unicode__ on Python 2
-        return u'OFC: %s' % (self.id)
+        return u'OFC: %s' % (self.num)
 
 
 
@@ -82,6 +82,7 @@ class danno(models.Model):
     richiedente = models.ForeignKey(User, null=True, blank=True,limit_choices_to={'groups__name': "Agricoltore"})
     foglio = models.CharField(max_length=50,verbose_name='Fogli colpiti da danno',default='',null=True, blank=True,help_text='<b>Attenzione</b> da inserire solo nel caso in cui non si ritrova il catastale nel campo in fondo alla pagina')
     particella = models.CharField(max_length=50,default='',null=True, blank=True,help_text='<b>Attenzione</b> da inserire solo nel caso in cui non si ritrova il catastale nel campo in fondo alla pagina')
+    data_danno = models.DateField(blank=True,verbose_name='data del danno',null=True)
     coltura = models.CharField(max_length=50,default='')
     varieta = models.CharField(max_length=50,verbose_name='varietà colturale',blank=True)
     SumTot = models.FloatField(verbose_name='Superficie totale particelle ettari',default=0)
@@ -133,7 +134,7 @@ class danno(models.Model):
             if old_danno.Rilevatore is None and self.Rilevatore is not None:
                 #individuo il destinatario
                 if self.Rilevatore.email == '':
-                    to_mail = 'pierluigi.derosa@gfosservices.it'
+                    to_mail = 'pierluigi.derosa@unipg.it'
                 else:
                     to_mail = self.Rilevatore.email
                 #costruisco il corpo del messaggio
@@ -164,7 +165,8 @@ class Agricoltore(models.Model):
     dataNascita = models.DateField(blank=True,verbose_name='data di nascita',null=True)
     viaResidenza = models.CharField(max_length=100,verbose_name='via')
     ComuneRes = models.CharField(max_length=50, default='',verbose_name='Comune di residenza')
-    telefono = models.CharField(max_length=50, default='',blank=True)
+    telefono = models.CharField(max_length=50, default='',blank=True,verbose_name='Telefono')
+    cellulare = models.CharField(max_length=50, default='', blank=True, verbose_name='cellulare')
     CF = models.CharField(max_length=50,default='')
     pec = models.EmailField(blank=True,null=True,verbose_name='Email PEC:')
     PIva = models.CharField(max_length=255, default='',verbose_name='P. IVA')
@@ -173,6 +175,8 @@ class Agricoltore(models.Model):
     azNome = models.CharField(max_length=255, default='',blank=True,verbose_name='Nome azienda')
     azLoc = models.CharField(max_length=255, default='',blank=True,verbose_name='Località')
     azComune = models.CharField(max_length=255, default='',blank=True,verbose_name='Comune Azienda')
+    biologica = models.NullBooleanField(verbose_name='Azienda biologica',blank=True,null=True)
+    iban = IBANField(default='', blank=True, null=True, help_text='Iban per eventuale risarcimento')
 
 
 

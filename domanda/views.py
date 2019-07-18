@@ -12,13 +12,14 @@ from django.db import transaction
 from django.views.generic.edit import UpdateView
 from djgeojson.views import GeoJSONLayerView
 from django.core.mail import send_mail
+from django.contrib.staticfiles import finders
 
 from splite import make as mksplite
 from .forms import DannoFormAgricoltore, UserForm, AgricoltoreForm, DannoFormCAA
 from datetime import date
 from django.conf import settings
 
-from .models import danno, quadranti, catastale_new
+from .models import danno, quadranti, catastale_new, quandranti_livorno
 
 
 # Create your views here.
@@ -76,19 +77,24 @@ def quadrante(request,id):
     for i in range(danno_pid.fog_part_db.count()):
         catasto = danno_pid.fog_part_db.all()[i]
         catasto.mpoly.transform('3003')
-        quad_interessati = quadranti.objects.filter(mpoly__intersects=catasto.mpoly)
+        #prendevo i quadranti da tutta la regione
+        #quad_interessati = quadranti.objects.filter(mpoly__intersects=catasto.mpoly)
+
+        quad_interessati = quandranti_livorno.objects.filter(geom__intersects=catasto.mpoly)
 
         # ciclo per ogni quadtante toccato dal singolo catastale
-        for j in range(quad_interessati.count()):
-            quad_id.append(int(quad_interessati[j].fid))
+        for quadrante in quad_interessati:
+            quad_id.append(int(quadrante.num))
 
     # prendo i valori unici di tutti i quadranti
     quadranti_list = list(set(quad_id))
     mbtilesPathList=[]
     for qd in range(len(quadranti_list)):
-        mbtilesPath = os.path.join(settings.STATIC_URL, 'mbtiles', 'ortofoto_%d'%(quadranti_list[qd])+'.mbtiles' )
+        mbtilesPath = os.path.join(settings.STATIC_URL, 'mbtiles', '%d'%(quadranti_list[qd])+'.mbtiles' )
+        #controllo se il file esiste
+        result = finders.find('mbtiles/%d'%(quadranti_list[qd])+'.mbtiles')
         # una lista che contiene una tupla con path e quadrante
-        mbtilesPathList.append((mbtilesPath,quadranti_list[qd]))
+        mbtilesPathList.append((result,mbtilesPath,quadranti_list[qd]))
         # TODO: corregge il path sotto
         html_test += '<a href="%s">mbtiles %d</a>' % (mbtilesPath, quadranti_list[qd])
         html_test += '<br>'

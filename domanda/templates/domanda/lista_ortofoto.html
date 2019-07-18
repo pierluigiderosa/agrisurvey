@@ -1,9 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="list-group">
-    {% for path,quadrante in mbtilesPaths %}
-  <a href="{{ path }}" class="list-group-item list-group-item-action">#{{ forloop.counter }} quadrante: {{ quadrante }}</a>
-  {% endfor %}
-</div>
+    <div class="list-group">
+        {% if mbtilesPaths %}
+            {% for result,path,quadrante in mbtilesPaths %}
+                {% if result %}
+                    <p>{{ result }}</p>
+                    <a href="{{ path }}" class="list-group-item list-group-item-action">#{{ forloop.counter }} quadrante: {{ quadrante }}</a>
+                {% else %}
+                    <p class="list-group-item list-group-item-action">#{{ forloop.counter }} quadrante: {{ quadrante }} -- Ortofoto non presente sul server per mancanza spazio</p>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <h3>Nessuna ortofoto presente nel sistema per la zona.</h3>
+        {% endif %}
+    </div>
 {% endblock content %}
