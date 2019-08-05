@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h2>Riepilogo delle domande di tua competenza per i quali puoi ottenere il report.</h2>
+        <h3>Solo se la domanda è <b>completa</b> puoi scaricare il report</h3>
+        <p>I Rilevatori visualizzano la lista ma non possono accedere ai dettagli in quanto non proprietari della domanda.</p>
+        <p>Se i rilevatori vogliono vedere i dettagli della domanda devono <a href="{% url 'mostra-rilievi' %}">cliccare qui</a> </p>
+    <table style="width:100%" class="table table-hover table-responsive">
+            <thead class="thead-light">
+    <tr>
+        <th scope="col">id pratica</th>
+        <th scope="col">Richiedente</th>
+        <th scope="col">Valore danno</th>
+        <th scope="col">data inserimento</th>
+        <th scope="col">stato</th>
+        <th scope="col">part. inserite</th>
+        <th scope="col">Download</th>
+    </tr>
+    </thead>
+    {% for danno in danni_lista %}
+        <tr>
+            <th scope="row"><a href="{{ danno.get_absolute_url }}">{{ danno.id }}</a></th>
+            <td>{{ danno.richiedente }}</td>
+            <td>€ {{ danno.ValoreDanno }}</td>
+            <td>{{ danno.data_ins|date }}</td>
+            <td>{{ danno.stato_pratica }}</td>
+            <td>{{ danno.fog_part_db.count }}</td>
+            <td><a class="btn btn-primary" href="{% url 'report_rilievo_singolo' id=danno.id %}"><i class="far fa-file-pdf"></i></a></td>
+        </tr>
+    {% empty %}
+        <tr>
+            <th>Non risultano domande complete per cui è possibile scaricare il report</th>
+        </tr>
+    {% endfor %}
+</table>
+{% else %}
+        <p>Benvenuto. Pagina non visibile agli utenti esterni. <br>Per favore effettua il <a href="{% url "login" %}">Login</a></p>
+{% endif %}
+{% endblock content %}

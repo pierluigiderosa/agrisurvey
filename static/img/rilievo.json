@@ -103,7 +103,7 @@
           "type": "string"
         },{
           "key": "Localizzazione_fondo",
-          "label":"Opere di prevenzione presenti",
+          "label":"Localizzazione del fondo",
           "values": {
             "items": [
               {"item": "Territorio di caccia programmata"},
@@ -116,6 +116,11 @@
           },
           "value": "",
           "type": "multistringcombo"
+        },{
+          "key": "Localizzazione_fondo_altro",
+          "label": "Altre localizzazioni del fondo",
+          "value": "",
+          "type": "string"
         },
         {
           "key": "OperePrevenzione",
@@ -134,6 +139,12 @@
           },
           "value": "",
           "type": "multistringcombo"
+        },
+        {
+          "key": "OperePrevenzione_altro",
+          "label": "Altre Opere di prevenzione presenti",
+          "value": "",
+          "type": "string"
         },
         {
           "key": "FunzionalitaPrevenzione",
@@ -168,7 +179,7 @@
         },
         {
           "key": "coltura",
-          "label": "Categoria coltura danneggiata",
+          "label": "Categoria colturale danneggiata",
           "values": {
             "items": [
               {"item": "Cereali"},
@@ -189,7 +200,14 @@
           },
           "value": "",
           "type": "stringcombo"
-        },{
+        },
+        {
+          "key": "coltura_altro",
+          "label": "Altra coltura danneggiata",
+          "value": "",
+          "type": "string"
+        },
+        {
           "key": "varieta",
           "label": "Coltura e varietà",
           "value": "",
@@ -276,6 +294,17 @@
           "value": "",
           "type": "multistringcombo"
         },{
+          "key": "Specie1_altro",
+          "label": "Specie 1 Altro",
+              "value": "",
+              "type": "string"
+        },{
+          "key": "perc_specie1",
+          "label": "% specie 1",
+          "value": "",
+          "type": "integer"
+        },
+        {
           "key": "Specie2",
           "label": "Specie 2",
           "values": {
@@ -301,6 +330,12 @@
           "value": "",
           "type": "multistringcombo"
         },{
+          "key": "Specie2_altro",
+          "label": "Specie 2 Altro",
+              "value": "",
+              "type": "string"
+        },
+        {
           "key": "perc_specie2",
           "label": "% specie 2",
           "value": "",

@@ -92,7 +92,7 @@ class danno(models.Model):
     PerProdPersa = models.BigIntegerField(verbose_name='% produzione persa',default=0,validators=[MinValueValidator(0), MaxValueValidator(100)],help_text='valore compreso tra 0 e 100')
     ValoreDanno = models.BigIntegerField(verbose_name='ipotetico valore del danno stimato dal dichiarante',default=0)
     NumPianteDan = models.BigIntegerField(verbose_name='numero piante danneggiate',default=0,blank=True)
-    TipoPiante  = models.CharField(max_length=50,blank=True)
+    TipoPiante  = models.CharField(max_length=50,blank=True,verbose_name='Tipologia di piante oggetto di danneggiamento',help_text='''età dell'impianto, altezza, caratteristiche se vivaio, ecc.''')
     SelvagginaSem = models.CharField(max_length=250,default='',verbose_name='Selvaggina che ha fatto i danni alla coltura')
     OpereProtezione = models.CharField(max_length=250,blank=True)
     polizza = models.NullBooleanField(verbose_name='Polizza assicurativa',blank=True,null=True)

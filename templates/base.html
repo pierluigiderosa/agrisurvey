@@ -51,15 +51,19 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     {% if user.groups.all.0.name != "Rilevatore" %}
                         <a class="dropdown-item" href="/domanda/inserisci/">Inserisci domanda</a>
-                        <div class="dropdown-divider"></div>
                     {% endif %}
+
                     {% if user.groups.all.0.name == "CAA" %}
-                        <a class="dropdown-item" href="/domanda/inserisci/agricoltore/">Inserisci agricoltore</a>
                         <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/domanda/inserisci/agricoltore/">Inserisci agricoltore</a>
                     {% endif %}
+
                     {% if user.groups.all.0.name == "Rilevatore" %}
+                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/domanda/assegna/">Assegnazione domande</a>
                     {% endif %}
+                        <div class="dropdown-divider"></div>
+                         <a class="dropdown-item" href="/rilievo/reports/">Report</a>
                 </div>
             </li>
             <li class="nav-item dropdown">

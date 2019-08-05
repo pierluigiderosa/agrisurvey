@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
+from django.views.generic import ListView
 from djgeojson.views import GeoJSONLayerView
 from domanda.models import danno
 
@@ -85,6 +86,29 @@ def mostra_singolo_rilievo(request,id):
     error=False
 
     return render(request, "rilievo_singolo.html", {'anagrafica': anagrafica_pratica,'rilievi':rilievi_pratica ,'error': error})
+
+# Create your views here.
+class lista_reports(ListView):
+    context_object_name = 'danni_lista'
+    # queryset=danno.objects.all().order_by('-data_ins','id')
+    template_name = "lista_reports.html"
+
+    def get_queryset(self):
+        if self.request.user.is_authenticated:
+            if not self.request.user.is_superuser:
+                #mostro i la lista dei danni a seconda del tipo di utente
+                if self.request.user.groups.filter(name__in=['Agricoltore']).exists():
+                    return danno.objects.filter(richiedente=self.request.user,stato_pratica='completa').order_by('-data_ins', 'id')
+                if self.request.user.groups.filter(name__in=['CAA']).exists():
+                    return danno.objects.filter(CAA=self.request.user,stato_pratica='completa').order_by('-data_ins', 'id')
+                # TODO togliere le due righe sotto
+                if self.request.user.groups.filter(name__in=['Rilevatore']).exists():
+                    return danno.objects.filter(Rilevatore=self.request.user,stato_pratica='completa').order_by('-data_ins', 'id')
+            else:
+                return danno.objects.all().order_by('-data_ins', 'id')
+        else:
+            return Http404
+
 
 
 def help_rilievo(request):
