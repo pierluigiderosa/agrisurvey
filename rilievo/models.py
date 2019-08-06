@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from datetime import date
+
 from django.contrib.gis.db import models
 from domanda.models import danno
 
@@ -22,10 +24,24 @@ class rilievo_poly(models.Model):
     Specie2 = models.CharField(max_length=250,blank=True,null=True)
     foglio = models.CharField(max_length=50,blank=True,null=True)
     varieta = models.CharField(max_length=50,blank=True,null=True)
+    #nuovi campi aggiunti dopo modifica rilievo di cavini
+    specie1_altro = models.CharField(max_length=250,blank=True,null=True,default='')
+    statovegsanitario = models.CharField(max_length=250, blank=True, null=True, default='')
+    numpiantesostituire = models.FloatField(blank=True, null=True, default=0)
+    colturabiologica = models.CharField(max_length=250, blank=True, null=True, default='')
+    note_colturali = models.CharField(max_length=250, blank=True, null=True, default='')
+    OperePrevenzione_altro = models.CharField(max_length=250, blank=True, null=True, default='')
+    coltura_altro = models.CharField(max_length=250, blank=True, null=True, default='')
+    FunzionalitaPrevenzione = models.CharField(max_length=250, blank=True, null=True, default='')
+    perc_specie2 = models.FloatField(blank=True, null=True, default=0)
+    superficierisemina = models.FloatField(blank=True, null=True, default=0)
+    Localizzazione_fondo_altro = models.CharField(max_length=250, blank=True, null=True, default='')
+    quantitaprodotto = models.FloatField(blank=True, null=True, default=0)
+    perc_specie1 = models.FloatField(blank=True, null=True, default=0)
+    Specie2_altro = models.CharField(max_length=250, blank=True, null=True, default='')
+
     #id pratica
     id_pratica = models.ForeignKey(danno,on_delete=models.CASCADE,blank=True,null=True)
-
-
 
     # GeoDjango-specific: a geometry field (MultiPolygonField)
     mpoly = models.MultiPolygonField(srid=3003)
@@ -40,12 +56,18 @@ class rilievo_poly(models.Model):
 
 class anagrafica(models.Model):
     mappa = models.CharField(max_length=250,blank=True, null=True)
-    Firma = models.FileField(max_length=250,blank=True, upload_to='firme/', help_text='firme jpg')
+    Firma = models.FileField(max_length=250,blank=True, upload_to='firme/', help_text='firma rapp. aziendale jpg')
     Rapp_Az = models.CharField(max_length=250,blank=True,null=True)
     Az_Ag_denominazione = models.CharField(max_length=250,blank=True, null=True)
     Rapp_Az_documento  = models.CharField(max_length=250,blank=True, null=True)
     Az_Ag_possesso = models.CharField(max_length=250,blank=True, null=True)
     Az_Ag_indirizzo = models.CharField(max_length=250,blank=True, null=True)
+    #campi aggiunti da modifica di form di cavini
+    data_sopralluogo = models.DateField(blank=True,null=True,default=date(2019, 8, 6)) #giorno di agosto che ho lavorato a agrisurvey
+    tecnico_incaricato = models.CharField(max_length=250,blank=True,null=True,default='')
+    Firma_rilevatore = models.FileField(max_length=250, blank=True, upload_to='firme/', help_text='firma rilevatore png')
+
+
     #id pratica
     id_pratica = models.ForeignKey(danno,on_delete=models.CASCADE,blank=True,null=True)
 

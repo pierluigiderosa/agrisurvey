@@ -8,7 +8,7 @@ from django.core.files import File
 from pysqlite2 import dbapi2 as sqlite3
 from .models import rilievo_poly,anagrafica
 from domanda.models import danno
-
+from datetime import datetime as dt
 
 
 def ExportFormNotes(file_gpap,id_danno):
@@ -49,7 +49,6 @@ def ExportFormNotes(file_gpap,id_danno):
                 rilievo_list.append(out)
 
 
-
         if cleanName.startswith('agrisurvey_anag'):
             for note in notes:
                 # there are some more attributes to save ...
@@ -64,7 +63,7 @@ def ExportFormNotes(file_gpap,id_danno):
                     for item in formitem:
                         if item.has_key('key'):
                             anagrafica_output[item['key']] = item['value']
-            #get firma
+            #get firma rappresentante aziendale
             firma = anagrafica_output['Firma']
             if len(firma.split(';'))>1:
                 firma=firma.split(';')[1]
@@ -75,6 +74,20 @@ def ExportFormNotes(file_gpap,id_danno):
             out_file.write(imgData[1])
             out_file.close()
 
+            #get firma rilevatore
+            firma_rilevatore = anagrafica_output['Firma_rilevatore']
+            if len(firma_rilevatore.split(';')) > 1:
+                firma_rilevatore = firma_rilevatore.split(';')[1]
+            imgsData_rilevatore = DBcursor.execute("SELECT * FROM imagedata WHERE _id = " + str(firma_rilevatore))
+            imgsData_rilevatore = imgsData_rilevatore.fetchone()
+            # salvo il file in tmp dir
+            out_file = open(osp.join('/tmp/', 'firma_pratica_rilevatore.png'), 'wb')
+            out_file.write(imgsData_rilevatore[1])
+            out_file.close()
+
+            #data sopralluogo
+            datasop_string = anagrafica_output['data_sopralluogo']
+            data_soprallugo = dt.strptime(datasop_string, '%Y-%m-%d')
             #salvo anagrafica in DB
 
             anag = anagrafica(
@@ -85,12 +98,17 @@ def ExportFormNotes(file_gpap,id_danno):
                 Rapp_Az_documento = anagrafica_output['Rapp_Az_documento'],
                 Az_Ag_possesso = anagrafica_output['Az_Ag_possesso'],
                 Az_Ag_indirizzo = anagrafica_output['Az_Ag_indirizzo'],
+                # campi aggiunti da modifica form di cavini
+                data_sopralluogo = data_soprallugo,
+                tecnico_incaricato=anagrafica_output['tecnico_incaricato'],
                 # id pratica
                 id_pratica = danno.objects.get(pk=id_danno),
             )
 
             anag.save()
             anag.Firma.save('firma_pratica_%s.jpg' %(str(id_danno)), File(open('/tmp/firma_pratica.jpg', 'r')))
+            # aggiunta firma rilevatore da modifica form di cavini
+            anag.Firma_rilevatore.save('firma_pratica_rilevatore_%s.jpg' % (str(id_danno)), File(open('/tmp/firma_pratica_rilevatore.png', 'r')))
 
     con.close()
     return anagrafica_output,rilievo_list,errore
@@ -166,6 +184,22 @@ def spatial_join(poligoni,rilievi,id_danno):
             Specie2 =rilievo['Specie2'],
             foglio = rilievo['foglio'],
             varieta = rilievo['varieta'],
+            #salvataggio altri dati di rilievo dopo modifica cavini
+            specie1_altro=rilievo['Specie1_altro'],
+            statovegsanitario = rilievo['statovegsanitario'],
+            numpiantesostituire = rilievo['numpiantesostituire'],
+            colturabiologica = rilievo['colturabiologica'],
+            note_colturali = rilievo['note_colturali'],
+            OperePrevenzione_altro = rilievo['OperePrevenzione_altro'],
+            coltura_altro = rilievo['coltura_altro'],
+            FunzionalitaPrevenzione = rilievo['FunzionalitaPrevenzione'],
+            perc_specie2 =rilievo['perc_specie2'],
+            superficierisemina =rilievo['superficierisemina'],
+            Localizzazione_fondo_altro =rilievo['Localizzazione_fondo_altro'],
+            quantitaprodotto = rilievo['quantitaprodotto'],
+            perc_specie1 = rilievo['perc_specie1'],
+            Specie2_altro = rilievo['Specie2_altro'],
+
             # id pratica
             id_pratica = danno.objects.get(pk=id_danno),
             mpoly = poligoni[id_ok][0],
