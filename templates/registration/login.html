@@ -1,39 +1,54 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+
+
 
 {% block content %}
-
-{% if form.errors %}
-<p>Il tuo username e password non corrispondono. Per favore riprova.</p>
-{% endif %}
-
-{% if next %}
+    {% if next %}
     {% if user.is_authenticated %}
     <p>Il tuo account non ha i permessi per accedere a questa pagina. Per favore esegui il login e poi procedi..</p>
     {% else %}
     <p>Per favore esegui il login a questa pagina.</p>
     {% endif %}
 {% endif %}
+    <div id="content-container" class="container p-none">
+        <div class="form-module form-module-login">
 
-<form method="post" action="{% url 'login' %}">
-{% csrf_token %}
+            <div id="login-form" class="form">
+                <div class="brand-form login-custom">
+                    <h2><i class="fas fa-sign-in-alt"></i>
+                        Inserisci le tue credenziali</h2>
+                </div>
+                <form id="login-form" method="post"
+                      action="{% url 'login' %}">
+                    {% csrf_token %}
 
-<div>
-  <td>{{ form.username.label_tag }}</td>
-  <td>{{ form.username }}</td>
-</div>
-<div>
-  <td>{{ form.password.label_tag }}</td>
-  <td>{{ form.password }}</td>
-</div>
+                    <label for="id_username">Username</label>
+                    <input id="id_username" name="username"
+                           type="text" class="form-control" placeholder="Nome utente">
 
-<div>
-  <input type="submit" value="login" />
-  <input type="hidden" name="next" value="{{ next }}" />
-</div>
-</form>
+                    <label for="id_password">Password</label>
+                    <input id="id_password" name="password"
+                           type="password" class="form-control" placeholder="password">
+                    <div class="help-toggle login-custom">
+                        <a href="/info">
+                            <span class="question-mark"><i class="fa fa-question-circle"></i></span>
+                            <span><a href="{% url 'password_reset' %}">Password dimenticata?</a></span>
+                        </a>
+                    </div>
+                    {% if form.errors %}
+                        <p class=" label label-danger">
+                            Il tuo username e password non corrispondono.
+                            Per favore riprova.
+                        </p>
+                    {% endif %}
 
-{# Assumes you setup the password_reset view in your URLconf #}
-<!--<p><a href="{% url 'password_reset' %}">Lost password?</a></p>-->
-
-
-{% endblock %}
+                    <input type="submit" value="Login"
+                           class="btn btn-primary pull-right" />
+                    <input type="hidden" name="next" value="{{ next }}" />
+                    <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

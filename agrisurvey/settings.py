@@ -144,7 +144,24 @@ LOGIN_REDIRECT_URL = '/domanda/'
 
 
 LEAFLET_CONFIG = {
-    'SPATIAL_EXTENT': (9.35,42, 12.5,44.6)
+    'SPATIAL_EXTENT': (9.35,42, 12.5,44.6),
+
+'TILES': [
+
+    ('OSM','http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {'attribution': '&copy; <a href="http://www.openstreetmap.org/copyright/">OpenStreetMap</a> contributors, under ODbL '}),
+
+        # ('Esri Word Topo', 'http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x} ', {'attribution': '&copy; Esri'}),
+        #
+        # ('Stamen', 'http://a.tile.stamen.com/terrain/{z}/{x}/{y}.png', {'attribution': '&copy; Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap', 'maxZoom': 22}),
+
+    ],
+    'OVERLAYS': [
+        ('Mapbox satellite',
+         'https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA ',
+         {'attribution': '&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a>'})
+    ],
+    'ATTRIBUTION_PREFIX': 'Powered by <a href="https://www.onegis.it/">Agrisurvey SA</a>',
+    'MINIMAP': False,
 }
 
 
@@ -152,7 +169,12 @@ LEAFLET_CONFIG = {
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 EMAIL_HOST = config('EMAIL_HOST')
-EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_PORT = '465'
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-EMAIL_USE_TLS = True
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

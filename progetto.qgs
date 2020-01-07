@@ -1,37 +1,69 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" version="2.18.16">
+<qgis projectname="" version="3.4.4-Madeira">
+  <homePath path=""/>
   <title></title>
   <autotransaction active="0"/>
   <evaluateDefaultValues active="0"/>
-  <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
+  <trust active="0"/>
+  <projectCrs>
+    <spatialrefsys>
+      <proj4>+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=1500000 +y_0=0 +ellps=intl +towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68 +units=m +no_defs</proj4>
+      <srsid>968</srsid>
+      <srid>3003</srid>
+      <authid>EPSG:3003</authid>
+      <description>Monte Mario / Italy zone 1</description>
+      <projectionacronym>tmerc</projectionacronym>
+      <ellipsoidacronym>intl</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys>
+  </projectCrs>
+  <layer-tree-group>
     <customproperties/>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="dati_agrisurvey_comuni_toscana_300320180227151315660" source="/media/pierluigi/LENOVO1/lavori/63_agrisurvey/dati_agrisurvey.gpkg|layerid=3" name="dati_agrisurvey comuni_toscana_3003">
+    <layer-tree-layer id="dati_agrisurvey_comuni_toscana_300320180227151315660" name="dati_agrisurvey comuni_toscana_3003" expanded="1" providerKey="ogr" source="/media/pierluigi/LENOVO1/lavori/63_agrisurvey/dati_agrisurvey.gpkg|layerid=3" checked="Qt::Checked">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="dati_agrisurvey20180227072711907" source="/media/pierluigi/LENOVO1/lavori/63_agrisurvey/dati_agrisurvey.gpkg|layername=toscana_3003" name="dati_agrisurvey toscana_3003 MultiPolygon">
+    <layer-tree-layer id="dati_agrisurvey20180227072711907" name="dati_agrisurvey toscana_3003 MultiPolygon" expanded="1" providerKey="ogr" source="/media/pierluigi/LENOVO1/lavori/63_agrisurvey/dati_agrisurvey.gpkg|layername=toscana_3003" checked="Qt::Unchecked">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="wms" checked="Qt::Unchecked" id="Particelle_catastali___AdT_Catasto_Terreni20180123183217966" source="contextualWMSLegend=0&amp;crs=EPSG:3003&amp;dpiMode=7&amp;featureCount=10&amp;format=image/png&amp;layers=rt_cat.idcatpart.rt&amp;styles=&amp;url=http://www502.regione.toscana.it/wmsraster/com.rt.wms.RTmap/wms?map%3Dwmscatasto%26map_resolution%3D91%26language%3Dita%26" name="Particelle catastali - AdT Catasto Terreni">
+    <layer-tree-layer id="Particelle_catastali___AdT_Catasto_Terreni20180123183217966" name="Particelle catastali - AdT Catasto Terreni" expanded="1" providerKey="wms" source="contextualWMSLegend=0&amp;crs=EPSG:3003&amp;dpiMode=7&amp;featureCount=10&amp;format=image/png&amp;layers=rt_cat.idcatpart.rt&amp;styles=&amp;url=http://www502.regione.toscana.it/wmsraster/com.rt.wms.RTmap/wms?map%3Dwmscatasto%26map_resolution%3D91%26language%3Dita%26" checked="Qt::Unchecked">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="domanda_quadranti20180227072409324" source="dbname='agrisurvey_db_new' host=localhost port=5432 user='pierluigi' sslmode=disable key='id' srid=3003 type=MultiPolygon table=&quot;public&quot;.&quot;domanda_quadranti&quot; (mpoly) sql=" name="domanda_quadranti">
+    <layer-tree-layer id="domanda_quadranti20180227072409324" name="domanda_quadranti" expanded="1" providerKey="postgres" source="dbname='agrisurvey_db_new' host=localhost port=5432 user='pierluigi' sslmode=disable key='id' srid=3003 type=MultiPolygon table=&quot;public&quot;.&quot;domanda_quadranti&quot; (mpoly) sql=" checked="Qt::Checked">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="e466001020180208222755389" source="/home/pierluigi/Sviluppo/agrisurvey/domanda/data/e4660010.shp" name="e4660010">
+    <layer-tree-layer id="e466001020180208222755389" name="e4660010" expanded="1" providerKey="ogr" source="./domanda/data/e4660010.shp" checked="Qt::Unchecked">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="wms" checked="Qt::Unchecked" id="OFC_2016_20cm___32_bit_colore___RGB20180208222656341" source="contextualWMSLegend=0&amp;crs=EPSG:3003&amp;dpiMode=7&amp;featureCount=10&amp;format=image/png&amp;layers=rt_ofc.5k16.32bit&amp;styles=&amp;url=http://www502.regione.toscana.it/ows_ofc/com.rt.wms.RTmap/wms?map%3Dowsofc%26map_resolution%3D91%26" name="OFC 2016 20cm - 32 bit colore - RGB">
+    <layer-tree-layer id="OFC_2016_20cm___32_bit_colore___RGB20180208222656341" name="OFC 2016 20cm - 32 bit colore - RGB" expanded="1" providerKey="wms" source="contextualWMSLegend=0&amp;crs=EPSG:3003&amp;dpiMode=7&amp;featureCount=10&amp;format=image/png&amp;layers=rt_ofc.5k16.32bit&amp;styles=&amp;url=http://www502.regione.toscana.it/ows_ofc/com.rt.wms.RTmap/wms?map%3Dowsofc%26map_resolution%3D91%26" checked="Qt::Unchecked">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="wms" checked="Qt::Unchecked" id="mapbox_satellite20180123074811784" source="crs=EPSG:3857&amp;format=&amp;type=xyz&amp;url=https://c.tiles.mapbox.com/v4/freddi.m2nj71k6/%7Bz%7D/%7Bx%7D/%7By%7D.png?access_token%3Dpk.eyJ1IjoiZnJlZGRpIiwiYSI6InhWUFRCYk0ifQ.qmjZlLlDE-EnjmTwp9Rf0Q" name="mapbox satellite">
+    <layer-tree-layer id="mapbox_satellite20180123074811784" name="mapbox satellite" expanded="1" providerKey="wms" source="crs=EPSG:3857&amp;format=&amp;type=xyz&amp;url=https://c.tiles.mapbox.com/v4/freddi.m2nj71k6/%7Bz%7D/%7Bx%7D/%7By%7D.png?access_token%3Dpk.eyJ1IjoiZnJlZGRpIiwiYSI6InhWUFRCYk0ifQ.qmjZlLlDE-EnjmTwp9Rf0Q" checked="Qt::Unchecked">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="wms" checked="Qt::Unchecked" id="OSM_classic20180123074639872" source="crs=EPSG:3857&amp;format=&amp;type=xyz&amp;url=http://c.tile.openstreetmap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png" name="OSM classic">
+    <layer-tree-layer id="OSM_classic20180123074639872" name="OSM classic" expanded="1" providerKey="wms" source="crs=EPSG:3857&amp;format=&amp;type=xyz&amp;url=http://c.tile.openstreetmap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png" checked="Qt::Unchecked">
       <customproperties/>
     </layer-tree-layer>
+    <custom-order enabled="0">
+      <item>OSM_classic20180123074639872</item>
+      <item>mapbox_satellite20180123074811784</item>
+      <item>Particelle_catastali___AdT_Catasto_Terreni20180123183217966</item>
+      <item>OFC_2016_20cm___32_bit_colore___RGB20180208222656341</item>
+      <item>e466001020180208222755389</item>
+      <item>domanda_quadranti20180227072409324</item>
+      <item>dati_agrisurvey20180227072711907</item>
+      <item>dati_agrisurvey_comuni_toscana_300320180227151315660</item>
+    </custom-order>
   </layer-tree-group>
+  <snapping-settings type="1" tolerance="0" mode="1" unit="2" intersection-snapping="0" enabled="0">
+    <individual-layer-settings>
+      <layer-setting id="e466001020180208222755389" type="2" tolerance="0" enabled="0" units="2"/>
+      <layer-setting id="domanda_quadranti20180227072409324" type="2" tolerance="0" enabled="0" units="2"/>
+      <layer-setting id="dati_agrisurvey_comuni_toscana_300320180227151315660" type="2" tolerance="0" enabled="0" units="2"/>
+      <layer-setting id="dati_agrisurvey20180227072711907" type="2" tolerance="0" enabled="0" units="2"/>
+    </individual-layer-settings>
+  </snapping-settings>
   <relations/>
-  <mapcanvas>
+  <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
       <xmin>1505013.90917957574129105</xmin>
@@ -40,7 +72,6 @@
       <ymax>4938684.18011383805423975</ymax>
     </extent>
     <rotation>0</rotation>
-    <projections>0</projections>
     <destinationsrs>
       <spatialrefsys>
         <proj4>+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=1500000 +y_0=0 +ellps=intl +towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68 +units=m +no_defs</proj4>
@@ -54,69 +85,127 @@
       </spatialrefsys>
     </destinationsrs>
     <rendermaptile>0</rendermaptile>
-    <layer_coordinate_transform_info/>
   </mapcanvas>
-  <layer-tree-canvas>
-    <custom-order enabled="0">
-      <item>OSM_classic20180123074639872</item>
-      <item>mapbox_satellite20180123074811784</item>
-      <item>Particelle_catastali___AdT_Catasto_Terreni20180123183217966</item>
-      <item>OFC_2016_20cm___32_bit_colore___RGB20180208222656341</item>
-      <item>e466001020180208222755389</item>
-      <item>domanda_quadranti20180227072409324</item>
-      <item>dati_agrisurvey20180227072711907</item>
-      <item>dati_agrisurvey_comuni_toscana_300320180227151315660</item>
-    </custom-order>
-  </layer-tree-canvas>
+  <projectModels/>
   <legend updateDrawingOrder="true">
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="dati_agrisurvey comuni_toscana_3003" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="dati_agrisurvey_comuni_toscana_300320180227151315660" visible="1"/>
+    <legendlayer showFeatureCount="0" name="dati_agrisurvey comuni_toscana_3003" drawingOrder="-1" open="true" checked="Qt::Checked">
+      <filegroup hidden="false" open="true">
+        <legendlayerfile layerid="dati_agrisurvey_comuni_toscana_300320180227151315660" isInOverview="0" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="dati_agrisurvey toscana_3003 MultiPolygon" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="dati_agrisurvey20180227072711907" visible="0"/>
+    <legendlayer showFeatureCount="0" name="dati_agrisurvey toscana_3003 MultiPolygon" drawingOrder="-1" open="true" checked="Qt::Unchecked">
+      <filegroup hidden="false" open="true">
+        <legendlayerfile layerid="dati_agrisurvey20180227072711907" isInOverview="0" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Particelle catastali - AdT Catasto Terreni" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="Particelle_catastali___AdT_Catasto_Terreni20180123183217966" visible="0"/>
+    <legendlayer showFeatureCount="0" name="Particelle catastali - AdT Catasto Terreni" drawingOrder="-1" open="true" checked="Qt::Unchecked">
+      <filegroup hidden="false" open="true">
+        <legendlayerfile layerid="Particelle_catastali___AdT_Catasto_Terreni20180123183217966" isInOverview="0" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="domanda_quadranti" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="domanda_quadranti20180227072409324" visible="1"/>
+    <legendlayer showFeatureCount="0" name="domanda_quadranti" drawingOrder="-1" open="true" checked="Qt::Checked">
+      <filegroup hidden="false" open="true">
+        <legendlayerfile layerid="domanda_quadranti20180227072409324" isInOverview="0" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="e4660010" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="e466001020180208222755389" visible="0"/>
+    <legendlayer showFeatureCount="0" name="e4660010" drawingOrder="-1" open="true" checked="Qt::Unchecked">
+      <filegroup hidden="false" open="true">
+        <legendlayerfile layerid="e466001020180208222755389" isInOverview="0" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OFC 2016 20cm - 32 bit colore - RGB" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="OFC_2016_20cm___32_bit_colore___RGB20180208222656341" visible="0"/>
+    <legendlayer showFeatureCount="0" name="OFC 2016 20cm - 32 bit colore - RGB" drawingOrder="-1" open="true" checked="Qt::Unchecked">
+      <filegroup hidden="false" open="true">
+        <legendlayerfile layerid="OFC_2016_20cm___32_bit_colore___RGB20180208222656341" isInOverview="0" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="mapbox satellite" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="mapbox_satellite20180123074811784" visible="0"/>
+    <legendlayer showFeatureCount="0" name="mapbox satellite" drawingOrder="-1" open="true" checked="Qt::Unchecked">
+      <filegroup hidden="false" open="true">
+        <legendlayerfile layerid="mapbox_satellite20180123074811784" isInOverview="0" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OSM classic" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="OSM_classic20180123074639872" visible="0"/>
+    <legendlayer showFeatureCount="0" name="OSM classic" drawingOrder="-1" open="true" checked="Qt::Unchecked">
+      <filegroup hidden="false" open="true">
+        <legendlayerfile layerid="OSM_classic20180123074639872" isInOverview="0" visible="0"/>
       </filegroup>
     </legendlayer>
   </legend>
+  <mapViewDocks/>
+  <mapcanvas name="mAreaCanvas" annotationsVisible="1">
+    <units>meters</units>
+    <extent>
+      <xmin>1505013.90917957574129105</xmin>
+      <ymin>4666804.42202139180153608</ymin>
+      <xmax>1831602.60542245116084814</xmax>
+      <ymax>4938684.18011383805423975</ymax>
+    </extent>
+    <rotation>0</rotation>
+    <destinationsrs>
+      <spatialrefsys>
+        <proj4>+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=1500000 +y_0=0 +ellps=intl +towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68 +units=m +no_defs</proj4>
+        <srsid>968</srsid>
+        <srid>3003</srid>
+        <authid>EPSG:3003</authid>
+        <description>Monte Mario / Italy zone 1</description>
+        <projectionacronym>tmerc</projectionacronym>
+        <ellipsoidacronym>intl</ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </destinationsrs>
+    <rendermaptile>0</rendermaptile>
+  </mapcanvas>
+  <mapcanvas name="mAreaCanvas" annotationsVisible="1">
+    <units>meters</units>
+    <extent>
+      <xmin>1505013.90917957574129105</xmin>
+      <ymin>4666804.42202139180153608</ymin>
+      <xmax>1831602.60542245116084814</xmax>
+      <ymax>4938684.18011383805423975</ymax>
+    </extent>
+    <rotation>0</rotation>
+    <destinationsrs>
+      <spatialrefsys>
+        <proj4>+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=1500000 +y_0=0 +ellps=intl +towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68 +units=m +no_defs</proj4>
+        <srsid>968</srsid>
+        <srid>3003</srid>
+        <authid>EPSG:3003</authid>
+        <description>Monte Mario / Italy zone 1</description>
+        <projectionacronym>tmerc</projectionacronym>
+        <ellipsoidacronym>intl</ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </destinationsrs>
+    <rendermaptile>0</rendermaptile>
+  </mapcanvas>
+  <mapcanvas name="mAreaCanvas" annotationsVisible="1">
+    <units>meters</units>
+    <extent>
+      <xmin>1505013.90917957574129105</xmin>
+      <ymin>4666804.42202139180153608</ymin>
+      <xmax>1831602.60542245116084814</xmax>
+      <ymax>4938684.18011383805423975</ymax>
+    </extent>
+    <rotation>0</rotation>
+    <destinationsrs>
+      <spatialrefsys>
+        <proj4>+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=1500000 +y_0=0 +ellps=intl +towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68 +units=m +no_defs</proj4>
+        <srsid>968</srsid>
+        <srid>3003</srid>
+        <authid>EPSG:3003</authid>
+        <description>Monte Mario / Italy zone 1</description>
+        <projectionacronym>tmerc</projectionacronym>
+        <ellipsoidacronym>intl</ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </destinationsrs>
+    <rendermaptile>0</rendermaptile>
+  </mapcanvas>
   <projectlayers>
-    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+    <maplayer minScale="1e+08" autoRefreshEnabled="0" type="raster" autoRefreshTime="0" maxScale="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories">
       <extent>
-        <xmin>1530000</xmin>
-        <ymin>4665000</ymin>
-        <xmax>1800000</xmax>
-        <ymax>4950000</ymax>
+        <xmin>1551070.12978860549628735</xmin>
+        <ymin>4673216.22970076370984316</ymin>
+        <xmax>1782206.22440108354203403</xmax>
+        <ymax>4930534.02618340868502855</ymax>
       </extent>
       <id>OFC_2016_20cm___32_bit_colore___RGB20180208222656341</id>
       <datasource>contextualWMSLegend=0&amp;crs=EPSG:3003&amp;dpiMode=7&amp;featureCount=10&amp;format=image/png&amp;layers=rt_ofc.5k16.32bit&amp;styles=&amp;url=http://www502.regione.toscana.it/ows_ofc/com.rt.wms.RTmap/wms?map%3Dowsofc%26map_resolution%3D91%26</datasource>
@@ -136,27 +225,64 @@
           <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
-      <customproperties>
-        <property key="identify/format" value="Undefined"/>
-      </customproperties>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
       <provider>wms</provider>
       <noData>
         <noDataList bandNo="1" useSrcNoData="0"/>
       </noData>
-      <map-layer-style-manager current="">
-        <map-layer-style name=""/>
+      <map-layer-style-manager current="predefinito">
+        <map-layer-style name="predefinito"/>
       </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <customproperties>
+        <property value="Undefined" key="identify/format"/>
+      </customproperties>
       <pipe>
-        <rasterrenderer opacity="1" alphaBand="-1" band="1" type="singlebandcolordata">
+        <rasterrenderer alphaBand="-1" type="singlebandcolordata" band="1" opacity="1">
           <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>None</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
         </rasterrenderer>
         <brightnesscontrast brightness="0" contrast="0"/>
-        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+        <huesaturation colorizeGreen="128" colorizeBlue="128" grayscaleMode="0" colorizeOn="0" saturation="0" colorizeStrength="100" colorizeRed="255"/>
         <rasterresampler maxOversampling="2"/>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+    <maplayer minScale="1e+08" autoRefreshEnabled="0" type="raster" autoRefreshTime="0" maxScale="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories">
       <extent>
         <xmin>-20037508.34278924390673637</xmin>
         <ymin>-20037508.34278925508260727</ymin>
@@ -175,33 +301,70 @@
           <srsid>3857</srsid>
           <srid>3857</srid>
           <authid>EPSG:3857</authid>
-          <description>WGS 84 / Pseudo Mercator</description>
+          <description>WGS 84 / Pseudo-Mercator</description>
           <projectionacronym>merc</projectionacronym>
           <ellipsoidacronym>WGS84</ellipsoidacronym>
           <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
-      <customproperties>
-        <property key="identify/format" value="Undefined"/>
-      </customproperties>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
       <provider>wms</provider>
       <noData>
         <noDataList bandNo="1" useSrcNoData="0"/>
       </noData>
-      <map-layer-style-manager current="">
-        <map-layer-style name=""/>
+      <map-layer-style-manager current="predefinito">
+        <map-layer-style name="predefinito"/>
       </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <customproperties>
+        <property value="Undefined" key="identify/format"/>
+      </customproperties>
       <pipe>
-        <rasterrenderer opacity="1" alphaBand="-1" band="1" type="singlebandcolordata">
+        <rasterrenderer alphaBand="-1" type="singlebandcolordata" band="1" opacity="1">
           <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>None</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
         </rasterrenderer>
         <brightnesscontrast brightness="0" contrast="0"/>
-        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+        <huesaturation colorizeGreen="128" colorizeBlue="128" grayscaleMode="0" colorizeOn="0" saturation="0" colorizeStrength="100" colorizeRed="255"/>
         <rasterresampler maxOversampling="2"/>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+    <maplayer minScale="1e+08" autoRefreshEnabled="0" type="raster" autoRefreshTime="0" maxScale="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories">
       <extent>
         <xmin>1530000</xmin>
         <ymin>4665000</ymin>
@@ -226,32 +389,69 @@
           <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
-      <customproperties>
-        <property key="identify/format" value="Html"/>
-      </customproperties>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
       <provider>wms</provider>
       <noData>
         <noDataList bandNo="1" useSrcNoData="0"/>
       </noData>
-      <map-layer-style-manager current="">
-        <map-layer-style name=""/>
+      <map-layer-style-manager current="predefinito">
+        <map-layer-style name="predefinito"/>
       </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <customproperties>
+        <property value="Html" key="identify/format"/>
+      </customproperties>
       <pipe>
-        <rasterrenderer opacity="1" alphaBand="-1" band="1" type="singlebandcolordata">
+        <rasterrenderer alphaBand="-1" type="singlebandcolordata" band="1" opacity="1">
           <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>None</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
         </rasterrenderer>
         <brightnesscontrast brightness="0" contrast="0"/>
-        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+        <huesaturation colorizeGreen="128" colorizeBlue="128" grayscaleMode="0" colorizeOn="0" saturation="0" colorizeStrength="100" colorizeRed="255"/>
         <rasterresampler maxOversampling="2"/>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minScale="1e+08" simplifyAlgorithm="0" autoRefreshEnabled="0" type="vector" simplifyLocal="1" autoRefreshTime="0" simplifyMaxScale="1" maxScale="0" hasScaleBasedVisibilityFlag="0" simplifyDrawingHints="1" geometry="Polygon" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" simplifyDrawingTol="1" labelsEnabled="1" readOnly="0">
       <extent>
-        <xmin>1554750</xmin>
-        <ymin>4678330</ymin>
-        <xmax>1771650</xmax>
-        <ymax>4924790</ymax>
+        <xmin>1554746.125</xmin>
+        <ymin>4678332</ymin>
+        <xmax>1771651.875</xmax>
+        <ymax>4924787.5</ymax>
       </extent>
       <id>dati_agrisurvey20180227072711907</id>
       <datasource>/media/pierluigi/LENOVO1/lavori/63_agrisurvey/dati_agrisurvey.gpkg|layername=toscana_3003</datasource>
@@ -271,139 +471,262 @@
           <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
       <provider encoding="UTF-8">ogr</provider>
       <vectorjoins/>
       <layerDependencies/>
+      <dataDependencies/>
+      <legend type="default-vector"/>
       <expressionfields/>
-      <map-layer-style-manager current="">
-        <map-layer-style name=""/>
+      <map-layer-style-manager current="predefinito">
+        <map-layer-style name="predefinito"/>
       </map-layer-style-manager>
-      <edittypes>
-        <edittype widgetv2type="TextEdit" name="fid">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="codice_istat">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="comune">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="nome_ted">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="provincia">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="regione">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="cod_regione">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="cod_provincia">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="cod_comune">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="tipo">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-      </edittypes>
-      <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <renderer-v2 enableorderby="0" type="singleSymbol" forceraster="0" symbollevels="0">
         <symbols>
-          <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
-            <layer pass="0" class="SimpleFill" locked="0">
-              <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="39,163,245,255"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="0,0,0,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.26"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="style" v="solid"/>
+          <symbol type="fill" name="0" force_rhr="0" alpha="1" clip_to_extent="1">
+            <layer locked="0" class="SimpleFill" pass="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="39,163,245,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="MM" k="offset_unit"/>
+              <prop v="0,0,0,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="0.26" k="outline_width"/>
+              <prop v="MM" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option type="QString" value="" name="name"/>
+                  <Option name="properties"/>
+                  <Option type="QString" value="collection" name="type"/>
+                </Option>
+              </data_defined_properties>
             </layer>
           </symbol>
         </symbols>
         <rotation/>
-        <sizescale scalemethod="diameter"/>
+        <sizescale/>
       </renderer-v2>
-      <labeling type="simple"/>
       <customproperties/>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
-      <layerTransparency>0</layerTransparency>
-      <displayfield>fid</displayfield>
-      <label>0</label>
-      <labelattributes>
-        <label fieldname="" text="Etichetta"/>
-        <family fieldname="" name="Ubuntu"/>
-        <size fieldname="" units="pt" value="12"/>
-        <bold fieldname="" on="0"/>
-        <italic fieldname="" on="0"/>
-        <underline fieldname="" on="0"/>
-        <strikeout fieldname="" on="0"/>
-        <color fieldname="" red="0" blue="0" green="0"/>
-        <x fieldname=""/>
-        <y fieldname=""/>
-        <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
-        <angle fieldname="" value="0" auto="0"/>
-        <alignment fieldname="" value="center"/>
-        <buffercolor fieldname="" red="255" blue="255" green="255"/>
-        <buffersize fieldname="" units="pt" value="1"/>
-        <bufferenabled fieldname="" on=""/>
-        <multilineenabled fieldname="" on=""/>
-        <selectedonly on=""/>
-      </labelattributes>
-      <annotationform>.</annotationform>
+      <layerOpacity>1</layerOpacity>
+      <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
+        <activeChecks/>
+        <checkConfiguration/>
+      </geometryOptions>
+      <fieldConfiguration>
+        <field name="fid">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="codice_istat">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="comune">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="nome_ted">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="provincia">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="regione">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="cod_regione">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="cod_provincia">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="cod_comune">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="tipo">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
       <aliases>
-        <alias field="fid" index="0" name=""/>
-        <alias field="codice_istat" index="1" name=""/>
-        <alias field="comune" index="2" name=""/>
-        <alias field="nome_ted" index="3" name=""/>
-        <alias field="provincia" index="4" name=""/>
-        <alias field="regione" index="5" name=""/>
-        <alias field="cod_regione" index="6" name=""/>
-        <alias field="cod_provincia" index="7" name=""/>
-        <alias field="cod_comune" index="8" name=""/>
-        <alias field="tipo" index="9" name=""/>
+        <alias index="0" name="" field="fid"/>
+        <alias index="1" name="" field="codice_istat"/>
+        <alias index="2" name="" field="comune"/>
+        <alias index="3" name="" field="nome_ted"/>
+        <alias index="4" name="" field="provincia"/>
+        <alias index="5" name="" field="regione"/>
+        <alias index="6" name="" field="cod_regione"/>
+        <alias index="7" name="" field="cod_provincia"/>
+        <alias index="8" name="" field="cod_comune"/>
+        <alias index="9" name="" field="tipo"/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
-      <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
+      <defaults>
+        <default applyOnUpdate="0" expression="" field="fid"/>
+        <default applyOnUpdate="0" expression="" field="codice_istat"/>
+        <default applyOnUpdate="0" expression="" field="comune"/>
+        <default applyOnUpdate="0" expression="" field="nome_ted"/>
+        <default applyOnUpdate="0" expression="" field="provincia"/>
+        <default applyOnUpdate="0" expression="" field="regione"/>
+        <default applyOnUpdate="0" expression="" field="cod_regione"/>
+        <default applyOnUpdate="0" expression="" field="cod_provincia"/>
+        <default applyOnUpdate="0" expression="" field="cod_comune"/>
+        <default applyOnUpdate="0" expression="" field="tipo"/>
+      </defaults>
+      <constraints>
+        <constraint unique_strength="1" exp_strength="0" notnull_strength="1" field="fid" constraints="3"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="codice_istat" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="comune" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="nome_ted" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="provincia" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="regione" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="cod_regione" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="cod_provincia" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="cod_comune" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="tipo" constraints="0"/>
+      </constraints>
+      <constraintExpressions>
+        <constraint exp="" field="fid" desc=""/>
+        <constraint exp="" field="codice_istat" desc=""/>
+        <constraint exp="" field="comune" desc=""/>
+        <constraint exp="" field="nome_ted" desc=""/>
+        <constraint exp="" field="provincia" desc=""/>
+        <constraint exp="" field="regione" desc=""/>
+        <constraint exp="" field="cod_regione" desc=""/>
+        <constraint exp="" field="cod_provincia" desc=""/>
+        <constraint exp="" field="cod_comune" desc=""/>
+        <constraint exp="" field="tipo" desc=""/>
+      </constraintExpressions>
+      <expressionfields/>
+      <attributeactions/>
+      <attributetableconfig sortExpression="" actionWidgetStyle="dropDown" sortOrder="0">
         <columns/>
       </attributetableconfig>
-      <editform>.</editform>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <editform tolerant="1">.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
       <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
+      <editable/>
+      <labelOnTop/>
       <widgets/>
-      <conditionalstyles>
-        <rowstyles/>
-        <fieldstyles/>
-      </conditionalstyles>
-      <defaults>
-        <default field="fid" expression=""/>
-        <default field="codice_istat" expression=""/>
-        <default field="comune" expression=""/>
-        <default field="nome_ted" expression=""/>
-        <default field="provincia" expression=""/>
-        <default field="regione" expression=""/>
-        <default field="cod_regione" expression=""/>
-        <default field="cod_provincia" expression=""/>
-        <default field="cod_comune" expression=""/>
-        <default field="tipo" expression=""/>
-      </defaults>
-      <previewExpression></previewExpression>
+      <previewExpression>"fid"</previewExpression>
+      <mapTip></mapTip>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minScale="1e+08" simplifyAlgorithm="0" autoRefreshEnabled="0" type="vector" simplifyLocal="1" autoRefreshTime="0" simplifyMaxScale="1" maxScale="0" hasScaleBasedVisibilityFlag="0" simplifyDrawingHints="1" geometry="Polygon" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" simplifyDrawingTol="1" labelsEnabled="1" readOnly="0">
+      <extent>
+        <xmin>1554746.125</xmin>
+        <ymin>4678332</ymin>
+        <xmax>1771651.875</xmax>
+        <ymax>4924787.5</ymax>
+      </extent>
       <id>dati_agrisurvey_comuni_toscana_300320180227151315660</id>
       <datasource>/media/pierluigi/LENOVO1/lavori/63_agrisurvey/dati_agrisurvey.gpkg|layerid=3</datasource>
       <keywordList>
@@ -422,144 +745,272 @@
           <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
       <provider encoding="UTF-8">ogr</provider>
       <vectorjoins/>
       <layerDependencies/>
+      <dataDependencies/>
+      <legend type="default-vector"/>
       <expressionfields/>
-      <map-layer-style-manager current="">
-        <map-layer-style name=""/>
+      <map-layer-style-manager current="predefinito">
+        <map-layer-style name="predefinito"/>
       </map-layer-style-manager>
-      <edittypes>
-        <edittype widgetv2type="TextEdit" name="fid">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="objectid_1">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="codice_istat">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="comune">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="nome_ted">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="provincia">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="regione">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="cod_regione">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="cod_provincia">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="cod_comune">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="tipo">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-      </edittypes>
-      <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <renderer-v2 enableorderby="0" type="singleSymbol" forceraster="0" symbollevels="0">
         <symbols>
-          <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
-            <layer pass="0" class="SimpleFill" locked="0">
-              <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="174,196,237,255"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="0,0,0,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.26"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="style" v="solid"/>
+          <symbol type="fill" name="0" force_rhr="0" alpha="1" clip_to_extent="1">
+            <layer locked="0" class="SimpleFill" pass="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="174,196,237,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="MM" k="offset_unit"/>
+              <prop v="0,0,0,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="0.26" k="outline_width"/>
+              <prop v="MM" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option type="QString" value="" name="name"/>
+                  <Option name="properties"/>
+                  <Option type="QString" value="collection" name="type"/>
+                </Option>
+              </data_defined_properties>
             </layer>
           </symbol>
         </symbols>
         <rotation/>
-        <sizescale scalemethod="diameter"/>
+        <sizescale/>
       </renderer-v2>
-      <labeling type="simple"/>
       <customproperties/>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
-      <layerTransparency>0</layerTransparency>
-      <displayfield>fid</displayfield>
-      <label>0</label>
-      <labelattributes>
-        <label fieldname="" text="Etichetta"/>
-        <family fieldname="" name="Ubuntu"/>
-        <size fieldname="" units="pt" value="12"/>
-        <bold fieldname="" on="0"/>
-        <italic fieldname="" on="0"/>
-        <underline fieldname="" on="0"/>
-        <strikeout fieldname="" on="0"/>
-        <color fieldname="" red="0" blue="0" green="0"/>
-        <x fieldname=""/>
-        <y fieldname=""/>
-        <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
-        <angle fieldname="" value="0" auto="0"/>
-        <alignment fieldname="" value="center"/>
-        <buffercolor fieldname="" red="255" blue="255" green="255"/>
-        <buffersize fieldname="" units="pt" value="1"/>
-        <bufferenabled fieldname="" on=""/>
-        <multilineenabled fieldname="" on=""/>
-        <selectedonly on=""/>
-      </labelattributes>
-      <annotationform>.</annotationform>
+      <layerOpacity>1</layerOpacity>
+      <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
+        <activeChecks/>
+        <checkConfiguration/>
+      </geometryOptions>
+      <fieldConfiguration>
+        <field name="fid">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="objectid_1">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="codice_istat">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="comune">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="nome_ted">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="provincia">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="regione">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="cod_regione">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="cod_provincia">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="cod_comune">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="tipo">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
       <aliases>
-        <alias field="fid" index="0" name=""/>
-        <alias field="objectid_1" index="1" name=""/>
-        <alias field="codice_istat" index="2" name=""/>
-        <alias field="comune" index="3" name=""/>
-        <alias field="nome_ted" index="4" name=""/>
-        <alias field="provincia" index="5" name=""/>
-        <alias field="regione" index="6" name=""/>
-        <alias field="cod_regione" index="7" name=""/>
-        <alias field="cod_provincia" index="8" name=""/>
-        <alias field="cod_comune" index="9" name=""/>
-        <alias field="tipo" index="10" name=""/>
+        <alias index="0" name="" field="fid"/>
+        <alias index="1" name="" field="objectid_1"/>
+        <alias index="2" name="" field="codice_istat"/>
+        <alias index="3" name="" field="comune"/>
+        <alias index="4" name="" field="nome_ted"/>
+        <alias index="5" name="" field="provincia"/>
+        <alias index="6" name="" field="regione"/>
+        <alias index="7" name="" field="cod_regione"/>
+        <alias index="8" name="" field="cod_provincia"/>
+        <alias index="9" name="" field="cod_comune"/>
+        <alias index="10" name="" field="tipo"/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
-      <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
+      <defaults>
+        <default applyOnUpdate="0" expression="" field="fid"/>
+        <default applyOnUpdate="0" expression="" field="objectid_1"/>
+        <default applyOnUpdate="0" expression="" field="codice_istat"/>
+        <default applyOnUpdate="0" expression="" field="comune"/>
+        <default applyOnUpdate="0" expression="" field="nome_ted"/>
+        <default applyOnUpdate="0" expression="" field="provincia"/>
+        <default applyOnUpdate="0" expression="" field="regione"/>
+        <default applyOnUpdate="0" expression="" field="cod_regione"/>
+        <default applyOnUpdate="0" expression="" field="cod_provincia"/>
+        <default applyOnUpdate="0" expression="" field="cod_comune"/>
+        <default applyOnUpdate="0" expression="" field="tipo"/>
+      </defaults>
+      <constraints>
+        <constraint unique_strength="1" exp_strength="0" notnull_strength="1" field="fid" constraints="3"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="objectid_1" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="codice_istat" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="comune" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="nome_ted" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="provincia" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="regione" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="cod_regione" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="cod_provincia" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="cod_comune" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="tipo" constraints="0"/>
+      </constraints>
+      <constraintExpressions>
+        <constraint exp="" field="fid" desc=""/>
+        <constraint exp="" field="objectid_1" desc=""/>
+        <constraint exp="" field="codice_istat" desc=""/>
+        <constraint exp="" field="comune" desc=""/>
+        <constraint exp="" field="nome_ted" desc=""/>
+        <constraint exp="" field="provincia" desc=""/>
+        <constraint exp="" field="regione" desc=""/>
+        <constraint exp="" field="cod_regione" desc=""/>
+        <constraint exp="" field="cod_provincia" desc=""/>
+        <constraint exp="" field="cod_comune" desc=""/>
+        <constraint exp="" field="tipo" desc=""/>
+      </constraintExpressions>
+      <expressionfields/>
+      <attributeactions>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+      </attributeactions>
+      <attributetableconfig sortExpression="" actionWidgetStyle="dropDown" sortOrder="0">
         <columns/>
       </attributetableconfig>
-      <editform>.</editform>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <editform tolerant="1">.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
       <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
+      <editable/>
+      <labelOnTop/>
       <widgets/>
-      <conditionalstyles>
-        <rowstyles/>
-        <fieldstyles/>
-      </conditionalstyles>
-      <defaults>
-        <default field="fid" expression=""/>
-        <default field="objectid_1" expression=""/>
-        <default field="codice_istat" expression=""/>
-        <default field="comune" expression=""/>
-        <default field="nome_ted" expression=""/>
-        <default field="provincia" expression=""/>
-        <default field="regione" expression=""/>
-        <default field="cod_regione" expression=""/>
-        <default field="cod_provincia" expression=""/>
-        <default field="cod_comune" expression=""/>
-        <default field="tipo" expression=""/>
-      </defaults>
-      <previewExpression></previewExpression>
+      <previewExpression>"fid"</previewExpression>
+      <mapTip></mapTip>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minScale="1e+08" simplifyAlgorithm="0" autoRefreshEnabled="0" type="vector" simplifyLocal="1" autoRefreshTime="0" simplifyMaxScale="1" maxScale="0" hasScaleBasedVisibilityFlag="0" simplifyDrawingHints="1" geometry="Polygon" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" simplifyDrawingTol="1" labelsEnabled="1" readOnly="0">
       <extent>
         <xmin>1553650</xmin>
         <ymin>4673540</ymin>
@@ -584,119 +1035,200 @@
           <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
-      <provider encoding="System">postgres</provider>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider encoding="UTF-8">postgres</provider>
       <vectorjoins/>
       <layerDependencies/>
+      <dataDependencies/>
+      <legend type="default-vector"/>
       <expressionfields/>
-      <map-layer-style-manager current="">
-        <map-layer-style name=""/>
+      <map-layer-style-manager current="predefinito">
+        <map-layer-style name="predefinito"/>
       </map-layer-style-manager>
-      <edittypes>
-        <edittype widgetv2type="TextEdit" name="id">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="fid">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="left">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="top">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="right">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="bottom">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-      </edittypes>
-      <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <renderer-v2 enableorderby="0" type="singleSymbol" forceraster="0" symbollevels="0">
         <symbols>
-          <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
-            <layer pass="0" class="SimpleFill" locked="0">
-              <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="160,134,186,255"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="0,0,0,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.26"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="style" v="solid"/>
+          <symbol type="fill" name="0" force_rhr="0" alpha="1" clip_to_extent="1">
+            <layer locked="0" class="SimpleFill" pass="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="160,134,186,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="MM" k="offset_unit"/>
+              <prop v="0,0,0,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="0.26" k="outline_width"/>
+              <prop v="MM" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option type="QString" value="" name="name"/>
+                  <Option name="properties"/>
+                  <Option type="QString" value="collection" name="type"/>
+                </Option>
+              </data_defined_properties>
             </layer>
           </symbol>
         </symbols>
         <rotation/>
-        <sizescale scalemethod="diameter"/>
+        <sizescale/>
       </renderer-v2>
-      <labeling type="simple"/>
       <customproperties/>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
-      <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
-      <label>0</label>
-      <labelattributes>
-        <label fieldname="" text="Etichetta"/>
-        <family fieldname="" name="Ubuntu"/>
-        <size fieldname="" units="pt" value="12"/>
-        <bold fieldname="" on="0"/>
-        <italic fieldname="" on="0"/>
-        <underline fieldname="" on="0"/>
-        <strikeout fieldname="" on="0"/>
-        <color fieldname="" red="0" blue="0" green="0"/>
-        <x fieldname=""/>
-        <y fieldname=""/>
-        <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
-        <angle fieldname="" value="0" auto="0"/>
-        <alignment fieldname="" value="center"/>
-        <buffercolor fieldname="" red="255" blue="255" green="255"/>
-        <buffersize fieldname="" units="pt" value="1"/>
-        <bufferenabled fieldname="" on=""/>
-        <multilineenabled fieldname="" on=""/>
-        <selectedonly on=""/>
-      </labelattributes>
-      <annotationform>.</annotationform>
+      <layerOpacity>1</layerOpacity>
+      <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
+        <activeChecks/>
+        <checkConfiguration/>
+      </geometryOptions>
+      <fieldConfiguration>
+        <field name="id">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="fid">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="left">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="top">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="right">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="bottom">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
       <aliases>
-        <alias field="id" index="0" name=""/>
-        <alias field="fid" index="1" name=""/>
-        <alias field="left" index="2" name=""/>
-        <alias field="top" index="3" name=""/>
-        <alias field="right" index="4" name=""/>
-        <alias field="bottom" index="5" name=""/>
+        <alias index="0" name="" field="id"/>
+        <alias index="1" name="" field="fid"/>
+        <alias index="2" name="" field="left"/>
+        <alias index="3" name="" field="top"/>
+        <alias index="4" name="" field="right"/>
+        <alias index="5" name="" field="bottom"/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
-      <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
+      <defaults>
+        <default applyOnUpdate="0" expression="" field="id"/>
+        <default applyOnUpdate="0" expression="" field="fid"/>
+        <default applyOnUpdate="0" expression="" field="left"/>
+        <default applyOnUpdate="0" expression="" field="top"/>
+        <default applyOnUpdate="0" expression="" field="right"/>
+        <default applyOnUpdate="0" expression="" field="bottom"/>
+      </defaults>
+      <constraints>
+        <constraint unique_strength="1" exp_strength="0" notnull_strength="1" field="id" constraints="3"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="1" field="fid" constraints="1"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="1" field="left" constraints="1"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="1" field="top" constraints="1"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="1" field="right" constraints="1"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="1" field="bottom" constraints="1"/>
+      </constraints>
+      <constraintExpressions>
+        <constraint exp="" field="id" desc=""/>
+        <constraint exp="" field="fid" desc=""/>
+        <constraint exp="" field="left" desc=""/>
+        <constraint exp="" field="top" desc=""/>
+        <constraint exp="" field="right" desc=""/>
+        <constraint exp="" field="bottom" desc=""/>
+      </constraintExpressions>
+      <expressionfields/>
+      <attributeactions/>
+      <attributetableconfig sortExpression="" actionWidgetStyle="dropDown" sortOrder="0">
         <columns/>
       </attributetableconfig>
-      <editform>.</editform>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <editform tolerant="1">.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
       <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
+      <editable/>
+      <labelOnTop/>
       <widgets/>
-      <conditionalstyles>
-        <rowstyles/>
-        <fieldstyles/>
-      </conditionalstyles>
-      <defaults>
-        <default field="id" expression=""/>
-        <default field="fid" expression=""/>
-        <default field="left" expression=""/>
-        <default field="top" expression=""/>
-        <default field="right" expression=""/>
-        <default field="bottom" expression=""/>
-      </defaults>
-      <previewExpression></previewExpression>
+      <previewExpression>"id"</previewExpression>
+      <mapTip></mapTip>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minScale="1e+08" simplifyAlgorithm="0" autoRefreshEnabled="0" type="vector" simplifyLocal="1" autoRefreshTime="0" simplifyMaxScale="1" maxScale="0" hasScaleBasedVisibilityFlag="0" simplifyDrawingHints="1" geometry="Polygon" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" simplifyDrawingTol="1" labelsEnabled="1" readOnly="0">
       <extent>
         <xmin>1665739.17999999993480742</xmin>
         <ymin>4847578.91999999992549419</ymin>
@@ -721,281 +1253,229 @@
           <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
-      <provider encoding="System">ogr</provider>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider encoding="UTF-8">ogr</provider>
       <vectorjoins/>
       <layerDependencies/>
+      <dataDependencies/>
+      <legend type="default-vector"/>
       <expressionfields/>
-      <map-layer-style-manager current="">
-        <map-layer-style name=""/>
+      <map-layer-style-manager current="predefinito">
+        <map-layer-style name="predefinito"/>
       </map-layer-style-manager>
-      <edittypes>
-        <edittype widgetv2type="TextEdit" name="OBJECTID">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="PART">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="SUB">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="FOGLIO">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="IDSEQ">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="CODFOGLIO">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="FE466001">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-      </edittypes>
-      <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <renderer-v2 enableorderby="0" type="singleSymbol" forceraster="0" symbollevels="0">
         <symbols>
-          <symbol alpha="0.541176" clip_to_extent="1" type="fill" name="0">
-            <layer pass="0" class="SimpleFill" locked="0">
-              <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="66,153,67,255"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="0,0,0,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.26"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="style" v="solid"/>
+          <symbol type="fill" name="0" force_rhr="0" alpha="0.541176" clip_to_extent="1">
+            <layer locked="0" class="SimpleFill" pass="0" enabled="1">
+              <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+              <prop v="66,153,67,255" k="color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="MM" k="offset_unit"/>
+              <prop v="0,0,0,255" k="outline_color"/>
+              <prop v="solid" k="outline_style"/>
+              <prop v="0.26" k="outline_width"/>
+              <prop v="MM" k="outline_width_unit"/>
+              <prop v="solid" k="style"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option type="QString" value="" name="name"/>
+                  <Option name="properties"/>
+                  <Option type="QString" value="collection" name="type"/>
+                </Option>
+              </data_defined_properties>
             </layer>
           </symbol>
         </symbols>
         <rotation/>
-        <sizescale scalemethod="diameter"/>
+        <sizescale/>
       </renderer-v2>
-      <labeling type="simple"/>
       <customproperties>
-        <property key="embeddedWidgets/count" value="0"/>
-        <property key="labeling" value="pal"/>
-        <property key="labeling/addDirectionSymbol" value="false"/>
-        <property key="labeling/angleOffset" value="0"/>
-        <property key="labeling/blendMode" value="0"/>
-        <property key="labeling/bufferBlendMode" value="0"/>
-        <property key="labeling/bufferColorA" value="255"/>
-        <property key="labeling/bufferColorB" value="255"/>
-        <property key="labeling/bufferColorG" value="255"/>
-        <property key="labeling/bufferColorR" value="255"/>
-        <property key="labeling/bufferDraw" value="false"/>
-        <property key="labeling/bufferJoinStyle" value="128"/>
-        <property key="labeling/bufferNoFill" value="false"/>
-        <property key="labeling/bufferSize" value="1"/>
-        <property key="labeling/bufferSizeInMapUnits" value="false"/>
-        <property key="labeling/bufferSizeMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/bufferTransp" value="0"/>
-        <property key="labeling/centroidInside" value="false"/>
-        <property key="labeling/centroidWhole" value="false"/>
-        <property key="labeling/decimals" value="3"/>
-        <property key="labeling/displayAll" value="false"/>
-        <property key="labeling/dist" value="0"/>
-        <property key="labeling/distInMapUnits" value="false"/>
-        <property key="labeling/distMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/drawLabels" value="false"/>
-        <property key="labeling/enabled" value="false"/>
-        <property key="labeling/fieldName" value=""/>
-        <property key="labeling/fitInPolygonOnly" value="false"/>
-        <property key="labeling/fontCapitals" value="0"/>
-        <property key="labeling/fontFamily" value="Ubuntu"/>
-        <property key="labeling/fontItalic" value="false"/>
-        <property key="labeling/fontLetterSpacing" value="0"/>
-        <property key="labeling/fontLimitPixelSize" value="false"/>
-        <property key="labeling/fontMaxPixelSize" value="10000"/>
-        <property key="labeling/fontMinPixelSize" value="3"/>
-        <property key="labeling/fontSize" value="11"/>
-        <property key="labeling/fontSizeInMapUnits" value="false"/>
-        <property key="labeling/fontSizeMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/fontStrikeout" value="false"/>
-        <property key="labeling/fontUnderline" value="false"/>
-        <property key="labeling/fontWeight" value="50"/>
-        <property key="labeling/fontWordSpacing" value="0"/>
-        <property key="labeling/formatNumbers" value="false"/>
-        <property key="labeling/isExpression" value="true"/>
-        <property key="labeling/labelOffsetInMapUnits" value="true"/>
-        <property key="labeling/labelOffsetMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/labelPerPart" value="false"/>
-        <property key="labeling/leftDirectionSymbol" value="&lt;"/>
-        <property key="labeling/limitNumLabels" value="false"/>
-        <property key="labeling/maxCurvedCharAngleIn" value="25"/>
-        <property key="labeling/maxCurvedCharAngleOut" value="-25"/>
-        <property key="labeling/maxNumLabels" value="2000"/>
-        <property key="labeling/mergeLines" value="false"/>
-        <property key="labeling/minFeatureSize" value="0"/>
-        <property key="labeling/multilineAlign" value="4294967295"/>
-        <property key="labeling/multilineHeight" value="1"/>
-        <property key="labeling/namedStyle" value="Medium Italic"/>
-        <property key="labeling/obstacle" value="true"/>
-        <property key="labeling/obstacleFactor" value="1"/>
-        <property key="labeling/obstacleType" value="0"/>
-        <property key="labeling/offsetType" value="0"/>
-        <property key="labeling/placeDirectionSymbol" value="0"/>
-        <property key="labeling/placement" value="1"/>
-        <property key="labeling/placementFlags" value="10"/>
-        <property key="labeling/plussign" value="false"/>
-        <property key="labeling/predefinedPositionOrder" value="TR,TL,BR,BL,R,L,TSR,BSR"/>
-        <property key="labeling/preserveRotation" value="true"/>
-        <property key="labeling/previewBkgrdColor" value="#ffffff"/>
-        <property key="labeling/priority" value="5"/>
-        <property key="labeling/quadOffset" value="4"/>
-        <property key="labeling/repeatDistance" value="0"/>
-        <property key="labeling/repeatDistanceMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/repeatDistanceUnit" value="1"/>
-        <property key="labeling/reverseDirectionSymbol" value="false"/>
-        <property key="labeling/rightDirectionSymbol" value=">"/>
-        <property key="labeling/scaleMax" value="10000000"/>
-        <property key="labeling/scaleMin" value="1"/>
-        <property key="labeling/scaleVisibility" value="false"/>
-        <property key="labeling/shadowBlendMode" value="6"/>
-        <property key="labeling/shadowColorB" value="0"/>
-        <property key="labeling/shadowColorG" value="0"/>
-        <property key="labeling/shadowColorR" value="0"/>
-        <property key="labeling/shadowDraw" value="false"/>
-        <property key="labeling/shadowOffsetAngle" value="135"/>
-        <property key="labeling/shadowOffsetDist" value="1"/>
-        <property key="labeling/shadowOffsetGlobal" value="true"/>
-        <property key="labeling/shadowOffsetMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/shadowOffsetUnits" value="1"/>
-        <property key="labeling/shadowRadius" value="1.5"/>
-        <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
-        <property key="labeling/shadowRadiusMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/shadowRadiusUnits" value="1"/>
-        <property key="labeling/shadowScale" value="100"/>
-        <property key="labeling/shadowTransparency" value="30"/>
-        <property key="labeling/shadowUnder" value="0"/>
-        <property key="labeling/shapeBlendMode" value="0"/>
-        <property key="labeling/shapeBorderColorA" value="255"/>
-        <property key="labeling/shapeBorderColorB" value="128"/>
-        <property key="labeling/shapeBorderColorG" value="128"/>
-        <property key="labeling/shapeBorderColorR" value="128"/>
-        <property key="labeling/shapeBorderWidth" value="0"/>
-        <property key="labeling/shapeBorderWidthMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/shapeBorderWidthUnits" value="1"/>
-        <property key="labeling/shapeDraw" value="false"/>
-        <property key="labeling/shapeFillColorA" value="255"/>
-        <property key="labeling/shapeFillColorB" value="255"/>
-        <property key="labeling/shapeFillColorG" value="255"/>
-        <property key="labeling/shapeFillColorR" value="255"/>
-        <property key="labeling/shapeJoinStyle" value="64"/>
-        <property key="labeling/shapeOffsetMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/shapeOffsetUnits" value="1"/>
-        <property key="labeling/shapeOffsetX" value="0"/>
-        <property key="labeling/shapeOffsetY" value="0"/>
-        <property key="labeling/shapeRadiiMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/shapeRadiiUnits" value="1"/>
-        <property key="labeling/shapeRadiiX" value="0"/>
-        <property key="labeling/shapeRadiiY" value="0"/>
-        <property key="labeling/shapeRotation" value="0"/>
-        <property key="labeling/shapeRotationType" value="0"/>
-        <property key="labeling/shapeSVGFile" value=""/>
-        <property key="labeling/shapeSizeMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/shapeSizeType" value="0"/>
-        <property key="labeling/shapeSizeUnits" value="1"/>
-        <property key="labeling/shapeSizeX" value="0"/>
-        <property key="labeling/shapeSizeY" value="0"/>
-        <property key="labeling/shapeTransparency" value="0"/>
-        <property key="labeling/shapeType" value="0"/>
-        <property key="labeling/substitutions" value="&lt;substitutions/>"/>
-        <property key="labeling/textColorA" value="255"/>
-        <property key="labeling/textColorB" value="0"/>
-        <property key="labeling/textColorG" value="0"/>
-        <property key="labeling/textColorR" value="0"/>
-        <property key="labeling/textTransp" value="0"/>
-        <property key="labeling/upsidedownLabels" value="0"/>
-        <property key="labeling/useSubstitutions" value="false"/>
-        <property key="labeling/wrapChar" value=""/>
-        <property key="labeling/xOffset" value="0"/>
-        <property key="labeling/yOffset" value="0"/>
-        <property key="labeling/zIndex" value="0"/>
+        <property value="0" key="embeddedWidgets/count"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
       </customproperties>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
-      <layerTransparency>0</layerTransparency>
-      <displayfield>OBJECTID</displayfield>
-      <label>0</label>
-      <labelattributes>
-        <label fieldname="" text="Etichetta"/>
-        <family fieldname="" name="Ubuntu"/>
-        <size fieldname="" units="pt" value="12"/>
-        <bold fieldname="" on="0"/>
-        <italic fieldname="" on="0"/>
-        <underline fieldname="" on="0"/>
-        <strikeout fieldname="" on="0"/>
-        <color fieldname="" red="0" blue="0" green="0"/>
-        <x fieldname=""/>
-        <y fieldname=""/>
-        <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
-        <angle fieldname="" value="0" auto="0"/>
-        <alignment fieldname="" value="center"/>
-        <buffercolor fieldname="" red="255" blue="255" green="255"/>
-        <buffersize fieldname="" units="pt" value="1"/>
-        <bufferenabled fieldname="" on=""/>
-        <multilineenabled fieldname="" on=""/>
-        <selectedonly on=""/>
-      </labelattributes>
-      <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
-        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
-          <fontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
-          <attribute field="" color="#000000" label=""/>
+      <layerOpacity>1</layerOpacity>
+      <SingleCategoryDiagramRenderer diagramType="Histogram" attributeLegend="1">
+        <DiagramCategory minimumSize="0" barWidth="5" scaleBasedVisibility="0" backgroundColor="#ffffff" rotationOffset="270" height="15" sizeType="MM" labelPlacementMethod="XHeight" lineSizeType="MM" sizeScale="3x:0,0,0,0,0,0" backgroundAlpha="255" penColor="#000000" diagramOrientation="Up" width="15" enabled="0" scaleDependency="Area" penAlpha="255" opacity="1" maxScaleDenominator="1e+08" penWidth="0" lineSizeScale="3x:0,0,0,0,0,0" minScaleDenominator="inf">
+          <fontProperties style="" description="Ubuntu,11,-1,5,50,0,0,0,0,0"/>
+          <attribute color="#000000" field="" label=""/>
         </DiagramCategory>
-        <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
-          <layer pass="0" class="SimpleMarker" locked="0">
-            <prop k="angle" v="0"/>
-            <prop k="color" v="255,0,0,255"/>
-            <prop k="horizontal_anchor_point" v="1"/>
-            <prop k="joinstyle" v="bevel"/>
-            <prop k="name" v="circle"/>
-            <prop k="offset" v="0,0"/>
-            <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-            <prop k="offset_unit" v="MM"/>
-            <prop k="outline_color" v="0,0,0,255"/>
-            <prop k="outline_style" v="solid"/>
-            <prop k="outline_width" v="0"/>
-            <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
-            <prop k="outline_width_unit" v="MM"/>
-            <prop k="scale_method" v="diameter"/>
-            <prop k="size" v="2"/>
-            <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-            <prop k="size_unit" v="MM"/>
-            <prop k="vertical_anchor_point" v="1"/>
-          </layer>
-        </symbol>
       </SingleCategoryDiagramRenderer>
-      <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-      <annotationform>.</annotationform>
+      <DiagramLayerSettings showAll="1" dist="0" placement="0" obstacle="0" linePlacementFlags="10" zIndex="0" priority="0">
+        <properties>
+          <Option type="Map">
+            <Option type="QString" value="" name="name"/>
+            <Option name="properties"/>
+            <Option type="QString" value="collection" name="type"/>
+          </Option>
+        </properties>
+      </DiagramLayerSettings>
+      <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
+        <activeChecks/>
+        <checkConfiguration/>
+      </geometryOptions>
+      <fieldConfiguration>
+        <field name="OBJECTID">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="PART">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="SUB">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="FOGLIO">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="IDSEQ">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="CODFOGLIO">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="FE466001">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="QString" value="0" name="IsMultiline"/>
+                <Option type="QString" value="0" name="UseHtml"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
       <aliases>
-        <alias field="OBJECTID" index="0" name=""/>
-        <alias field="PART" index="1" name=""/>
-        <alias field="SUB" index="2" name=""/>
-        <alias field="FOGLIO" index="3" name=""/>
-        <alias field="IDSEQ" index="4" name=""/>
-        <alias field="CODFOGLIO" index="5" name=""/>
-        <alias field="FE466001" index="6" name=""/>
+        <alias index="0" name="" field="OBJECTID"/>
+        <alias index="1" name="" field="PART"/>
+        <alias index="2" name="" field="SUB"/>
+        <alias index="3" name="" field="FOGLIO"/>
+        <alias index="4" name="" field="IDSEQ"/>
+        <alias index="5" name="" field="CODFOGLIO"/>
+        <alias index="6" name="" field="FE466001"/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
-      <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
+      <defaults>
+        <default applyOnUpdate="0" expression="" field="OBJECTID"/>
+        <default applyOnUpdate="0" expression="" field="PART"/>
+        <default applyOnUpdate="0" expression="" field="SUB"/>
+        <default applyOnUpdate="0" expression="" field="FOGLIO"/>
+        <default applyOnUpdate="0" expression="" field="IDSEQ"/>
+        <default applyOnUpdate="0" expression="" field="CODFOGLIO"/>
+        <default applyOnUpdate="0" expression="" field="FE466001"/>
+      </defaults>
+      <constraints>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="OBJECTID" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="PART" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="SUB" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="FOGLIO" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="IDSEQ" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="CODFOGLIO" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" notnull_strength="0" field="FE466001" constraints="0"/>
+      </constraints>
+      <constraintExpressions>
+        <constraint exp="" field="OBJECTID" desc=""/>
+        <constraint exp="" field="PART" desc=""/>
+        <constraint exp="" field="SUB" desc=""/>
+        <constraint exp="" field="FOGLIO" desc=""/>
+        <constraint exp="" field="IDSEQ" desc=""/>
+        <constraint exp="" field="CODFOGLIO" desc=""/>
+        <constraint exp="" field="FE466001" desc=""/>
+      </constraintExpressions>
+      <expressionfields/>
+      <attributeactions/>
+      <attributetableconfig sortExpression="" actionWidgetStyle="dropDown" sortOrder="0">
         <columns>
-          <column width="-1" hidden="0" type="field" name="OBJECTID"/>
-          <column width="-1" hidden="0" type="field" name="PART"/>
-          <column width="-1" hidden="0" type="field" name="SUB"/>
-          <column width="-1" hidden="0" type="field" name="FOGLIO"/>
-          <column width="-1" hidden="0" type="field" name="IDSEQ"/>
-          <column width="-1" hidden="0" type="field" name="CODFOGLIO"/>
-          <column width="-1" hidden="0" type="field" name="FE466001"/>
-          <column width="-1" hidden="1" type="actions"/>
+          <column type="field" name="OBJECTID" hidden="0" width="-1"/>
+          <column type="field" name="PART" hidden="0" width="-1"/>
+          <column type="field" name="SUB" hidden="0" width="-1"/>
+          <column type="field" name="FOGLIO" hidden="0" width="-1"/>
+          <column type="field" name="IDSEQ" hidden="0" width="-1"/>
+          <column type="field" name="CODFOGLIO" hidden="0" width="-1"/>
+          <column type="field" name="FE466001" hidden="0" width="-1"/>
+          <column type="actions" hidden="1" width="-1"/>
         </columns>
       </attributetableconfig>
-      <editform>.</editform>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <editform tolerant="1">.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
       <editforminitfilepath>.</editforminitfilepath>
@@ -1018,23 +1498,13 @@ def my_form_open(dialog, layer, feature):
 ]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
+      <editable/>
+      <labelOnTop/>
       <widgets/>
-      <conditionalstyles>
-        <rowstyles/>
-        <fieldstyles/>
-      </conditionalstyles>
-      <defaults>
-        <default field="OBJECTID" expression=""/>
-        <default field="PART" expression=""/>
-        <default field="SUB" expression=""/>
-        <default field="FOGLIO" expression=""/>
-        <default field="IDSEQ" expression=""/>
-        <default field="CODFOGLIO" expression=""/>
-        <default field="FE466001" expression=""/>
-      </defaults>
-      <previewExpression></previewExpression>
+      <previewExpression>"OBJECTID"</previewExpression>
+      <mapTip></mapTip>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+    <maplayer minScale="1e+08" autoRefreshEnabled="0" type="raster" autoRefreshTime="0" maxScale="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories">
       <extent>
         <xmin>-20037508.34278924390673637</xmin>
         <ymin>-20037508.34278925508260727</ymin>
@@ -1053,98 +1523,119 @@ def my_form_open(dialog, layer, feature):
           <srsid>3857</srsid>
           <srid>3857</srid>
           <authid>EPSG:3857</authid>
-          <description>WGS 84 / Pseudo Mercator</description>
+          <description>WGS 84 / Pseudo-Mercator</description>
           <projectionacronym>merc</projectionacronym>
           <ellipsoidacronym>WGS84</ellipsoidacronym>
           <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
-      <customproperties>
-        <property key="identify/format" value="Undefined"/>
-      </customproperties>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
       <provider>wms</provider>
       <noData>
         <noDataList bandNo="1" useSrcNoData="0"/>
       </noData>
-      <map-layer-style-manager current="">
-        <map-layer-style name=""/>
+      <map-layer-style-manager current="predefinito">
+        <map-layer-style name="predefinito"/>
       </map-layer-style-manager>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <customproperties>
+        <property value="Undefined" key="identify/format"/>
+      </customproperties>
       <pipe>
-        <rasterrenderer opacity="1" alphaBand="-1" band="1" type="singlebandcolordata">
+        <rasterrenderer alphaBand="-1" type="singlebandcolordata" band="1" opacity="1">
           <rasterTransparency/>
+          <minMaxOrigin>
+            <limits>None</limits>
+            <extent>WholeRaster</extent>
+            <statAccuracy>Estimated</statAccuracy>
+            <cumulativeCutLower>0.02</cumulativeCutLower>
+            <cumulativeCutUpper>0.98</cumulativeCutUpper>
+            <stdDevFactor>2</stdDevFactor>
+          </minMaxOrigin>
         </rasterrenderer>
         <brightnesscontrast brightness="0" contrast="0"/>
-        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+        <huesaturation colorizeGreen="128" colorizeBlue="128" grayscaleMode="0" colorizeOn="0" saturation="0" colorizeStrength="100" colorizeRed="255"/>
         <rasterresampler maxOversampling="2"/>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
   </projectlayers>
+  <layerorder>
+    <layer id="OSM_classic20180123074639872"/>
+    <layer id="mapbox_satellite20180123074811784"/>
+    <layer id="Particelle_catastali___AdT_Catasto_Terreni20180123183217966"/>
+    <layer id="OFC_2016_20cm___32_bit_colore___RGB20180208222656341"/>
+    <layer id="e466001020180208222755389"/>
+    <layer id="domanda_quadranti20180227072409324"/>
+    <layer id="dati_agrisurvey20180227072711907"/>
+    <layer id="dati_agrisurvey_comuni_toscana_300320180227151315660"/>
+  </layerorder>
   <properties>
+    <WMSSegmentizeFeatureInfoGeometry type="bool">false</WMSSegmentizeFeatureInfoGeometry>
     <Variables>
-      <variableNames type="QStringList"/>
       <variableValues type="QStringList"/>
+      <variableNames type="QStringList"/>
     </Variables>
-    <WMSContactPerson type="QString"></WMSContactPerson>
-    <WMSOnlineResource type="QString"></WMSOnlineResource>
+    <WCSLayers type="QStringList"/>
+    <WMSServiceAbstract type="QString"></WMSServiceAbstract>
+    <WMSAccessConstraints type="QString">None</WMSAccessConstraints>
+    <WCSUrl type="QString"></WCSUrl>
+    <DefaultStyles>
+      <Line type="QString"></Line>
+      <AlphaInt type="int">255</AlphaInt>
+      <Fill type="QString"></Fill>
+      <RandomColors type="bool">true</RandomColors>
+      <Marker type="QString"></Marker>
+      <ColorRamp type="QString"></ColorRamp>
+    </DefaultStyles>
+    <PAL>
+      <CandidatesPoint type="int">16</CandidatesPoint>
+      <SearchMethod type="int">0</SearchMethod>
+      <CandidatesPolygon type="int">30</CandidatesPolygon>
+      <ShowingCandidates type="bool">false</ShowingCandidates>
+      <CandidatesLine type="int">50</CandidatesLine>
+      <ShowingPartialsLabels type="bool">true</ShowingPartialsLabels>
+      <ShowingAllLabels type="bool">false</ShowingAllLabels>
+      <DrawRectOnly type="bool">false</DrawRectOnly>
+      <TextFormat type="int">0</TextFormat>
+    </PAL>
+    <Identify>
+      <disabledLayers type="QStringList"/>
+    </Identify>
     <WMSUseLayerIDs type="bool">false</WMSUseLayerIDs>
-    <WMSContactOrganization type="QString"></WMSContactOrganization>
+    <WMSServiceTitle type="QString"></WMSServiceTitle>
+    <WMSPrecision type="QString">8</WMSPrecision>
     <WMSKeywordList type="QStringList">
       <value></value>
     </WMSKeywordList>
-    <WFSUrl type="QString"></WFSUrl>
-    <Paths>
-      <Absolute type="bool">false</Absolute>
-    </Paths>
-    <WMSServiceTitle type="QString"></WMSServiceTitle>
-    <WFSLayers type="QStringList"/>
-    <WMSContactMail type="QString"></WMSContactMail>
-    <PositionPrecision>
-      <DecimalPlaces type="int">2</DecimalPlaces>
-      <Automatic type="bool">true</Automatic>
-      <DegreeFormat type="QString">MU</DegreeFormat>
-    </PositionPrecision>
-    <WCSUrl type="QString"></WCSUrl>
-    <WMSContactPhone type="QString"></WMSContactPhone>
-    <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
-    <WMSServiceAbstract type="QString"></WMSServiceAbstract>
-    <WMSContactPosition type="QString"></WMSContactPosition>
-    <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
-    <Measure>
-      <Ellipsoid type="QString">NONE</Ellipsoid>
-    </Measure>
-    <WMSPrecision type="QString">8</WMSPrecision>
-    <WMSSegmentizeFeatureInfoGeometry type="bool">false</WMSSegmentizeFeatureInfoGeometry>
-    <WFSTLayers>
-      <Insert type="QStringList"/>
-      <Update type="QStringList"/>
-      <Delete type="QStringList"/>
-    </WFSTLayers>
-    <Gui>
-      <SelectionColorBluePart type="int">0</SelectionColorBluePart>
-      <CanvasColorGreenPart type="int">255</CanvasColorGreenPart>
-      <CanvasColorRedPart type="int">255</CanvasColorRedPart>
-      <SelectionColorRedPart type="int">255</SelectionColorRedPart>
-      <SelectionColorAlphaPart type="int">255</SelectionColorAlphaPart>
-      <SelectionColorGreenPart type="int">255</SelectionColorGreenPart>
-      <CanvasColorBluePart type="int">255</CanvasColorBluePart>
-    </Gui>
     <Digitizing>
-      <DefaultSnapToleranceUnit type="int">2</DefaultSnapToleranceUnit>
-      <LayerSnappingList type="QStringList">
-        <value>dati_agrisurvey20180227072711907</value>
-        <value>dati_agrisurvey_comuni_toscana_300320180227151315660</value>
-        <value>domanda_quadranti20180227072409324</value>
-        <value>e466001020180208222755389</value>
-      </LayerSnappingList>
-      <LayerSnappingEnabledList type="QStringList">
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-      </LayerSnappingEnabledList>
-      <SnappingMode type="QString">current_layer</SnappingMode>
-      <AvoidIntersectionsList type="QStringList"/>
       <LayerSnappingToleranceUnitList type="QStringList">
         <value>2</value>
         <value>2</value>
@@ -1157,47 +1648,98 @@ def my_form_open(dialog, layer, feature):
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
       </LayerSnapToList>
-      <DefaultSnapType type="QString">off</DefaultSnapType>
-      <DefaultSnapTolerance type="double">0</DefaultSnapTolerance>
+      <SnappingMode type="QString">current_layer</SnappingMode>
+      <AvoidIntersectionsList type="QStringList"/>
+      <LayerSnappingEnabledList type="QStringList">
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+      </LayerSnappingEnabledList>
       <LayerSnappingToleranceList type="QStringList">
         <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
       </LayerSnappingToleranceList>
+      <DefaultSnapType type="QString">off</DefaultSnapType>
+      <DefaultSnapToleranceUnit type="int">2</DefaultSnapToleranceUnit>
+      <LayerSnappingList type="QStringList">
+        <value>dati_agrisurvey20180227072711907</value>
+        <value>dati_agrisurvey_comuni_toscana_300320180227151315660</value>
+        <value>domanda_quadranti20180227072409324</value>
+        <value>e466001020180208222755389</value>
+      </LayerSnappingList>
+      <DefaultSnapTolerance type="double">0</DefaultSnapTolerance>
     </Digitizing>
-    <Identify>
-      <disabledLayers type="QStringList"/>
-    </Identify>
-    <Macros>
-      <pythonCode type="QString"></pythonCode>
-    </Macros>
-    <WMSAccessConstraints type="QString">None</WMSAccessConstraints>
-    <WCSLayers type="QStringList"/>
-    <Legend>
-      <filterByMap type="bool">false</filterByMap>
-    </Legend>
     <SpatialRefSys>
       <ProjectCRSProj4String type="QString">+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=1500000 +y_0=0 +ellps=intl +towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68 +units=m +no_defs</ProjectCRSProj4String>
       <ProjectCrs type="QString">EPSG:3003</ProjectCrs>
       <ProjectCRSID type="int">968</ProjectCRSID>
-      <ProjectionsEnabled type="int">0</ProjectionsEnabled>
+      <ProjectionsEnabled type="int">1</ProjectionsEnabled>
     </SpatialRefSys>
-    <DefaultStyles>
-      <Fill type="QString"></Fill>
-      <Line type="QString"></Line>
-      <Marker type="QString"></Marker>
-      <RandomColors type="bool">true</RandomColors>
-      <AlphaInt type="int">255</AlphaInt>
-      <ColorRamp type="QString"></ColorRamp>
-    </DefaultStyles>
+    <WMSContactPosition type="QString"></WMSContactPosition>
+    <Macros>
+      <pythonCode type="QString"></pythonCode>
+    </Macros>
+    <WMSContactMail type="QString"></WMSContactMail>
+    <WMSContactPerson type="QString"></WMSContactPerson>
     <WMSFees type="QString">conditions unknown</WMSFees>
-    <WMSImageQuality type="int">90</WMSImageQuality>
     <Measurement>
       <DistanceUnits type="QString">meters</DistanceUnits>
       <AreaUnits type="QString">m2</AreaUnits>
     </Measurement>
+    <WMSImageQuality type="int">90</WMSImageQuality>
+    <Measure>
+      <Ellipsoid type="QString">NONE</Ellipsoid>
+    </Measure>
     <WMSUrl type="QString"></WMSUrl>
+    <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
+    <Legend>
+      <filterByMap type="bool">false</filterByMap>
+    </Legend>
+    <WMSOnlineResource type="QString"></WMSOnlineResource>
+    <WMSContactPhone type="QString"></WMSContactPhone>
+    <Paths>
+      <Absolute type="bool">false</Absolute>
+    </Paths>
+    <WFSUrl type="QString"></WFSUrl>
+    <WFSTLayers>
+      <Update type="QStringList"/>
+      <Delete type="QStringList"/>
+      <Insert type="QStringList"/>
+    </WFSTLayers>
+    <Gui>
+      <CanvasColorBluePart type="int">255</CanvasColorBluePart>
+      <CanvasColorGreenPart type="int">255</CanvasColorGreenPart>
+      <SelectionColorBluePart type="int">0</SelectionColorBluePart>
+      <SelectionColorAlphaPart type="int">255</SelectionColorAlphaPart>
+      <SelectionColorRedPart type="int">255</SelectionColorRedPart>
+      <SelectionColorGreenPart type="int">255</SelectionColorGreenPart>
+      <CanvasColorRedPart type="int">255</CanvasColorRedPart>
+    </Gui>
+    <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
+    <WFSLayers type="QStringList"/>
+    <PositionPrecision>
+      <DecimalPlaces type="int">2</DecimalPlaces>
+      <Automatic type="bool">true</Automatic>
+      <DegreeFormat type="QString">MU</DegreeFormat>
+    </PositionPrecision>
+    <WMSContactOrganization type="QString"></WMSContactOrganization>
   </properties>
   <visibility-presets/>
+  <transformContext/>
+  <projectMetadata>
+    <identifier></identifier>
+    <parentidentifier></parentidentifier>
+    <language></language>
+    <type></type>
+    <title></title>
+    <abstract></abstract>
+    <links/>
+    <author></author>
+    <creation></creation>
+  </projectMetadata>
+  <Annotations/>
+  <Layouts/>
 </qgis>

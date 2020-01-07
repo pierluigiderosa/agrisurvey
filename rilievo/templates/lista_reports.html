@@ -16,6 +16,7 @@
         <th scope="col">stato</th>
         <th scope="col">part. inserite</th>
         <th scope="col">Download</th>
+        <th scope="col">Download shapefile</th>
     </tr>
     </thead>
     {% for danno in danni_lista %}
@@ -27,6 +28,7 @@
             <td>{{ danno.stato_pratica }}</td>
             <td>{{ danno.fog_part_db.count }}</td>
             <td><a class="btn btn-primary" href="{% url 'report_rilievo_singolo' id=danno.id %}"><i class="far fa-file-pdf"></i></a></td>
+            <td><a class="btn btn-primary" href="{% url 'shape_rilievo_singolo' id=danno.id %}"><i class="fas fa-file-archive"></i></a></td>
         </tr>
     {% empty %}
         <tr>
@@ -34,6 +36,18 @@
         </tr>
     {% endfor %}
 </table>
+{#// inserimento parte per download dei report#}
+        <br>
+        <h3>Report complessivi</h3>
+        <a class="btn btn-secondary" href="{% url 'consuntivo-agricoltore-coltura' %}">Report per -> agricoltore -> coltura</a>
+        <a class="btn btn-secondary" href="{% url 'consuntivo-specie-comune' comune=True %}">Report per Agricoltore -> Comune -> Specie -> Coltura</a>
+        <a class="btn btn-secondary" href="{% url 'consuntivo-specie' %}">Consuntivo specie</a>
+        <a class="btn btn-secondary" href="{% url 'consuntivo-coltura' %}">Consuntivo coltura</a>
+        <br><br>
+        {% if user.groups.all.0.name != "atc-admin" or user.is_staff %}
+        <a class="btn btn-secondary" href="{% url 'shape_tutti_rilievi' %}">Download in shapefile</a>
+            {% endif %}
+
 {% else %}
         <p>Benvenuto. Pagina non visibile agli utenti esterni. <br>Per favore effettua il <a href="{% url "login" %}">Login</a></p>
 {% endif %}

@@ -45,6 +45,7 @@
                 </ul>
                 </div>
                 {% endfor %}
+
             </div>
         </div>
 
@@ -77,6 +78,24 @@
                             layer.bindPopup('<h5>Foglio</h5>'+ feature.properties.foglio+'<h5>Particella: </h5>'+feature.properties.particelle);
                         }
                     }).addTo(map);
+
+                     var urlcatastogeoscopio = 'http://www502.regione.toscana.it/ows_catasto/com.rt.wms.RTmap/ows?map=owscatasto&'
+                     var urlpianofaunistico = 'http://www502.regione.toscana.it/ows2/com.rt.wms.RTmap/wms?map=owscacciapesca&map_resolution=91&'
+
+                    var lc = map.layerscontrol;
+
+                    lc.addOverlay(
+                        L.tileLayer.wms(
+                            urlcatastogeoscopio,
+                            {layers: 'rt_cat.idcatpart.rt', format: 'image/png', transparent: true}),
+                        'Catasto Geoscopio Toscana'
+                    );
+                    lc.addOverlay(
+                        L.tileLayer.wms(
+                            urlpianofaunistico,
+                            {layers: 'rt_cacciapesca.atc.rt', format: 'image/png', transparent: true}),
+                        'ATC Toscana'
+                    );
 
                     var wmsLayer = L.tileLayer.wms('https://demo.boundlessgeo.com/geoserver/ows?', {
                         layers: 'ne:ne'

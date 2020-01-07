@@ -193,6 +193,9 @@ def InserisciDanno(request):
                     dannoEntry.CAA = request.user
                 dannoEntry.stato_pratica = u'lavorazione'
                 dannoEntry.mappale = form.cleaned_data['mappale']
+                dannoEntry.documentopdf = form.cleaned_data['documentopdf']
+                dannoEntry.visurapdf = form.cleaned_data['visurapdf']
+                dannoEntry.titolopossessopdf = form.cleaned_data['titolopossessopdf']
                 dannoEntry.save()
 
                 #sostituito il modo per salvare le particelle con ajax per gestire molte righe

@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-
 from django.contrib.gis.db import models
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
@@ -12,6 +11,7 @@ from django.core.mail import send_mail
 
 # Create your models here.
 from django_iban.fields import IBANField
+# Create your models here.
 
 
 class catastale_new(models.Model):
@@ -67,6 +67,10 @@ class quadranti(models.Model):
     def __str__(self):  # __unicode__ on Python 2
         return u'fid: %s' % (self.fid)
 
+
+
+
+
 class quandranti_livorno(models.Model):
     location = models.CharField(max_length=254)
     num = models.BigIntegerField()
@@ -79,22 +83,42 @@ class quandranti_livorno(models.Model):
 
 
 class danno(models.Model):
+    categorie_colturali = [
+        ('Cereali', 'Cereali'),
+        ('Oleoproteaginose', 'Oleoproteaginose'),
+        ('Vite', 'Vite'),
+        ('Olivo', 'Olivo'),
+        ('Frutteto', 'Frutteto'),
+        ('Ortaggi', 'Ortaggi'),
+        ('Prati_pascoli', 'Prati naturali e Pascoli'),
+        ('Leguminose_foraggio', 'Leguminose da Foraggio'),
+        ('Leguminose_granella', 'Leguminose da Granella'),
+        ('Prodotti_Vivaistici', 'Prodotti Vivaistici'),
+        ('Spezie', 'Spezie'),
+        ('Erbe_Aromatiche', 'Erbe Aromatiche'),
+        ('Prodotti_Forestali', 'Prodotti Forestali'),
+        ('Altro', 'Altro'),
+
+    ]
+
+
     richiedente = models.ForeignKey(User, null=True, blank=True,limit_choices_to={'groups__name': "Agricoltore"})
     foglio = models.CharField(max_length=50,verbose_name='Fogli colpiti da danno',default='',null=True, blank=True,help_text='<b>Attenzione</b> da inserire solo nel caso in cui non si ritrova il catastale nel campo in fondo alla pagina')
     particella = models.CharField(max_length=50,default='',null=True, blank=True,help_text='<b>Attenzione</b> da inserire solo nel caso in cui non si ritrova il catastale nel campo in fondo alla pagina')
+    comune = models.CharField(max_length=100,default='',null=True,blank=True,help_text='<b>Attenzione</b> da inserire solo nel caso in cui non si ritrova il catastale nel campo in fondo alla pagina')
     data_danno = models.DateField(blank=True,verbose_name='data del danno',null=True)
-    coltura = models.CharField(max_length=50,default='')
-    varieta = models.CharField(max_length=50,verbose_name='varietà colturale',blank=True)
-    SumTot = models.FloatField(verbose_name='Superficie totale particelle ettari',default=0)
-    SumSem = models.FloatField(verbose_name='Superficie seminativa particella ettari',default=0)
+    coltura = models.CharField(max_length=50,default='',verbose_name='Categoria colturale danneggiata',choices=categorie_colturali)
+    varieta = models.CharField(max_length=50,verbose_name='Coltura e Varietà',blank=True)
+    SumTot = models.FloatField(verbose_name='Superficie totale particelle (Ha)',default=0)
+    SumSem = models.FloatField(verbose_name='Superficie Coltivata (Ha)',default=0)
     PercDanno = models.IntegerField(verbose_name='% stimata del danno',default=0,validators=[MinValueValidator(0), MaxValueValidator(100)],help_text='valore compreso tra 0 e 100')
-    Produzione = models.BigIntegerField(verbose_name='produzione prevista nella particella',default=0)
-    PerProdPersa = models.BigIntegerField(verbose_name='% produzione persa',default=0,validators=[MinValueValidator(0), MaxValueValidator(100)],help_text='valore compreso tra 0 e 100')
+    Produzione = models.BigIntegerField(verbose_name=' Resa Unitaria (Q.li/Ha, N, ecc.)',default=0)
+    PerProdPersa = models.BigIntegerField(verbose_name=' Stima quantità prodotto perso',default=0,validators=[MinValueValidator(0), MaxValueValidator(100)])
     ValoreDanno = models.BigIntegerField(verbose_name='ipotetico valore del danno stimato dal dichiarante',default=0)
     NumPianteDan = models.BigIntegerField(verbose_name='numero piante danneggiate',default=0,blank=True)
     TipoPiante  = models.CharField(max_length=50,blank=True,verbose_name='Tipologia di piante oggetto di danneggiamento',help_text='''età dell'impianto, altezza, caratteristiche se vivaio, ecc.''')
-    SelvagginaSem = models.CharField(max_length=250,default='',verbose_name='Selvaggina che ha fatto i danni alla coltura')
-    OpereProtezione = models.CharField(max_length=250,blank=True)
+    SelvagginaSem = models.CharField(max_length=250,default='',verbose_name='Fauna selvatica causa del danno')
+    OpereProtezione = models.CharField(max_length=250,blank=True,verbose_name='Opere di Prevenzione')
     polizza = models.NullBooleanField(verbose_name='Polizza assicurativa',blank=True,null=True)
     biologica = models.NullBooleanField(verbose_name='Azienda biologica',blank=True,null=True)
     iban = IBANField(default='',blank=True,null=True,help_text='Iban ')
@@ -118,7 +142,10 @@ class danno(models.Model):
     )
     CAA = models.ForeignKey(User, null=True, blank=True, limit_choices_to={'groups__name': "CAA"}, related_name='+', help_text='Centro di Assistenza agricolo')
     Rilevatore = models.ForeignKey(User, null=True, blank=True, limit_choices_to={'groups__name': "Rilevatore"}, related_name='+', )
-    mappale = models.FileField(blank=True,upload_to='mappali/',help_text='file pdf')
+    mappale = models.FileField(blank=True,upload_to='mappali/',help_text='estratto di mappa in pdf')
+    documentopdf = models.FileField(blank=True, upload_to='mappali/', help_text='Documento di identità in pdf')
+    visurapdf = models.FileField(blank=True, upload_to='mappali/', help_text='Visura catastale in pdf')
+    titolopossessopdf = models.FileField(blank=True,upload_to='mappali/',help_text='Titolo di possesso in pdf')
     #fog_part_certified = models.ManyToManyField(CatastaleSmall,verbose_name='Foglio Particella da Catastale',help_text='aiuto',null=True, blank=True)
     fog_part_db = models.ManyToManyField(catastale_new, verbose_name='Foglio Particella da Catastale',
                                                 help_text='Inserire nel formato Comune foglio e particella del tipo : -<b>Empoli 060 317</b>- dove 060 è il foglio è 60 e 317 la particella')
@@ -141,10 +168,13 @@ class danno(models.Model):
                 body = '''
                 Gentile %s,
                 le è stato appena assegnato un nuovo rilievo.
-                La preghiamo di voler accedere alla propria pagina personale per scaricare i dati.
+                La preghiamo di voler accedere alla propria pagina personale su agrisurvey.it per scaricare i dati.
                 Cordiali saluti
+                
+                Lo staff di Agrisurvey.it
+                Per comunicazioni scrivere a comunicazioni@agrsurvey.it
                 ''' %(self.Rilevatore.get_username())
-                send_mail('Assegnazione rilievo %d' %(self.id), body, 'noreply@parsifal.co', [to_mail])
+                send_mail('Assegnazione rilievo %d' %(self.id), body, 'comunicazioni@agrisurvey.it', [to_mail])
         super(danno, self).save()
 
 

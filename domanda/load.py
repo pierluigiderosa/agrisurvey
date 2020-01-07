@@ -49,7 +49,8 @@ def run(verbose=True):
 
 def run_new(verbose=True):
     #path on server
-    datadir='/home/ucavini/LIVORNO_CATASTALE'
+    #datadir='/home/ucavini/LIVORNO_CATASTALE'
+    datadir='/media/pierluigi/LENOVO/lavori/63_agrisurvey/LIVORNO_CATASTALE'
     shp_firenze = ['a564','a632','a633','b036','b406','b507','B626','b684','B794','b962','c101','c529','c540','d299','d403','d575','d583']
     shp = ['A852','B509','B553','B669','B685','C044','C415','C869','E625','E680','E930','E931','G687','G912','H297','H305','H570','I390','I454','L019']
     for i in range(len(shp)):

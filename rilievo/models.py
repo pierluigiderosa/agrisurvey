@@ -4,6 +4,9 @@ from __future__ import unicode_literals
 from datetime import date
 
 from django.contrib.gis.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
+from django.db.models import Count
+
 from domanda.models import danno
 
 # Create your models here.
@@ -23,7 +26,7 @@ class rilievo_poly(models.Model):
     perc_danno = models.IntegerField(blank=True,null=True)
     Specie2 = models.CharField(max_length=250,blank=True,null=True)
     foglio = models.CharField(max_length=50,blank=True,null=True)
-    varieta = models.CharField(max_length=50,blank=True,null=True)
+    varieta = models.CharField(max_length=50,blank=True,null=True,verbose_name='coltura e varieta')
     #nuovi campi aggiunti dopo modifica rilievo di cavini
     specie1_altro = models.CharField(max_length=250,blank=True,null=True,default='')
     statovegsanitario = models.CharField(max_length=250, blank=True, null=True, default='')
@@ -36,7 +39,7 @@ class rilievo_poly(models.Model):
     perc_specie2 = models.FloatField(blank=True, null=True, default=0)
     superficierisemina = models.FloatField(blank=True, null=True, default=0)
     Localizzazione_fondo_altro = models.CharField(max_length=250, blank=True, null=True, default='')
-    quantitaprodotto = models.FloatField(blank=True, null=True, default=0)
+    quantitaprodotto = models.FloatField(blank=True, null=True, default=0,verbose_name='quantita prodotto perso in Q.Li')
     perc_specie1 = models.FloatField(blank=True, null=True, default=0)
     Specie2_altro = models.CharField(max_length=250, blank=True, null=True, default='')
 
@@ -78,3 +81,32 @@ class anagrafica(models.Model):
     class Meta:
         verbose_name = 'anagrafica'
         verbose_name_plural = 'anagrafiche'
+
+def current_year():
+    return date.today().year
+
+
+def max_value_current_year(value):
+    return MaxValueValidator(current_year())(value)
+
+def getColturaVarieta():
+    COLTURA_CHOICES = []
+    for sin_coltura in rilievo_poly.objects.values('varieta').order_by('varieta'):
+            COLTURA_CHOICES.append((sin_coltura['varieta'], sin_coltura['varieta']))
+    return COLTURA_CHOICES
+
+class prezzo(models.Model):
+    COLTURA_CHOICES = getColturaVarieta()
+    coltura = models.CharField(choices=COLTURA_CHOICES,default='',max_length=50)
+    anno = models.PositiveIntegerField(
+        default=current_year(), validators=[MinValueValidator(1984), max_value_current_year])
+    prezzo = models.DecimalField(max_digits=6, decimal_places=2,verbose_name='prezzo al Q.le')
+
+    # Returns the string representation of the model.
+    def __str__(self):  # __unicode__ on Python 2
+        return u'%s anno:%s' % (self.coltura, self.anno)
+
+    class Meta:
+        verbose_name = 'prezzo'
+        verbose_name_plural = 'prezzi'
+        unique_together = ["coltura", "anno"]

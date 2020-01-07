@@ -17,13 +17,17 @@ class DannoFormAgricoltore(forms.ModelForm):
         model = danno
         fields = ('CAA','coltura', 'varieta','SumTot',
                   'SumSem','PercDanno','Produzione','PerProdPersa','ValoreDanno', 'NumPianteDan',
-                  'TipoPiante','SelvagginaSem','OpereProtezione','polizza','biologica','iban','mappale','note','foglio', 'particella')
+                  'TipoPiante','SelvagginaSem','OpereProtezione','polizza','biologica','iban','mappale','documentopdf','visurapdf','titolopossessopdf','note','foglio', 'particella')
         #widgets = {'fog_part_certified': forms.CheckboxSelectMultiple}
         widgets = {
             'note': forms.Textarea(attrs={'rows':4, 'cols':15}),
         }
         labels = {
             'mappale': 'Estratto di mappa',
+            'documentopdf': 'Documento di identità in pdf',
+            'visurapdf': 'Visura catastale',
+            'titolopossessopdf': 'Titolo di possesso',
+
         }
 
     fog_part_db = make_ajax_field(danno, 'fog_part_db', 'catastali', help_text='Inserire nel formato Comune foglio e particella del tipo : -<b>Empoli 060 317</b>- dove 060 è il foglio è 60 e la particella è 317 ')
@@ -44,13 +48,17 @@ class DannoFormCAA(forms.ModelForm):
         model = danno
         fields = ('richiedente','data_danno', 'coltura', 'varieta','SumTot',
                   'SumSem','PercDanno','Produzione','PerProdPersa','ValoreDanno', 'NumPianteDan',
-                  'TipoPiante','SelvagginaSem','OpereProtezione','mappale','note','foglio', 'particella',)
+                  'TipoPiante','SelvagginaSem','OpereProtezione','mappale','documentopdf','visurapdf','titolopossessopdf',
+                  'note','foglio', 'particella','comune',)
         #widgets = {'fog_part_certified': forms.CheckboxSelectMultiple}
         widgets = {
             'data_danno': forms.SelectDateWidget(years=range(2015, 2100))
         }
         labels = {
             'mappale': 'Estratto di mappa',
+            'documentopdf': 'Documento di identità in pdf',
+            'visurapdf': 'Visura catastale',
+            'titolopossessopdf': 'Titolo di possesso',
         }
 
     fog_part_db = make_ajax_field(danno, 'fog_part_db', 'catastali', help_text='Inserire nel formato Comune foglio e particella del tipo : -    <b>Empoli 060 317</b>- dove 060 è il foglio 60 e la particella è 317.')

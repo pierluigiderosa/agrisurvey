@@ -10,7 +10,6 @@ from .models import CatastaleSmall, danno, Agricoltore,catastale_new
 admin.site.register(CatastaleSmall, admin.OSMGeoAdmin)
 admin.site.register(catastale_new, admin.OSMGeoAdmin)
 
-from .models import Agricoltore
 
 class DannoAdmin(admin.ModelAdmin):
     list_display = ('author_full_name','id', 'richiedente','data_ins',)
