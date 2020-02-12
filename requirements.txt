@@ -1,4 +1,4 @@
-Django==1.11.23
+Django==1.11.28
 django-ajax-selects==1.7.0
 django-crispy-forms==1.7.0
 django-geojson==2.11.0
